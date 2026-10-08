@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iWin Study Centre - Class 10 Learning</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: #333;
+            background-color: #fff;
+            line-height: 1.6;
+        }
+
+        /* Top Navigation */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: #0b2545;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #e0a96d;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links a:hover {
+            color: #0b2545;
+        }
+
+        .btn-register {
+            border: 1px solid #ccc;
+            padding: 6px 16px;
+            border-radius: 4px;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: linear-gradient(135deg, #7ba4b5 0%, #a4c4d2 100%);
+            padding: 80px 8%;
+            min-height: 480px;
+            color: #fff;
+        }
+
+        .hero-content {
+            max-width: 550px;
+        }
+
+        .hero-title {
+            font-size: 48px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .hero-subtitle {
+            font-size: 16px;
+            margin-bottom: 35px;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background-color: #0b2545;
+            color: #fff;
+            padding: 12px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+
+        .cta-btn:hover {
+            background-color: #134074;
+            transform: translateY(-2px);
+        }
+
+        .cta-badge {
+            background-color: #e0a96d;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0b2545;
+            font-weight: bold;
+        }
+
+        /* Hero Graphic (Placeholder for student image) */
+        .hero-image-container {
+            width: 400px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* Subjects Section */
+        .subjects-section {
+            padding: 80px 8%;
+            text-align: center;
+        }
+
+        .section-tag {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #e0a96d;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .section-title {
+            font-size: 32px;
+            font-weight: 800;
+            color: #0b2545;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        .section-description {
+            max-width: 650px;
+            margin: 0 auto 60px auto;
+            color: #777;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        /* Subject Cards Grid */
+        .subjects-grid {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .subject-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            width: 160px;
+            transition: transform 0.2s ease;
+        }
+
+        .subject-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .subject-icon-wrapper {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #fff;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+            border: 1px solid #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .subject-card:hover .subject-icon-wrapper {
+            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+        }
+
+        .subject-icon {
+            width: 40px;
+            height: 40px;
+            stroke: #e0a96d;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .subject-name {
+            font-size: 13px;
+            font-weight: 800;
+            color: #0b2545;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        .subject-tag {
+            font-size: 11px;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .disabled-card {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .disabled-card:hover {
+            transform: none;
+        }
+
+        /* Responsive Layout */
+        @media (max-width: 900px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                gap: 40px;
+            }
+            .hero-title {
+                font-size: 36px;
+            }
+            .hero-image-container {
+                width: 100%;
+                max-width: 350px;
+            }
+            .subjects-grid {
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header>
+        <a href="index.html" class="logo">iWin <span>Study</span></a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#login">Login</a></li>
+            <li><a href="#register" class="btn-register">Register</a></li>
+        </ul>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Don't Just Watch. Learn.</h1>
+            <p class="hero-subtitle">Master Class 10 topics through chapter tests, interactive MCQs, and full syllabus practice exams.</p>
+            <a href="science/index.html" class="cta-btn">
+                Get Started
+                <span class="cta-badge">&rarr;</span>
+            </a>
+        </div>
+        <div class="hero-image-container">
+            <!-- Add an image here or keep as illustrative block -->
+            <p style="color: rgba(255,255,255,0.8); font-size: 14px;">[ Interactive Learning Space ]</p>
+        </div>
+    </section>
+
+    <!-- Main Content Section -->
+    <section class="subjects-section">
+        <div class="section-tag">iWin Study Centre</div>
+        <h2 class="section-title">Gain Skills With Practice</h2>
+        <p class="section-description">
+            Our targeted practice modules help you test your understanding topic by topic. Select a subject below to attempt MCQs, chapter tests, and full exam papers.
+        </p>
+
+        <!-- Subjects Grid -->
+        <div class="subjects-grid">
+            
+            <!-- Science Card (Active Pilot) -->
+            <a href="science/index.html" class="subject-card">
+                <div class="subject-icon-wrapper">
+                    <!-- Science Icon -->
+                    <svg class="subject-icon" viewBox="0 0 24 24">
+                        <path d="M10 2v7.31L4.75 20.5a1 1 0 0 0 .89 1.5h12.72a1 1 0 0 0 .89-1.5L14 9.31V2"/>
+                        <path d="M85 2h7"/>
+                        <path d="M14 9h-4"/>
+                    </svg>
+                </div>
+                <div class="subject-name">Science</div>
+                <div class="subject-tag">Class 10</div>
+            </a>
+
+            <!-- English Card -->
+            <div class="subject-card disabled-card">
+                <div class="subject-icon-wrapper">
+                    <svg class="subject-icon" viewBox="0 0 24 24">
+                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                    </svg>
+                </div>
+                <div class="subject-name">English</div>
+                <div class="subject-tag">Coming Soon</div>
+            </div>
+
+            <!-- Maths Card -->
+            <div class="subject-card disabled-card">
+                <div class="subject-icon-wrapper">
+                    <svg class="subject-icon" viewBox="0 0 24 24">
+                        <rect x="4" y="4" width="16" height="16" rx="2"/>
+                        <path d="M8 10h8"/>
+                        <path d="M12 14v4"/>
+                        <path d="M10 16h4"/>
+                    </svg>
+                </div>
+                <div class="subject-name">Maths</div>
+                <div class="subject-tag">Coming Soon</div>
+            </div>
+
+            <!-- Hindi Card -->
+            <div class="subject-card disabled-card">
+                <div class="subject-icon-wrapper">
+                    <svg class="subject-icon" viewBox="0 0 24 24">
+                        <path d="M12 20h9"/>
+                        <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+                    </svg>
+                </div>
+                <div class="subject-name">Hindi</div>
+                <div class="subject-tag">Coming Soon</div>
+            </div>
+
+            <!-- Home Science Card -->
+            <div class="subject-card disabled-card">
+                <div class="subject-icon-wrapper">
+                    <svg class="subject-icon" viewBox="0 0 24 24">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <polyline points="9 22 9 12 15 12 15 22"/>
+                    </svg>
+                </div>
+                <div class="subject-name">Home Science</div>
+                <div class="subject-tag">Coming Soon</div>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>
