@@ -130,17 +130,23 @@
             font-weight: bold;
         }
 
-        /* Hero Graphic (Placeholder for student image) */
+        /* Hero Graphic */
         .hero-image-container {
-            width: 400px;
-            height: 300px;
+            width: 100%;
+            max-width: 400px;
+            aspect-ratio: 4 / 3;
             background: rgba(255, 255, 255, 0.2);
             border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            overflow: hidden;
             backdrop-filter: blur(5px);
             border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
         /* Subjects Section */
@@ -292,8 +298,7 @@
             </a>
         </div>
         <div class="hero-image-container">
-            <!-- Add an image here or keep as illustrative block -->
-            <p style="color: rgba(255,255,255,0.8); font-size: 14px;">[ Interactive Learning Space ]</p>
+            <img src="hero_img.png" alt="Interactive Learning Space" width="400" height="300">
         </div>
     </section>
 
@@ -308,10 +313,9 @@
         <!-- Subjects Grid -->
         <div class="subjects-grid">
             
-            <!-- Science Card (Active Pilot) -->
+            <!-- Science Card (Active) -->
             <a href="science/index.html" class="subject-card">
                 <div class="subject-icon-wrapper">
-                    <!-- Science Icon -->
                     <svg class="subject-icon" viewBox="0 0 24 24">
                         <path d="M10 2v7.31L4.75 20.5a1 1 0 0 0 .89 1.5h12.72a1 1 0 0 0 .89-1.5L14 9.31V2"/>
                         <path d="M85 2h7"/>
@@ -348,8 +352,8 @@
                 <div class="subject-tag">Coming Soon</div>
             </div>
 
-            <!-- Hindi Card -->
-            <div class="subject-card disabled-card">
+            <!-- Hindi Card (Active) -->
+            <a href="hindi/index.html" class="subject-card">
                 <div class="subject-icon-wrapper">
                     <svg class="subject-icon" viewBox="0 0 24 24">
                         <path d="M12 20h9"/>
@@ -357,11 +361,11 @@
                     </svg>
                 </div>
                 <div class="subject-name">Hindi</div>
-                <div class="subject-tag">Coming Soon</div>
-            </div>
+                <div class="subject-tag">Class 10</div>
+            </a>
 
-            <!-- Home Science Card -->
-            <div class="subject-card disabled-card">
+            <!-- Home Science Card (Active) -->
+            <a href="home_science/index.html" class="subject-card">
                 <div class="subject-icon-wrapper">
                     <svg class="subject-icon" viewBox="0 0 24 24">
                         <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
@@ -369,8 +373,8 @@
                     </svg>
                 </div>
                 <div class="subject-name">Home Science</div>
-                <div class="subject-tag">Coming Soon</div>
-            </div>
+                <div class="subject-tag">Class 10</div>
+            </a>
 
         </div>
     </section>
