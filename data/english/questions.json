@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "chapter": "1",
+    "difficulty": "Easy",
+    "type": "MCQ",
+    "question": "What was the name of the author of 'A Letter to God'?",
+    "options": [
+      "G.L. Fuentes",
+      "Roald Dahl",
+      "Ruskin Bond",
+      "Liam O'Flaherty"
+    ],
+    "answer": "G.L. Fuentes",
+    "explanation": "'A Letter to God' is written by Gregorio López y Fuentes, a prominent Mexican novelist and journalist.",
+    "marks": 1
+  },
+  {
+    "id": 2,
+    "chapter": "1",
+    "difficulty": "Easy",
+    "type": "MCQ",
+    "question": "Where was Lencho's house situated?",
+    "options": [
+      "At the bottom of a hill",
+      "On the crest of a low hill",
+      "In a deep valley",
+      "Near a bustling city"
+    ],
+    "answer": "On the crest of a low hill",
+    "explanation": "The story begins by describing Lencho's house as sitting alone on the crest of a low hill, commanding a view of the river and the ripe cornfield.",
+    "marks": 1
+  },
+  {
+    "id": 3,
+    "chapter": "2",
+    "difficulty": "Medium",
+    "type": "MCQ",
+    "question": "According to Nelson Mandela, what is freedom?",
+    "options": [
+      "An illusion of safety",
+      "The absence of obstacles",
+      "To be free to read and write",
+      "Birthright of being a human being"
+    ],
+    "answer": "Birthright of being a human being",
+    "explanation": "Mandela realized in his youth that his boyhood freedom was an illusion and that his freedom had already been taken from him, leading him to hunger for the basic freedom of his people.",
+    "marks": 1
+  },
+  {
+    "id": 4,
+    "chapter": "3",
+    "difficulty": "Medium",
+    "type": "Short Form",
+    "question": "Why was the young seagull afraid to fly?",
+    "options": [],
+    "answer": "He was afraid that his wings would not support him and that the vast expanse of the sea down below was too terrifying.",
+    "explanation": "The young seagull lacked confidence in his wings and felt certain that his wings would fail him over the deep sea.",
+    "marks": 2
+  },
+  {
+    "id": 5,
+    "chapter": "1",
+    "difficulty": "Hard",
+    "type": "Long Form",
+    "question": "Describe Lencho's faith in God and how it led to the drafting of his letter.",
+    "options": [],
+    "answer": "Lencho had unwavering, absolute faith in God, believing that God's eyes 'see everything, even what is deep in one's conscience.' When his crops were completely destroyed by a hailstorm, he turned to God as his only remaining hope, writing a letter asking for 100 pesos to sow his field again and live until the next harvest.",
+    "explanation": "Lencho's letter represents extreme innocence and blind faith in divine intervention.",
+    "marks": 5
+  }
+]

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter-Wise Tests - iWin Study Centre</title>
+    <style>
+        :root { --primary-dark: #0b2545; --primary-hover: #134074; --accent-gold: #e0a96d; --bg: #f8fafc; --card-bg: #ffffff; --text-main: #333333; --border: #e2e8f0; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: var(--bg); color: var(--text-main); line-height: 1.6; }
+        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 8%; background-color: #ffffff; box-shadow: 0 2px 5px rgba(0,0,0,0.05); margin-bottom: 30px; }
+        .logo { font-size: 24px; font-weight: 800; color: var(--primary-dark); text-decoration: none; }
+        .logo span { color: var(--accent-gold); }
+        .back-link { text-decoration: none; color: #555; font-size: 14px; font-weight: 600; transition: color 0.2s ease; }
+        .back-link:hover { color: var(--primary-dark); }
+        .container { max-width: 800px; margin: 0 auto 50px auto; padding: 0 20px; }
+        .page-header { margin-bottom: 24px; padding-bottom: 16px; border-bottom: 2px solid var(--border); }
+        .page-title { font-size: 1.6rem; font-weight: 800; color: var(--primary-dark); text-transform: uppercase; letter-spacing: 0.5px; }
+        .chapter-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+        .chapter-item { background-color: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 18px 24px; display: flex; justify-content: space-between; align-items: center; text-decoration: none; color: var(--primary-dark); font-weight: 700; font-size: 1.05rem; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03); transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease; }
+        .chapter-item:hover { transform: translateY(-2px); border-color: var(--accent-gold); box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08); }
+        .chapter-arrow { color: var(--accent-gold); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .chapter-item:hover .chapter-arrow { color: var(--primary-dark); }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">iWin <span>Study</span></a>
+        <a href="#" id="backSubLink" class="back-link">&larr; Back to Subject</a>
+    </header>
+
+    <main class="container">
+        <div class="page-header">
+            <h1 class="page-title" id="pageTitle">Chapter-Wise Tests</h1>
+        </div>
+
+        <ul class="chapter-list" id="chapterListContainer">
+            <li><p>Loading chapters...</p></li>
+        </ul>
+    </main>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const subject = urlParams.get('subject') || 'hindi';
+        
+        document.getElementById('backSubLink').href = `subject.html?subject=${subject}`;
+        const subjectFormatted = subject.replace('_', ' ').toUpperCase();
+        document.getElementById('pageTitle').textContent = `10TH GRADE ${subjectFormatted} - CHAPTER TESTS`;
+
+        async function loadChapters() {
+            const container = document.getElementById('chapterListContainer');
+            container.innerHTML = '';
+
+            let chapters = [];
+
+            try {
+                // Try manifest.json first
+                const manifestRes = await fetch(`data/${subject}/manifest.json`);
+                if (manifestRes.ok) {
+                    const manifest = await manifestRes.json();
+                    chapters = manifest.chapters;
+                } else {
+                    throw new Error('No manifest');
+                }
+            } catch (e) {
+                // Fallback to questions.json
+                try {
+                    const response = await fetch(`data/${subject}/questions.json`);
+                    if (!response.ok) throw new Error('Could not load questions.');
+                    const questions = await response.json();
+                    chapters = [...new Set(questions.map(q => q.chapter).filter(c => c && c !== '-'))];
+                } catch (err) {
+                    console.error(err);
+                    container.innerHTML = '<li><p>Error loading chapters.</p></li>';
+                    return;
+                }
+            }
+
+            if (chapters.length === 0) {
+                container.innerHTML = '<li><p>No specific chapters defined for this subject yet.</p></li>';
+                return;
+            }
+
+            chapters.forEach(ch => {
+                const li = document.createElement('li');
+                li.innerHTML = `
+                    <a href="mcqs.html?subject=${subject}&chapter=${ch}" class="chapter-item">
+                        <span>Chapter ${ch}</span>
+                        <span class="chapter-arrow">Start Test &rarr;</span>
+                    </a>
+                `;
+                container.appendChild(li);
+            });
+        }
+
+        loadChapters();
+    </script>
+</body>
+</html>

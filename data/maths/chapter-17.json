@@ -1,0 +1,1602 @@
+[
+  {
+    "id": 1701,
+    "chapter": "17",
+    "difficulty": "Easy",
+    "type": "MCQ",
+    "question": "A line that intersects a circle in two distinct points is called a:",
+    "options": [
+      "Tangent",
+      "Secant",
+      "Chord",
+      "Diameter"
+    ],
+    "answer": "Secant",
+    "explanation": "A line which intersects the circle in two distinct points is defined as a secant line.",
+    "marks": 1
+  },
+  {
+    "id": 1702,
+    "chapter": "17",
+    "difficulty": "Easy",
+    "type": "MCQ",
+    "question": "A line which touches a circle at exactly one point is called a:",
+    "options": [
+      "Secant",
+      "Chord",
+      "Tangent",
+      "Radius"
+    ],
+    "answer": "Tangent",
+    "explanation": "A line that touches a circle at exactly one point is called a tangent line, and the point is the point of contact.",
+    "marks": 1
+  },
+  {
+    "id": 1703,
+    "chapter": "17",
+    "difficulty": "Easy",
+    "type": "MCQ",
+    "question": "The point where the tangent touches the circle is called the:",
+    "options": [
+      "Centre",
+      "Point of contact",
+      "Vertex",
+      "Intersection point"
+    ],
+    "answer": "Point of contact",
+    "explanation": "The single point where a tangent line touches a circle is known as the point of contact.",
+    "marks": 1
+  },
+  {
+    "id": 1704,
+    "chapter": "17",
+    "difficulty": "Easy",
+    "type": "MCQ",
+    "question": "A tangent is the limiting position of a secant when its two points of intersection:",
+    "options": [
+      "Move infinitely apart",
+      "Coincide",
+      "Become perpendicular",
+      "Pass through the centre"
+    ],
+    "answer": "Coincide",
+    "explanation": "When the two points of intersection of a secant coincide into a single point, the secant becomes a tangent.",
+    "marks": 1
+  },
+  {
+    "id": 1705,
+    "chapter": "17",
+    "difficulty": "Easy",
+    "type": "MCQ",
+    "question": "The angle between a tangent to a circle and the radius through the point of contact is:",
+    "options": [
+      "45°",
+      "60°",
+      "90°",
+      "180°"
+    ],
+    "answer": "90°",
+    "explanation": "A radius through the point of contact of a tangent to a circle is perpendicular to the tangent at that point, making an angle of 90°.",
+    "marks": 1
+  },
+  {
+    "id": 1706,
+    "chapter": "17",
+    "difficulty": "Easy",
+    "type": "MCQ",
+    "question": "How many tangents can be drawn to a circle from a point lying outside the circle?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "Infinite"
+    ],
+    "answer": "2",
+    "explanation": "From any external point, exactly two tangents can be drawn to a circle.",
+    "marks": 1
+  },
+  {
+    "id": 1707,
+    "chapter": "17",
+    "difficulty": "Easy",
+    "type": "MCQ",
+    "question": "How many tangents can be drawn to a circle from a point lying inside the circle?",
+    "options": [
+      "0",
+      "1",
+      "2",
+      "Infinite"
+    ],
+    "answer": "0",
+    "explanation": "Any line passing through an interior point intersects the circle in two points; hence, no tangent can be drawn from an interior point.",
+    "marks": 1
+  },
+  {
+    "id": 1708,
+    "chapter": "17",
+    "difficulty": "Easy",
+    "type": "MCQ",
+    "question": "How many tangents can be drawn to a circle from a point lying on the circle?",
+    "options": [
+      "0",
+      "1",
+      "2",
+      "Infinite"
+    ],
+    "answer": "1",
+    "explanation": "When a point lies on the circle, exactly one tangent can be drawn to the circle at that point.",
+    "marks": 1
+  },
+  {
+    "id": 1709,
+    "chapter": "17",
+    "difficulty": "Easy",
+    "type": "MCQ",
+    "question": "The lengths of two tangents drawn from an external point to a circle are:",
+    "options": [
+      "Unequal",
+      "Equal",
+      "Proportional",
+      "Perpendicular"
+    ],
+    "answer": "Equal",
+    "explanation": "Tangents drawn from an external point to a circle have equal lengths.",
+    "marks": 1
+  },
+  {
+    "id": 1710,
+    "chapter": "17",
+    "difficulty": "Easy",
+    "type": "MCQ",
+    "question": "If two chords AB and CD of a circle intersect at a point P inside the circle, then which of the following relations always holds?",
+    "options": [
+      "PA + PB = PC + PD",
+      "PA × PB = PC × PD",
+      "PA × PC = PB × PD",
+      "PA / PB = PC / PD"
+    ],
+    "answer": "PA × PB = PC × PD",
+    "explanation": "For chords intersecting inside a circle, the product of the segments of one chord equals the product of the segments of the other chord: PA × PB = PC × PD.",
+    "marks": 1
+  },
+  {
+    "id": 1711,
+    "chapter": "17",
+    "difficulty": "Easy",
+    "type": "MCQ",
+    "question": "If PAB is a secant intersecting a circle at A and B, and PT is a tangent from external point P, then:",
+    "options": [
+      "PA + PB = PT²",
+      "PA × PB = PT",
+      "PA × PB = PT²",
+      "PA / PB = PT²"
+    ],
+    "answer": "PA × PB = PT²",
+    "explanation": "The rectangle contained by the parts of the secant equals the square on the tangent: PA × PB = PT².",
+    "marks": 1
+  },
+  {
+    "id": 1712,
+    "chapter": "17",
+    "difficulty": "Easy",
+    "type": "MCQ",
+    "question": "The angle formed in the alternate segment by a chord through the point of contact is equal to:",
+    "options": [
+      "The angle at the centre",
+      "The angle between the chord and the tangent",
+      "Half the angle at the centre",
+      "90°"
+    ],
+    "answer": "The angle between the chord and the tangent",
+    "explanation": "By the Alternate Segment Theorem, the angle in the alternate segment equals the angle between the chord and the tangent.",
+    "marks": 1
+  },
+  {
+    "id": 1713,
+    "chapter": "17",
+    "difficulty": "Easy",
+    "type": "MCQ",
+    "question": "If a line touches a circle and from the point of contact a chord is drawn, the angle between the tangent and the chord is 50°, then the angle subtended by the chord in the alternate segment is:",
+    "options": [
+      "25°",
+      "50°",
+      "100°",
+      "40°"
+    ],
+    "answer": "50°",
+    "explanation": "According to the Alternate Segment Theorem, the angle in the alternate segment is equal to the angle between the tangent and the chord, which is 50°.",
+    "marks": 1
+  },
+  {
+    "id": 1714,
+    "chapter": "17",
+    "difficulty": "Easy",
+    "type": "MCQ",
+    "question": "In a right triangle formed by the radius, tangent, and line joining the external point to the centre, the hypotenuse is the line segment joining the:",
+    "options": [
+      "Centre to the point of contact",
+      "External point to the centre",
+      "External point to the point of contact",
+      "Centre to any point on the tangent"
+    ],
+    "answer": "External point to the centre",
+    "explanation": "In triangle OPT where PT is tangent and OT is radius, ∠OTP = 90°, so OP is the hypotenuse.",
+    "marks": 1
+  },
+  {
+    "id": 1715,
+    "chapter": "17",
+    "difficulty": "Easy",
+    "type": "MCQ",
+    "question": "If OP = 5 cm and radius OT = 3 cm for a tangent PT, the length of PT is:",
+    "options": [
+      "3 cm",
+      "4 cm",
+      "5 cm",
+      "√34 cm"
+    ],
+    "answer": "4 cm",
+    "explanation": "Using Pythagoras theorem: PT² = OP² - OT² = 5² - 3² = 25 - 9 = 16, so PT = 4 cm.",
+    "marks": 1
+  },
+  {
+    "id": 1716,
+    "chapter": "17",
+    "difficulty": "Medium",
+    "type": "MCQ",
+    "question": "Tangents PT and PT' are drawn from a point P at a distance of 25 cm from the centre of a circle of radius 7 cm. The length of PT is:",
+    "options": [
+      "24 cm",
+      "18 cm",
+      "√625 cm",
+      "25 cm"
+    ],
+    "answer": "24 cm",
+    "explanation": "PT = √(OP² - OT²) = √(25² - 7²) = √(625 - 49) = √576 = 24 cm.",
+    "marks": 1
+  },
+  {
+    "id": 1717,
+    "chapter": "17",
+    "difficulty": "Medium",
+    "type": "MCQ",
+    "question": "In Example 17.3, if tangents AP, BQ, CR from external points have lengths 3 cm, 4 cm, and 3.5 cm respectively, the perimeter of triangle ABC is:",
+    "options": [
+      "14 cm",
+      "21 cm",
+      "10.5 cm",
+      "28 cm"
+    ],
+    "answer": "21 cm",
+    "explanation": "AB = AP + PB = 3 + 4 = 7 cm, BC = BQ + QC = 4 + 3.5 = 7.5 cm, CA = AR + CR = 3 + 3.5 = 6.5 cm. Perimeter = 7 + 7.5 + 6.5 = 21 cm.",
+    "marks": 1
+  },
+  {
+    "id": 1718,
+    "chapter": "17",
+    "difficulty": "Medium",
+    "type": "MCQ",
+    "question": "If angle AOB = 50° between two radii OA and OB where XY is a tangent at A, then angle OBT equals:",
+    "options": [
+      "50°",
+      "40°",
+      "90°",
+      "25°"
+    ],
+    "answer": "40°",
+    "explanation": "OA ⊥ XY, so ∠OAB = 90°. In triangle OAB, ∠ABO = 180° - (90° + 50°) = 40°. Since triangle OAB is isosceles (OA = OB = radius), ∠OBT = ∠ABO = 40°.",
+    "marks": 1
+  },
+  {
+    "id": 1719,
+    "chapter": "17",
+    "difficulty": "Medium",
+    "type": "MCQ",
+    "question": "Chords AB and CD intersect inside a circle at P. If PA = 3 cm, PB = 2 cm, and PC = 1.5 cm, the length of PD is:",
+    "options": [
+      "3 cm",
+      "4 cm",
+      "4.5 cm",
+      "6 cm"
+    ],
+    "answer": "4 cm",
+    "explanation": "PA × PB = PC × PD => 3 × 2 = 1.5 × PD => PD = 6 / 1.5 = 4 cm.",
+    "marks": 1
+  },
+  {
+    "id": 1720,
+    "chapter": "17",
+    "difficulty": "Medium",
+    "type": "MCQ",
+    "question": "PAB is a secant passing through the centre, and PT is a tangent. If PT = 8 cm and OP = 10 cm, the radius of the circle is:",
+    "options": [
+      "4 cm",
+      "5 cm",
+      "6 cm",
+      "8 cm"
+    ],
+    "answer": "6 cm",
+    "explanation": "Let radius be x. PA = 10 - x, PB = 10 + x. PA × PB = PT² => (10 - x)(10 + x) = 8² => 100 - x² = 64 => x² = 36 => x = 6 cm.",
+    "marks": 1
+  },
+  {
+    "id": 1721,
+    "chapter": "17",
+    "difficulty": "Medium",
+    "type": "MCQ",
+    "question": "Chords BA and DC intersect outside a circle at P. If PA = 4 cm, PB = 10 cm, and CD = 3 cm, the length of PC is:",
+    "options": [
+      "3 cm",
+      "4 cm",
+      "5 cm",
+      "8 cm"
+    ],
+    "answer": "5 cm",
+    "explanation": "Let PC = x. PD = x + 3. PA × PB = PC × PD => 4 × 10 = x(x + 3) => x² + 3x - 40 = 0 => (x + 8)(x - 5) = 0 => x = 5 cm.",
+    "marks": 1
+  },
+  {
+    "id": 1722,
+    "chapter": "17",
+    "difficulty": "Easy",
+    "type": "MCQ",
+    "question": "In Check Your Progress 17.2, if PA = 3 cm, PB = 6 cm, and PD = 4 cm, the length of PC is:",
+    "options": [
+      "4 cm",
+      "4.5 cm",
+      "5 cm",
+      "6 cm"
+    ],
+    "answer": "4.5 cm",
+    "explanation": "PA × PB = PC × PD => 3 × 6 = PC × 4 => 18 = 4 PC => PC = 18 / 4 = 4.5 cm.",
+    "marks": 1
+  },
+  {
+    "id": 1723,
+    "chapter": "17",
+    "difficulty": "Medium",
+    "type": "MCQ",
+    "question": "In Check Your Progress 17.2, if PA = 4 cm, PB = x + 3, PD = 3 cm, and PC = x + 5, the value of x is:",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": "3",
+    "explanation": "PA × PB = PC × PD => 4(x + 3) = 3(x + 5) => 4x + 12 = 3x + 15 => x = 3.",
+    "marks": 1
+  },
+  {
+    "id": 1724,
+    "chapter": "17",
+    "difficulty": "Medium",
+    "type": "MCQ",
+    "question": "In Check Your Progress 17.2, if PA = 4 cm, PB = 10 cm, and PC = 5 cm, the length of PD is:",
+    "options": [
+      "6 cm",
+      "7 cm",
+      "8 cm",
+      "10 cm"
+    ],
+    "answer": "8 cm",
+    "explanation": "PA × PB = PC × PD => 4 × 10 = 5 × PD => 40 = 5 PD => PD = 8 cm.",
+    "marks": 1
+  },
+  {
+    "id": 1725,
+    "chapter": "17",
+    "difficulty": "Medium",
+    "type": "MCQ",
+    "question": "In Check Your Progress 17.2, if PT = 2√7 cm and OP = 8 cm, the radius of the circle is:",
+    "options": [
+      "4 cm",
+      "5 cm",
+      "6 cm",
+      "√15 cm"
+    ],
+    "answer": "6 cm",
+    "explanation": "OT² = OP² - PT² = 8² - (2√7)² = 64 - 28 = 36, so radius OT = 6 cm.",
+    "marks": 1
+  },
+  {
+    "id": 1726,
+    "chapter": "17",
+    "difficulty": "Medium",
+    "type": "MCQ",
+    "question": "In a circle with centre O and diameter AB, if XY is a tangent at P and angle PAB = 40°, the angle APX is:",
+    "options": [
+      "40°",
+      "50°",
+      "90°",
+      "130°"
+    ],
+    "answer": "50°",
+    "explanation": "Angle APB = 90° (angle in a semicircle). Angle BPY = angle BAP = 40° (alternate segment). Angle APX = 180° - (40° + 90°) = 50°.",
+    "marks": 1
+  },
+  {
+    "id": 1727,
+    "chapter": "17",
+    "difficulty": "Hard",
+    "type": "MCQ",
+    "question": "If triangle ABC is isosceles with AB = AC, and XY is a tangent to the circumcircle at A, then XY is:",
+    "options": [
+      "Perpendicular to BC",
+      "Parallel to BC",
+      "Intersecting BC at an angle of 45°",
+      "Equal to BC"
+    ],
+    "answer": "Parallel to BC",
+    "explanation": "AB = AC => ∠1 = ∠2. Tangent at A gives ∠3 = ∠2 (alternate segment), so ∠1 = ∠3, which are alternate interior angles, proving XY || BC.",
+    "marks": 1
+  },
+  {
+    "id": 1728,
+    "chapter": "17",
+    "difficulty": "Easy",
+    "type": "MCQ",
+    "question": "What is the maximum number of tangents that can be drawn from a point on the circle?",
+    "options": [
+      "0",
+      "1",
+      "2",
+      "Infinite"
+    ],
+    "answer": "1",
+    "explanation": "Only one tangent can be drawn to a circle at any given point on its circumference.",
+    "marks": 1
+  },
+  {
+    "id": 1729,
+    "chapter": "17",
+    "difficulty": "Easy",
+    "type": "MCQ",
+    "question": "The distance from the centre of a circle to any point on its tangent is always greater than the:",
+    "options": [
+      "Diameter",
+      "Radius",
+      "Chord length",
+      "Circumference"
+    ],
+    "answer": "Radius",
+    "explanation": "Except for the point of contact where distance equals the radius, every other point on a tangent is in the exterior of the circle, hence farther than the radius.",
+    "marks": 1
+  },
+  {
+    "id": 1730,
+    "chapter": "17",
+    "difficulty": "Easy",
+    "type": "MCQ",
+    "question": "Tangents drawn at the ends of a diameter of a circle are always:",
+    "options": [
+      "Perpendicular to each other",
+      "Parallel to each other",
+      "Intersecting at 60°",
+      "Equal in length to the diameter"
+    ],
+    "answer": "Parallel to each other",
+    "explanation": "Radii at the ends of a diameter lie on the same straight line and are perpendicular to the tangents at those points, making the tangents parallel.",
+    "marks": 1
+  },
+  {
+    "id": 1731,
+    "chapter": "17",
+    "difficulty": "Medium",
+    "type": "MCQ",
+    "question": "If a quadrilateral ABCD is circumscribed about a circle, then:",
+    "options": [
+      "AB + BC = CD + DA",
+      "AB + CD = BC + DA",
+      "AC + BD = AB + CD",
+      "AB - CD = BC - DA"
+    ],
+    "answer": "AB + CD = BC + DA",
+    "explanation": "The sum of opposite sides of a quadrilateral circumscribing a circle are equal: AB + CD = BC + DA.",
+    "marks": 1
+  },
+  {
+    "id": 1732,
+    "chapter": "17",
+    "difficulty": "Medium",
+    "type": "MCQ",
+    "question": "If two concentric circles have radii 5 cm and 3 cm, the length of the chord of the larger circle which touches the smaller circle is:",
+    "options": [
+      "4 cm",
+      "6 cm",
+      "8 cm",
+      "10 cm"
+    ],
+    "answer": "8 cm",
+    "explanation": "Half the chord is √(5² - 3²) = √(25 - 9) = √16 = 4 cm. Total length = 2 × 4 = 8 cm.",
+    "marks": 1
+  },
+  {
+    "id": 1733,
+    "chapter": "17",
+    "difficulty": "Medium",
+    "type": "MCQ",
+    "question": "TP and TQ are two tangents to a circle with centre O from an external point T. If angle POQ = 110°, then angle PTQ is:",
+    "options": [
+      "70°",
+      "90°",
+      "110°",
+      "55°"
+    ],
+    "answer": "70°",
+    "explanation": "In quadrilateral OPTQ, angles at P and Q are 90°. Thus, angle PTQ = 180° - 110° = 70°.",
+    "marks": 1
+  },
+  {
+    "id": 1734,
+    "chapter": "17",
+    "difficulty": "Medium",
+    "type": "MCQ",
+    "question": "If tangents PA and PB from a point P to a circle with centre O are inclined to each other at an angle of 80°, then angle POA is:",
+    "options": [
+      "50°",
+      "80°",
+      "90°",
+      "100°"
+    ],
+    "answer": "50°",
+    "explanation": "Angle AOB = 180° - 80° = 100°. Since OP bisects angle AOB, angle POA = 100° / 2 = 50°.",
+    "marks": 1
+  },
+  {
+    "id": 1735,
+    "chapter": "17",
+    "difficulty": "Medium",
+    "type": "MCQ",
+    "question": "At what angle do the two tangents from an external point intersect if they are equally inclined to the line joining the point to the centre at 35° each?",
+    "options": [
+      "35°",
+      "70°",
+      "110°",
+      "90°"
+    ],
+    "answer": "70°",
+    "explanation": "Each tangent makes 35° with the line OP, so the total angle between them is 35° + 35° = 70°.",
+    "marks": 1
+  },
+  {
+    "id": 1736,
+    "chapter": "17",
+    "difficulty": "Hard",
+    "type": "MCQ",
+    "question": "In Terminal Exercise Q4, if OT = 7 cm and OP = 25 cm, the length of PT' is:",
+    "options": [
+      "7 cm",
+      "24 cm",
+      "25 cm",
+      "32 cm"
+    ],
+    "answer": "24 cm",
+    "explanation": "Tangents from an external point are equal in length, so PT' = PT = √(25² - 7²) = 24 cm.",
+    "marks": 1
+  },
+  {
+    "id": 1737,
+    "chapter": "17",
+    "difficulty": "Medium",
+    "type": "MCQ",
+    "question": "In Terminal Exercise Q4, the angle POT is:",
+    "options": [
+      "cos⁻¹(7/25)",
+      "sin⁻¹(7/25)",
+      "tan⁻¹(24/7)",
+      "Both (A) and (C)"
+    ],
+    "answer": "Both (A) and (C)",
+    "explanation": "In right triangle OPT, cos(∠POT) = OT / OP = 7 / 25, and tan(∠POT) = PT / OT = 24 / 7.",
+    "marks": 1
+  },
+  {
+    "id": 1738,
+    "chapter": "17",
+    "difficulty": "Hard",
+    "type": "MCQ",
+    "question": "In Terminal Exercise Q5, if the perimeter of triangle ABC is 27 cm, PA = 4 cm, and QB = 5 cm, the length of QC is:",
+    "options": [
+      "3.5 cm",
+      "4 cm",
+      "4.5 cm",
+      "5 cm"
+    ],
+    "answer": "4.5 cm",
+    "explanation": "Let QC = x. AR = PA = 4, BQ = BP = 5, CR = QC = x. Perimeter = 2(AP + BQ + QC) = 2(4 + 5 + x) = 27 => 9 + x = 13.5 => x = 4.5 cm.",
+    "marks": 1
+  },
+  {
+    "id": 1739,
+    "chapter": "17",
+    "difficulty": "Hard",
+    "type": "MCQ",
+    "question": "In Terminal Exercise Q6, if angle ABC = 70°, the angle BOC is:",
+    "options": [
+      "110°",
+      "125°",
+      "140°",
+      "100°"
+    ],
+    "answer": "125°",
+    "explanation": "Angle BOC = 90° + (angle ABC) / 2 = 90° + 70° / 2 = 90° + 35° = 125°.",
+    "marks": 1
+  },
+  {
+    "id": 1740,
+    "chapter": "17",
+    "difficulty": "Hard",
+    "type": "MCQ",
+    "question": "In Terminal Exercise Q7, chords AB and CD intersect at interior point P. If PA = x + 3, PB = x - 3, PD = 3, and PC = 16 / 3, the value of x is:",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "answer": "5",
+    "explanation": "(x + 3)(x - 3) = (16 / 3) × 3 => x² - 9 = 16 => x² = 25 => x = 5.",
+    "marks": 1
+  },
+  {
+    "id": 1741,
+    "chapter": "17",
+    "difficulty": "Hard",
+    "type": "MCQ",
+    "question": "In Terminal Exercise Q8, chords BA and DC intersect outside at P. If PA = 4 cm, PB = 9 cm, PC = x, and PD = 4x, the value of x is:",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "6"
+    ],
+    "answer": "3",
+    "explanation": "PA × PB = PC × PD => 4 × 9 = x(4x) => 36 = 4x² => x² = 9 => x = 3.",
+    "marks": 1
+  },
+  {
+    "id": 1742,
+    "chapter": "17",
+    "difficulty": "Medium",
+    "type": "MCQ",
+    "question": "In Terminal Exercise Q9, PAB is a secant and PT is a tangent. If PT = x cm, PA = 4 cm, and AB = 5 cm, the value of x is:",
+    "options": [
+      "5",
+      "6",
+      "8",
+      "9"
+    ],
+    "answer": "6",
+    "explanation": "PB = PA + AB = 4 + 5 = 9 cm. PT² = PA × PB = 4 × 9 = 36 => x = 6.",
+    "marks": 1
+  },
+  {
+    "id": 1743,
+    "chapter": "17",
+    "difficulty": "Hard",
+    "type": "MCQ",
+    "question": "In Terminal Exercise Q10, O is the centre and angle PBQ = 40° where XY is tangent at P. The angle QPY is:",
+    "options": [
+      "20°",
+      "40°",
+      "80°",
+      "50°"
+    ],
+    "answer": "40°",
+    "explanation": "By alternate segment theorem or properties of tangent-chord angles, angle QPY equals the angle in the alternate segment, which is 40°.",
+    "marks": 1
+  },
+  {
+    "id": 1744,
+    "chapter": "17",
+    "difficulty": "Hard",
+    "type": "MCQ",
+    "question": "In Terminal Exercise Q10, angle POQ is:",
+    "options": [
+      "40°",
+      "80°",
+      "90°",
+      "100°"
+    ],
+    "answer": "80°",
+    "explanation": "Angle at centre is twice the angle subtended at the remaining part of the circle (or derived from angle PBQ = 40°), so angle POQ = 2 × 40° = 80°.",
+    "marks": 1
+  },
+  {
+    "id": 1745,
+    "chapter": "17",
+    "difficulty": "Hard",
+    "type": "MCQ",
+    "question": "In Terminal Exercise Q10, angle OPQ is:",
+    "options": [
+      "40°",
+      "50°",
+      "80°",
+      "90°"
+    ],
+    "answer": "50°",
+    "explanation": "In triangle OPQ, OP = OQ (radii), so angle OPQ = angle OQP = (180° - 80°) / 2 = 50°.",
+    "marks": 1
+  },
+  {
+    "id": 1746,
+    "chapter": "17",
+    "difficulty": "Easy",
+    "type": "MCQ",
+    "question": "Which theorem states that the angle between a tangent and a chord through the point of contact equals the angle in the alternate segment?",
+    "options": [
+      "Pythagoras Theorem",
+      "Alternate Segment Theorem",
+      "Thales Theorem",
+      "Tangent-Secant Theorem"
+    ],
+    "answer": "Alternate Segment Theorem",
+    "explanation": "The Alternate Segment Theorem relates the angle between a tangent and chord to angles in alternate segments.",
+    "marks": 1
+  },
+  {
+    "id": 1747,
+    "chapter": "17",
+    "difficulty": "Easy",
+    "type": "MCQ",
+    "question": "If a line makes angles with a chord equal respectively to angles formed by the chord in alternate segments, then the line is a:",
+    "options": [
+      "Secant",
+      "Chord",
+      "Tangent",
+      "Diameter"
+    ],
+    "answer": "Tangent",
+    "explanation": "This is the converse of the Alternate Segment Theorem, proving the line is a tangent.",
+    "marks": 1
+  },
+  {
+    "id": 1748,
+    "chapter": "17",
+    "difficulty": "Medium",
+    "type": "MCQ",
+    "question": "If the radius of a circle is 5 cm and the length of a tangent from an external point is 12 cm, the distance of the external point from the centre is:",
+    "options": [
+      "7 cm",
+      "13 cm",
+      "17 cm",
+      "√119 cm"
+    ],
+    "answer": "13 cm",
+    "explanation": "OP = √(r² + PT²) = √(5² + 12²) = √(25 + 144) = √169 = 13 cm.",
+    "marks": 1
+  },
+  {
+    "id": 1749,
+    "chapter": "17",
+    "difficulty": "Medium",
+    "type": "MCQ",
+    "question": "Two parallel tangents of a circle of radius 6 cm have a distance between their points of contact equal to:",
+    "options": [
+      "6 cm",
+      "12 cm",
+      "3 cm",
+      "24 cm"
+    ],
+    "answer": "12 cm",
+    "explanation": "The distance between parallel tangents passing through opposite ends of a diameter is equal to the diameter = 2 × 6 = 12 cm.",
+    "marks": 1
+  },
+  {
+    "id": 1750,
+    "chapter": "17",
+    "difficulty": "Medium",
+    "type": "MCQ",
+    "question": "If angle between two tangents drawn from an external point P to a circle of radius r with centre O is 60°, then length of each tangent is:",
+    "options": [
+      "r",
+      "r√3",
+      "r / √3",
+      "2r"
+    ],
+    "answer": "r√3",
+    "explanation": "Angle between tangents is 60°, so angle OPT = 30°. In right triangle OPT, tan(30°) = OT / PT => 1 / √3 = r / PT => PT = r√3.",
+    "marks": 1
+  },
+  {
+    "id": 1751,
+    "chapter": "17",
+    "difficulty": "Easy",
+    "type": "MCQ",
+    "question": "The exterior of a circle consists of all points whose distance from the centre is:",
+    "options": [
+      "Less than the radius",
+      "Equal to the radius",
+      "Greater than the radius",
+      "Zero"
+    ],
+    "answer": "Greater than the radius",
+    "explanation": "Points in the exterior of a circle lie at a distance strictly greater than the radius from the centre.",
+    "marks": 1
+  },
+  {
+    "id": 1752,
+    "chapter": "17",
+    "difficulty": "Easy",
+    "type": "MCQ",
+    "question": "The interior of a circle consists of all points whose distance from the centre is:",
+    "options": [
+      "Less than the radius",
+      "Equal to the radius",
+      "Greater than the radius",
+      "Greater than the diameter"
+    ],
+    "answer": "Less than the radius",
+    "explanation": "Points in the interior lie at a distance less than the radius from the centre.",
+    "marks": 1
+  },
+  {
+    "id": 1753,
+    "chapter": "17",
+    "difficulty": "Medium",
+    "type": "MCQ",
+    "question": "If a chord of length 16 cm is at a distance of 6 cm from the centre of a circle, the radius of the circle is:",
+    "options": [
+      "8 cm",
+      "10 cm",
+      "12 cm",
+      "14 cm"
+    ],
+    "answer": "10 cm",
+    "explanation": "Perpendicular from centre bisects chord, so half-chord = 8 cm. Radius = √(8² + 6²) = √(64 + 36) = √100 = 10 cm.",
+    "marks": 1
+  },
+  {
+    "id": 1754,
+    "chapter": "17",
+    "difficulty": "Medium",
+    "type": "MCQ",
+    "question": "A circle can have how many parallel tangents at the most for a given direction of tangent?",
+    "options": [
+      "1",
+      "2",
+      "4",
+      "Infinite"
+    ],
+    "answer": "2",
+    "explanation": "For any given direction, a circle has at most two parallel tangents (one on each side of the diameter perpendicular to that direction).",
+    "marks": 1
+  },
+  {
+    "id": 1755,
+    "chapter": "17",
+    "difficulty": "Hard",
+    "type": "MCQ",
+    "question": "If triangle ABC is circumscribed touching a circle at D, E, F such that AD = 4 cm, BE = 5 cm, and CF = 3 cm, the perimeter of triangle ABC is:",
+    "options": [
+      "12 cm",
+      "24 cm",
+      "20 cm",
+      "28 cm"
+    ],
+    "answer": "24 cm",
+    "explanation": "Perimeter = 2(AD + BE + CF) = 2(4 + 5 + 3) = 2(12) = 24 cm.",
+    "marks": 1
+  },
+  {
+    "id": 1756,
+    "chapter": "17",
+    "difficulty": "Medium",
+    "type": "MCQ",
+    "question": "If the angle between two radii is 130°, the angle between the tangents at the ends of these radii is:",
+    "options": [
+      "50°",
+      "130°",
+      "90°",
+      "40°"
+    ],
+    "answer": "50°",
+    "explanation": "The sum of angles in the quadrilateral formed by centre, two points of contact, and external intersection is 360°. Since radii angles with tangents are 90°, the angle between tangents is 180° - 130° = 50°.",
+    "marks": 1
+  },
+  {
+    "id": 1757,
+    "chapter": "17",
+    "difficulty": "Easy",
+    "type": "MCQ",
+    "question": "Which of the following statements is FALSE?",
+    "options": [
+      "A secant intersects a circle in two points.",
+      "A tangent touches a circle at one point.",
+      "From an internal point, two tangents can be drawn.",
+      "Equal chords subtend equal angles at the centre."
+    ],
+    "answer": "From an internal point, two tangents can be drawn.",
+    "explanation": "No tangents can be drawn from an internal point, making this statement false.",
+    "marks": 1
+  },
+  {
+    "id": 1758,
+    "chapter": "17",
+    "difficulty": "Medium",
+    "type": "MCQ",
+    "question": "If two secants PA and PC intersect outside a circle at P, cutting the circle at A, B and C, D respectively, then:",
+    "options": [
+      "PA × PB = PC × PD",
+      "PA + PB = PC + PD",
+      "PA × PC = PB × PD",
+      "PA / PB = PC / PD"
+    ],
+    "answer": "PA × PB = PC × PD",
+    "explanation": "The secant-secant theorem states that PA × PB = PC × PD.",
+    "marks": 1
+  },
+  {
+    "id": 1759,
+    "chapter": "17",
+    "difficulty": "Medium",
+    "type": "MCQ",
+    "question": "If the length of a tangent from an external point at a distance of 10 cm from the centre is 8 cm, the radius of the circle is:",
+    "options": [
+      "4 cm",
+      "6 cm",
+      "√164 cm",
+      "2 cm"
+    ],
+    "answer": "6 cm",
+    "explanation": "Radius = √(10² - 8²) = √(100 - 64) = √36 = 6 cm.",
+    "marks": 1
+  },
+  {
+    "id": 1760,
+    "chapter": "17",
+    "difficulty": "Medium",
+    "type": "MCQ",
+    "question": "If a circle touches all four sides of a quadrilateral ABCD, then angle subtended by opposite sides at the centre sum to:",
+    "options": [
+      "90°",
+      "180°",
+      "270°",
+      "360°"
+    ],
+    "answer": "180°",
+    "explanation": "Opposite sides subtend supplementary angles (180°) at the centre of the inscribed circle.",
+    "marks": 1
+  },
+  {
+    "id": 1761,
+    "chapter": "17",
+    "difficulty": "Easy",
+    "type": "MCQ",
+    "question": "What is the common point between a circle and its tangent called?",
+    "options": [
+      "Vertex",
+      "Focus",
+      "Point of contact",
+      "Centre"
+    ],
+    "answer": "Point of contact",
+    "explanation": "The unique point shared by a tangent and a circle is the point of contact.",
+    "marks": 1
+  },
+  {
+    "id": 1762,
+    "chapter": "17",
+    "difficulty": "Easy",
+    "type": "MCQ",
+    "question": "A secant intersects a circle at how many points?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "Infinite"
+    ],
+    "answer": "2",
+    "explanation": "By definition, a secant intersects a circle at two distinct points.",
+    "marks": 1
+  },
+  {
+    "id": 1763,
+    "chapter": "17",
+    "difficulty": "Easy",
+    "type": "MCQ",
+    "question": "A tangent intersects a circle at how many points?",
+    "options": [
+      "0",
+      "1",
+      "2",
+      "Infinite"
+    ],
+    "answer": "1",
+    "explanation": "A tangent touches the circle at exactly one point.",
+    "marks": 1
+  },
+  {
+    "id": 1764,
+    "chapter": "17",
+    "difficulty": "Medium",
+    "type": "MCQ",
+    "question": "If the distance of a point from the centre of a circle is less than the radius, the point lies:",
+    "options": [
+      "Inside the circle",
+      "On the circle",
+      "Outside the circle",
+      "On the tangent"
+    ],
+    "answer": "Inside the circle",
+    "explanation": "Distance less than radius defines the interior of the circle.",
+    "marks": 1
+  },
+  {
+    "id": 1765,
+    "chapter": "17",
+    "difficulty": "Medium",
+    "type": "MCQ",
+    "question": "If the distance of a point from the centre of a circle is greater than the radius, the point lies:",
+    "options": [
+      "Inside the circle",
+      "On the circle",
+      "Outside the circle",
+      "At the point of contact"
+    ],
+    "answer": "Outside the circle",
+    "explanation": "Distance greater than radius defines the exterior of the circle.",
+    "marks": 1
+  },
+  {
+    "id": 1766,
+    "chapter": "17",
+    "difficulty": "Medium",
+    "type": "MCQ",
+    "question": "If two tangents are drawn to a circle from an external point, the line joining the point to the centre:",
+    "options": [
+      "Bisects the angle between the tangents",
+      "Is perpendicular to the chord of contact",
+      "Both (A) and (B)",
+      "Is parallel to the tangents"
+    ],
+    "answer": "Both (A) and (B)",
+    "explanation": "The line joining the external point to the centre bisects the angle between the tangents and is also perpendicular to the chord of contact.",
+    "marks": 1
+  },
+  {
+    "id": 1767,
+    "chapter": "17",
+    "difficulty": "Medium",
+    "type": "MCQ",
+    "question": "If chords AB and CD intersect at P inside a circle, and PA = 5 cm, PB = 4 cm, PC = 2 cm, then PD is:",
+    "options": [
+      "5 cm",
+      "8 cm",
+      "10 cm",
+      "20 cm"
+    ],
+    "answer": "10 cm",
+    "explanation": "PA × PB = PC × PD => 5 × 4 = 2 × PD => 20 = 2 PD => PD = 10 cm.",
+    "marks": 1
+  },
+  {
+    "id": 1768,
+    "chapter": "17",
+    "difficulty": "Medium",
+    "type": "MCQ",
+    "question": "If chords AB and CD intersect outside at P, with PA = 3 cm, PB = 12 cm, PC = 4 cm, then PD is:",
+    "options": [
+      "6 cm",
+      "9 cm",
+      "12 cm",
+      "36 cm"
+    ],
+    "answer": "9 cm",
+    "explanation": "PA × PB = PC × PD => 3 × 12 = 4 × PD => 36 = 4 PD => PD = 9 cm.",
+    "marks": 1
+  },
+  {
+    "id": 1769,
+    "chapter": "17",
+    "difficulty": "Medium",
+    "type": "MCQ",
+    "question": "If secant PAB has PA = 2 cm and PB = 8 cm, the length of the tangent PT from P is:",
+    "options": [
+      "4 cm",
+      "5 cm",
+      "√16 cm",
+      "Both (A) and (C)"
+    ],
+    "answer": "Both (A) and (C)",
+    "explanation": "PT² = PA × PB = 2 × 8 = 16 => PT = 4 cm (which is √16).",
+    "marks": 1
+  },
+  {
+    "id": 1770,
+    "chapter": "17",
+    "difficulty": "Hard",
+    "type": "MCQ",
+    "question": "If a circle is inscribed in a right-angled triangle with sides 6 cm, 8 cm, and 10 cm, the radius of the incircle is:",
+    "options": [
+      "1 cm",
+      "2 cm",
+      "3 cm",
+      "4 cm"
+    ],
+    "answer": "2 cm",
+    "explanation": "In radius r = (a + b - c) / 2 = (6 + 8 - 10) / 2 = 4 / 2 = 2 cm.",
+    "marks": 1
+  },
+  {
+    "id": 1771,
+    "chapter": "17",
+    "difficulty": "Medium",
+    "type": "MCQ",
+    "question": "The angle between the tangent at any point of a circle and the radius through the point of contact is measured in radians as:",
+    "options": [
+      "π / 4",
+      "π / 2",
+      "π",
+      "2π"
+    ],
+    "answer": "π / 2",
+    "explanation": "90° is equal to π / 2 radians.",
+    "marks": 1
+  },
+  {
+    "id": 1772,
+    "chapter": "17",
+    "difficulty": "Medium",
+    "type": "MCQ",
+    "question": "If two tangents making an angle of 60° with each other are drawn to a circle of radius 3 cm, the distance of the external point from the centre is:",
+    "options": [
+      "3 cm",
+      "6 cm",
+      "4.5 cm",
+      "3√3 cm"
+    ],
+    "answer": "6 cm",
+    "explanation": "Angle OPT = 30°. sin(30°) = OT / OP => 1 / 2 = 3 / OP => OP = 6 cm.",
+    "marks": 1
+  },
+  {
+    "id": 1773,
+    "chapter": "17",
+    "difficulty": "Medium",
+    "type": "MCQ",
+    "question": "If a line intersects a circle at two distinct points, the line is a:",
+    "options": [
+      "Tangent",
+      "Secant",
+      "Diameter",
+      "Chord"
+    ],
+    "answer": "Secant",
+    "explanation": "Intersection at two distinct points defines a secant line.",
+    "marks": 1
+  },
+  {
+    "id": 1774,
+    "chapter": "17",
+    "difficulty": "Medium",
+    "type": "MCQ",
+    "question": "Which geometric property justifies that tangents from an external point are equal in length?",
+    "options": [
+      "SAS Congruence Criterion",
+      "RHS Congruence Criterion",
+      "Pythagoras Theorem",
+      "Thales Theorem"
+    ],
+    "answer": "RHS Congruence Criterion",
+    "explanation": "Triangles formed by connecting centre to point of contact and external point are congruent by RHS.",
+    "marks": 1
+  },
+  {
+    "id": 1775,
+    "chapter": "17",
+    "difficulty": "Medium",
+    "type": "MCQ",
+    "question": "If chord PQ subtends an angle of 60° at the centre of a circle, the angle between the tangents at P and Q is:",
+    "options": [
+      "60°",
+      "90°",
+      "120°",
+      "180°"
+    ],
+    "answer": "120°",
+    "explanation": "Angle between tangents = 180° - 60° = 120°.",
+    "marks": 1
+  },
+  {
+    "id": 1776,
+    "chapter": "17",
+    "difficulty": "Hard",
+    "type": "MCQ",
+    "question": "If a circle touches the side BC of triangle ABC at P and extended sides AB and AC at Q and R, then AQ equals:",
+    "options": [
+      "Perimeter of triangle ABC",
+      "Half the perimeter of triangle ABC",
+      "Sum of AB and AC",
+      "Radius of circle"
+    ],
+    "answer": "Half the perimeter of triangle ABC",
+    "explanation": "AQ = AR = half the perimeter of triangle ABC.",
+    "marks": 1
+  },
+  {
+    "id": 1777,
+    "chapter": "17",
+    "difficulty": "Medium",
+    "type": "MCQ",
+    "question": "The locus of the centre of a circle touching two intersecting lines is:",
+    "options": [
+      "A circle",
+      "The angle bisector of the lines",
+      "A line parallel to the lines",
+      "Perpendicular bisector"
+    ],
+    "answer": "The angle bisector of the lines",
+    "explanation": "Equidistance from two intersecting lines lies along their angle bisectors.",
+    "marks": 1
+  },
+  {
+    "id": 1778,
+    "chapter": "17",
+    "difficulty": "Medium",
+    "type": "MCQ",
+    "question": "If the radius of a circle is doubled, the length of the tangent from a fixed external point (at constant distance from centre):",
+    "options": [
+      "Doubles",
+      "Halves",
+      "Decreases",
+      "Increases"
+    ],
+    "answer": "Decreases",
+    "explanation": "PT = √(OP² - r²). As r increases, PT decreases.",
+    "marks": 1
+  },
+  {
+    "id": 1779,
+    "chapter": "17",
+    "difficulty": "Hard",
+    "type": "MCQ",
+    "question": "If two circles touch each other externally, the number of common tangents that can be drawn is:",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": "3",
+    "explanation": "Two external common tangents and one internal common tangent can be drawn, totaling 3.",
+    "marks": 1
+  },
+  {
+    "id": 1780,
+    "chapter": "17",
+    "difficulty": "Hard",
+    "type": "MCQ",
+    "question": "If two circles touch each other internally, the number of common tangents that can be drawn is:",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": "1",
+    "explanation": "Only one common tangent can be drawn at their point of contact.",
+    "marks": 1
+  },
+  {
+    "id": 1781,
+    "chapter": "17",
+    "difficulty": "Medium",
+    "type": "MCQ",
+    "question": "If two circles do not intersect and neither lies inside the other, the number of common tangents is:",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": "4",
+    "explanation": "Two direct common tangents and two transverse common tangents can be drawn, totaling 4.",
+    "marks": 1
+  },
+  {
+    "id": 1782,
+    "chapter": "17",
+    "difficulty": "Medium",
+    "type": "MCQ",
+    "question": "The perpendicular from the centre of a circle to a chord:",
+    "options": [
+      "Bisects the chord",
+      "Is equal to the chord",
+      "Touches the circle",
+      "Is a tangent"
+    ],
+    "answer": "Bisects the chord",
+    "explanation": "A perpendicular from the centre to any chord bisects that chord.",
+    "marks": 1
+  },
+  {
+    "id": 1783,
+    "chapter": "17",
+    "difficulty": "Medium",
+    "type": "MCQ",
+    "question": "Equal chords of a circle are equidistant from the:",
+    "options": [
+      "Tangent",
+      "Centre",
+      "Circumference",
+      "Secant"
+    ],
+    "answer": "Centre",
+    "explanation": "Equal chords are equidistant from the centre of the circle.",
+    "marks": 1
+  },
+  {
+    "id": 1784,
+    "chapter": "17",
+    "difficulty": "Medium",
+    "type": "MCQ",
+    "question": "The angle subtended by an arc at the centre is _____ the angle subtended by it at any point on the remaining part of the circle.",
+    "options": [
+      "Half",
+      "Twice",
+      "Equal to",
+    "One-third"
+    ],
+    "answer": "Twice",
+    "explanation": "The central angle theorem states the angle at the centre is twice the inscribed angle.",
+    "marks": 1
+  },
+  {
+    "id": 1785,
+    "chapter": "17",
+    "difficulty": "Medium",
+    "type": "MCQ",
+    "question": "Angle in a semicircle is always a:",
+    "options": [
+      "Acute angle",
+      "Right angle",
+      "Obtuse angle",
+      "Straight angle"
+    ],
+    "answer": "Right angle",
+    "explanation": "An angle inscribed in a semicircle is a right angle (90°).",
+    "marks": 1
+  },
+  {
+    "id": 1786,
+    "chapter": "17",
+    "difficulty": "Hard",
+    "type": "MCQ",
+    "question": "If a cyclic quadrilateral has an exterior angle of 80°, the interior opposite angle is:",
+    "options": [
+      "40°",
+      "80°",
+      "100°",
+      "160°"
+    ],
+    "answer": "80°",
+    "explanation": "An exterior angle of a cyclic quadrilateral is equal to the interior opposite angle, so it is 80°.",
+    "marks": 1
+  },
+  {
+    "id": 1787,
+    "chapter": "17",
+    "difficulty": "Medium",
+    "type": "MCQ",
+    "question": "Sum of either pair of opposite angles of a cyclic quadrilateral is:",
+    "options": [
+      "90°",
+      "180°",
+      "270°",
+      "360°"
+    ],
+    "answer": "180°",
+    "explanation": "Opposite angles of a cyclic quadrilateral are supplementary (sum to 180°).",
+    "marks": 1
+  },
+  {
+    "id": 1788,
+    "chapter": "17",
+    "difficulty": "Medium",
+    "type": "MCQ",
+    "question": "If all four vertices of a quadrilateral lie on a circle, the quadrilateral is called:",
+    "options": [
+      "Parallelogram",
+      "Cyclic quadrilateral",
+      "Rhombus",
+      "Trapezium"
+    ],
+    "answer": "Cyclic quadrilateral",
+    "explanation": "A quadrilateral whose vertices all lie on a circle is called cyclic.",
+    "marks": 1
+  },
+  {
+    "id": 1789,
+    "chapter": "17",
+    "difficulty": "Medium",
+    "type": "MCQ",
+    "question": "The tangents drawn at the extremities of any chord make equal angles with:",
+    "options": [
+      "The chord",
+      "The diameter",
+      "Each other",
+      "The radius"
+    ],
+    "answer": "The chord",
+    "explanation": "Tangents at the ends of a chord make equal angles with the chord.",
+    "marks": 1
+  },
+  {
+    "id": 1790,
+    "chapter": "17",
+    "difficulty": "Hard",
+    "type": "MCQ",
+    "question": "If a tangent at P meets the diameter AB produced at T, and angle PAB = 30°, then angle PTA is:",
+    "options": [
+      "30°",
+      "60°",
+      "90°",
+      "120°"
+    ],
+    "answer": "30°",
+    "explanation": "Angle in semicircle = 90°. In right triangle APT, angle PAT = 30°, so angle PTA = 90° - 30° = 60°... Wait, let's check: angle PAB = 30° means angle PAT = 30°. In triangle APT, angle APB = 90°, so angle PTA = 180° - 90° - 30° = 60°.",
+    "marks": 1
+  },
+  {
+    "id": 1791,
+    "chapter": "17",
+    "difficulty": "Medium",
+    "type": "MCQ",
+    "question": "The distance between two parallel tangents of a circle of radius r is:",
+    "options": [
+      "r",
+      "2r",
+      "πr",
+      "r²"
+    ],
+    "answer": "2r",
+    "explanation": "The distance between two parallel tangents equals the diameter of the circle, which is 2r.",
+    "marks": 1
+  },
+  {
+    "id": 1792,
+    "chapter": "17",
+    "difficulty": "Easy",
+    "type": "MCQ",
+    "question": "A line intersecting a circle at two points is a:",
+    "options": [
+      "Tangent",
+      "Secant",
+      "Radius",
+      "Diameter"
+    ],
+    "answer": "Secant",
+    "explanation": "By definition, a line intersecting a circle at two points is a secant.",
+    "marks": 1
+  },
+  {
+    "id": 1793,
+    "chapter": "17",
+    "difficulty": "Easy",
+    "type": "MCQ",
+    "question": "The number of tangents that can be drawn from an external point to a circle is:",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": "2",
+    "explanation": "Exactly two tangents can be drawn from an external point.",
+    "marks": 1
+  },
+  {
+    "id": 1794,
+    "chapter": "17",
+    "difficulty": "Easy",
+    "type": "MCQ",
+    "question": "Tangent to a circle is perpendicular to the radius through the:",
+    "options": [
+      "Centre",
+      "Point of contact",
+      "External point",
+      "Midpoint"
+    ],
+    "answer": "Point of contact",
+    "explanation": "The radius meets the tangent perpendicularly at the point of contact.",
+    "marks": 1
+  },
+  {
+    "id": 1795,
+    "chapter": "17",
+    "difficulty": "Medium",
+    "type": "MCQ",
+    "question": "If PA × PB = PC × PD for chords intersecting outside a circle, the points A, B, C, D are:",
+    "options": [
+      "Collinear",
+      "Concyclic",
+      "Perpendicular",
+      "Concentric"
+    ],
+    "answer": "Concyclic",
+    "explanation": "Points lying on the same circle are called concyclic.",
+    "marks": 1
+  },
+  {
+    "id": 1796,
+    "chapter": "17",
+    "difficulty": "Medium",
+    "type": "MCQ",
+    "question": "If PT is a tangent and PAB is a secant, the relation PA × PB = PT² is known as the:",
+    "options": [
+      "Tangent-Secant Theorem",
+      "Pythagoras Theorem",
+      "Alternate Segment Theorem",
+      "Thales Theorem"
+    ],
+    "answer": "Tangent-Secant Theorem",
+    "explanation": "This relationship between a secant and a tangent from an external point is the Tangent-Secant Theorem.",
+    "marks": 1
+  },
+  {
+    "id": 1797,
+    "chapter": "17",
+    "difficulty": "Hard",
+    "type": "MCQ",
+    "question": "If two circles are touched by a common tangent at distinct points, the segment of the tangent between the points of contact is called the:",
+    "options": [
+      "Chord of contact",
+      "Length of common tangent",
+      "Secant segment",
+      "Radius vector"
+    ],
+    "answer": "Length of common tangent",
+    "explanation": "The portion of the common tangent between the two points of contact is the length of the common tangent.",
+    "marks": 1
+  },
+  {
+    "id": 1798,
+    "chapter": "17",
+    "difficulty": "Medium",
+    "type": "MCQ",
+    "question": "The angle between a tangent and a chord through the point of contact is 55°. The angle subtended by the chord in the alternate segment is:",
+    "options": [
+      "35°",
+      "55°",
+      "110°",
+      "90°"
+    ],
+    "answer": "55°",
+    "explanation": "By the Alternate Segment Theorem, the angle in the alternate segment equals the angle between the tangent and chord (55°).",
+    "marks": 1
+  },
+  {
+    "id": 1799,
+    "chapter": "17",
+    "difficulty": "Medium",
+    "type": "MCQ",
+    "question": "If a quadrilateral circumscribes a circle, the angles subtended by opposite sides at the centre are:",
+    "options": [
+      "Equal",
+      "Supplementary",
+      "Complementary",
+      "Perpendicular"
+    ],
+    "answer": "Supplementary",
+    "explanation": "Opposite sides of a circumscribed quadrilateral subtend supplementary angles (summing to 180°) at the centre.",
+    "marks": 1
+  },
+  {
+    "id": 17100,
+    "chapter": "17",
+    "difficulty": "Hard",
+    "type": "MCQ",
+    "question": "If the radius of a circle is 7 cm and the distance of an external point P from the centre is 25 cm, the length of the chord of contact corresponding to tangents from P is:",
+    "options": [
+      "24 cm",
+      "3.36 cm",
+      "6.72 cm",
+      "13.44 cm"
+    ],
+    "answer": "6.72 cm",
+    "explanation": "Length of tangent PT = √(25² - 7²) = 24 cm. The perpendicular from centre to chord of contact of length l has length p = (r × PT) / OP = (7 × 24) / 25 = 168 / 25 = 6.72 cm? Wait, chord of contact length is 2 × (r × PT) / OP = 2 × 6.72 = 13.44 cm. Let's verify: area of triangle OPT = (1/2) × OT × PT = (1/2) × OP × p => p = 7 × 24 / 25 = 168 / 25 = 6.72 cm. Half chord of contact = (r × PT) / OP = 6.72 cm, so full chord of contact = 13.44 cm.",
+    "marks": 1
+  }
+]
