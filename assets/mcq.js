@@ -117,19 +117,21 @@ function renderTest(questions, totalMarks) {
       </ul>
     `;
 
-    const chapterBadge = q.chapter && q.chapter !== '-' ? `<span class="badge">Chapter ${q.chapter}</span>` : '';
+    const chapterBadge = q.chapter && q.chapter !== '-' ? `<span class="badge badge-small">Chapter ${q.chapter}</span>` : '';
 
     card.innerHTML = `
-      <div class="question-meta">
+      <div class="question-meta-top">
         <span class="badge">Q${index + 1}</span>
-        ${chapterBadge}
-        <span class="badge">${q.difficulty}</span>
-        <span class="badge">${q.type}</span>
-        <span class="badge" style="margin-left: auto;"><strong>${q.marks} Mark${q.marks > 1 ? 's' : ''}</strong></span>
+        <span class="badge"><strong>${q.marks} Mark${q.marks > 1 ? 's' : ''}</strong></span>
       </div>
       <div class="question-text">${q.question}</div>
       ${inputHtml}
       <div id="feedback_${q.id}" class="feedback-box hidden"></div>
+      <div class="question-meta-bottom">
+        ${chapterBadge}
+        <span class="badge badge-small">${q.difficulty}</span>
+        <span class="badge badge-small">${q.type}</span>
+      </div>
     `;
 
     container.appendChild(card);

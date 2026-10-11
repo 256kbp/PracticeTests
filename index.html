@@ -1,111 +1,102 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>iWin Study Centre - 10th Grade Learning</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { color: #333; background-color: #fff; line-height: 1.6; }
-        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 8%; background-color: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-        .logo { font-size: 24px; font-weight: 800; color: #0b2545; text-decoration: none; }
-        .logo span { color: #e0a96d; }
-        .nav-links { display: flex; align-items: center; gap: 25px; list-style: none; }
-        .nav-links a { text-decoration: none; color: #555; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
-        .nav-links a:hover { color: #0b2545; }
-        .btn-register { border: 1px solid #ccc; padding: 6px 16px; border-radius: 4px; }
-        .hero { display: flex; align-items: center; justify-content: space-between; background: linear-gradient(135deg, #7ba4b5 0%, #a4c4d2 100%); padding: 80px 8%; min-height: 480px; color: #fff; }
-        .hero-content { max-width: 550px; }
-        .hero-title { font-size: 48px; font-weight: 900; line-height: 1.1; margin-bottom: 20px; letter-spacing: 1px; text-transform: uppercase; }
-        .hero-subtitle { font-size: 16px; margin-bottom: 35px; opacity: 0.9; font-weight: 300; }
-        .cta-btn { display: inline-flex; align-items: center; gap: 12px; background-color: #0b2545; color: #fff; padding: 12px 28px; border-radius: 30px; text-decoration: none; font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; transition: transform 0.2s ease, background-color 0.2s ease; }
-        .cta-btn:hover { background-color: #134074; transform: translateY(-2px); }
-        .cta-badge { background-color: #e0a96d; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #0b2545; font-weight: bold; }
-        .hero-image-container { width: 100%; max-width: 400px; aspect-ratio: 4 / 3; background: rgba(255, 255, 255, 0.2); border-radius: 12px; overflow: hidden; backdrop-filter: blur(5px); border: 1px solid rgba(255, 255, 255, 0.3); }
-        .hero-image-container img { width: 100%; height: 100%; object-fit: cover; display: block; }
-        .subjects-section { padding: 60px 8%; text-align: center; scroll-margin-top: 20px; }
-        .subjects-grid { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
-        .subject-card { display: flex; flex-direction: column; align-items: center; text-decoration: none; width: 150px; transition: transform 0.2s ease; }
-        .subject-card:hover { transform: translateY(-5px); }
-        .subject-icon-wrapper { width: 90px; height: 90px; border-radius: 50%; background-color: #fff; box-shadow: 0 10px 25px rgba(0,0,0,0.06); border: 1px solid #f0f0f0; display: flex; align-items: center; justify-content: center; margin-bottom: 15px; }
-        .subject-icon { width: 36px; height: 36px; stroke: #e0a96d; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-        .subject-name { font-size: 13px; font-weight: 800; color: #0b2545; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
-        .subject-tag { font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: 0.5px; }
-        @media (max-width: 900px) {
-            .hero { flex-direction: column; text-align: center; gap: 40px; }
-            .hero-title { font-size: 36px; }
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fffaf0">
+  <meta name="description" content="Learn smarter with iWin Study: chapter tests, interactive MCQs and full-syllabus practice exams for 10th grade.">
+  <title>iWin Study — Your next A+ starts here</title>
+  <link rel="preload" as="image" href="hero_img.webp" fetchpriority="high">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <header class="site-header">
+    <a class="logo" href="index.html" aria-label="iWin Study home">iWin <span>Study</span><i aria-hidden="true">✳</i></a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#login">Login</a>
+      <a class="nav-register" href="#register">Register</a>
+    </nav>
+    <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-nav">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" hidden>
+      <a href="#about">About</a><a href="#login">Login</a><a href="#register">Register</a>
+    </nav>
+  </header>
 
-    <header>
-        <a href="index.html" class="logo">iWin <span>Study</span></a>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#login">Login</a></li>
-            <li><a href="#register" class="btn-register">Register</a></li>
-        </ul>
-    </header>
-
-    <section class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">Don't Just Watch. Learn.</h1>
-            <p class="hero-subtitle">Master 10th Grade topics through chapter tests, interactive MCQs, and full syllabus practice exams.</p>
-            <a href="#subjects" class="cta-btn">
-                Get Started
-                <span class="cta-badge">&rarr;</span>
-            </a>
-        </div>
-        <div class="hero-image-container">
-            <img src="hero_img.png" alt="Interactive Learning Space" width="400" height="300">
-        </div>
+  <main class="page-shell">
+    <section class="hero" id="about">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> YOUR STUDY SPACE</p>
+        <h1>Your next <span>A+</span><br class="desktop-break"> starts here.</h1>
+        <p class="hero-description">Learn smarter with chapter tests, quick MCQs and full-syllabus practice exams.</p>
+        <a class="primary-button" href="#subjects">Get Started <span class="button-arrow" aria-hidden="true">→</span></a>
+        <div class="hero-proof"><span class="proof-check">✓</span> Small steps. Big progress.</div>
+      </div>
+      <div class="hero-art-wrap">
+        <div class="art-spark spark-one" aria-hidden="true">✦</div>
+        <div class="art-spark spark-two" aria-hidden="true">✳</div>
+        <img class="hero-art" src="hero_img.webp" alt="A student studying with books, notes and a laptop" width="900" height="490">
+        <div class="floating-note note-left" aria-hidden="true"><span>✎</span><b>Keep going!</b><small>You're getting there</small></div>
+        <div class="floating-note note-right" aria-hidden="true"><span>✓</span><b>One step at a time</b><small>Plan · Practise · Achieve</small></div>
+      </div>
+      <span class="hero-decoration decor-a" aria-hidden="true">✳</span>
+      <span class="hero-decoration decor-b" aria-hidden="true">✦</span>
     </section>
 
     <section class="subjects-section" id="subjects">
-        <div class="subjects-grid">
-            
-            <a href="subject.html?subject=science" class="subject-card">
-                <div class="subject-icon-wrapper">
-                    <svg class="subject-icon" viewBox="0 0 24 24"><path d="M10 2v7.31L4.75 20.5a1 1 0 0 0 .89 1.5h12.72a1 1 0 0 0 .89-1.5L14 9.31V2"/></svg>
-                </div>
-                <div class="subject-name">Science</div>
-                <div class="subject-tag">10th Grade</div>
-            </a>
-
-            <a href="subject.html?subject=english" class="subject-card">
-                <div class="subject-icon-wrapper">
-                    <svg class="subject-icon" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-                </div>
-                <div class="subject-name">English</div>
-                <div class="subject-tag">10th Grade</div>
-            </a>
-
-            <a href="subject.html?subject=maths" class="subject-card">
-                <div class="subject-icon-wrapper">
-                    <svg class="subject-icon" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 10h8"/><path d="M12 14v4"/><path d="M10 16h4"/></svg>
-                </div>
-                <div class="subject-name">Maths</div>
-                <div class="subject-tag">10th Grade</div>
-            </a>
-
-            <a href="subject.html?subject=hindi" class="subject-card">
-                <div class="subject-icon-wrapper">
-                    <svg class="subject-icon" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-                </div>
-                <div class="subject-name">Hindi</div>
-                <div class="subject-tag">10th Grade</div>
-            </a>
-
-            <a href="subject.html?subject=home_science" class="subject-card">
-                <div class="subject-icon-wrapper">
-                    <svg class="subject-icon" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                </div>
-                <div class="subject-name">Home Science</div>
-                <div class="subject-tag">10th Grade</div>
-            </a>
-
-        </div>
+      <div class="section-heading">
+        <p class="eyebrow">FIND YOUR FOCUS</p>
+        <h2>Pick your subject <span class="heading-spark" aria-hidden="true">✳</span></h2>
+        <p>A little practice goes a long way.</p>
+      </div>
+      <div class="subjects-grid">
+        <a href="subject.html?subject=science" class="subject-card science">
+          <span class="subject-art" aria-hidden="true">
+            <svg viewBox="0 0 64 64"><path d="M25 9v17L12 49a5 5 0 0 0 4 7h32a5 5 0 0 0 4-7L39 26V9"/><path d="M22 9h20M19 43h26"/><circle cx="28" cy="48" r="2"/><circle cx="38" cy="38" r="2"/></svg>
+            <span class="mini-spark">✦</span>
+          </span>
+          <strong>Science</strong><small>10th grade</small><span class="card-bottom"><span class="progress"><i></i></span><span class="card-arrow">→</span></span>
+        </a>
+        <a href="subject.html?subject=english" class="subject-card english">
+          <span class="subject-art" aria-hidden="true">
+            <svg viewBox="0 0 64 64"><path d="M8 15c10-5 18-3 24 2v36c-7-5-15-7-24-2z"/><path d="M56 15c-10-5-18-3-24 2v36c7-5 15-7 24-2z"/><path d="M15 24l10 2M15 32l10 2M39 24l10-2M39 32l10-2"/></svg>
+            <span class="mini-spark">✦</span>
+          </span>
+          <strong>English</strong><small>10th grade</small><span class="card-bottom"><span class="progress"><i></i></span><span class="card-arrow">→</span></span>
+        </a>
+        <a href="subject.html?subject=maths" class="subject-card maths">
+          <span class="subject-art" aria-hidden="true">
+            <svg viewBox="0 0 64 64"><path d="M13 52V13l39 39z"/><path d="M22 43h8M30 35h8M39 27h8"/><path d="M45 11v12M39 17h12"/></svg>
+            <span class="mini-spark">+</span>
+          </span>
+          <strong>Maths</strong><small>10th grade</small><span class="card-bottom"><span class="progress"><i></i></span><span class="card-arrow">→</span></span>
+        </a>
+        <a href="subject.html?subject=hindi" class="subject-card hindi">
+          <span class="subject-art hindi-glyph" aria-hidden="true">अ<span class="pencil">✎</span></span>
+          <strong>Hindi</strong><small>10th grade</small><span class="card-bottom"><span class="progress"><i></i></span><span class="card-arrow">→</span></span>
+        </a>
+        <a href="subject.html?subject=home_science" class="subject-card home-science">
+          <span class="subject-art" aria-hidden="true">
+            <svg viewBox="0 0 64 64"><path d="M7 30L32 10l25 20"/><path d="M14 27v28h36V27M26 55V37h12v18"/><path d="M42 15l5 4"/><path d="M43 34c5-6 11-2 9 3-1 4-9 9-9 9s-8-5-9-9c-2-5 4-9 9-3z"/></svg>
+            <span class="mini-spark">✦</span>
+          </span>
+          <strong>Home Science</strong><small>10th grade</small><span class="card-bottom"><span class="progress"><i></i></span><span class="card-arrow">→</span></span>
+        </a>
+      </div>
     </section>
+
+    <section class="practice-banner" aria-label="Exam practice">
+      <div class="banner-icon" aria-hidden="true"><svg viewBox="0 0 56 56"><path d="M13 8l27-4 8 34-27 8z"/><path d="M20 23l7 7 13-15"/></svg></div>
+      <div class="banner-copy"><strong>Ready for exam day?</strong><span>Build confidence, one quiz at a time.</span></div>
+      <span class="banner-divider" aria-hidden="true"></span>
+      <div class="banner-rocket" aria-hidden="true">↗</div>
+      <div class="banner-copy banner-copy-right"><strong>Practise at your pace</strong><span>You're closer than you think.</span></div>
+      <span class="banner-wave" aria-hidden="true">〰</span>
+    </section>
+    <footer class="site-footer"><span class="logo footer-logo">iWin <span>Study</span><i aria-hidden="true">✳</i></span><span>Learn a little. Grow a lot.</span></footer>
+  </main>
+  <script src="assets/app.js" defer></script>
 </body>
 </html>

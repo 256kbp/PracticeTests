@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fun Quiz - iWin Study Centre</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    :root {
+      --primary-dark: #092c5b;
+      --accent-yellow: #fde047;
+      --accent-yellow-dark: #eab308;
+      --bg-gradient: linear-gradient(135deg, #fef08a 0%, #facc15 50%, #eab308 100%);
+      --card-bg: #ffffff;
+      --text-main: #12315b;
+      --success: #16a34a;
+      --success-bg: #dcfce7;
+      --error: #dc2626;
+      --error-bg: #fee2e2;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Nunito', 'Segoe UI', sans-serif; }
+
+    html { overflow-y: scroll; }
+
+    body {
+      background: var(--bg-gradient);
+      min-height: 100vh;
+      color: var(--text-main);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 20px;
+      overflow-x: hidden;
+    }
+
+    .bubble {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.25);
+      border-radius: 50%;
+      pointer-events: none;
+      animation: floatUp 8s infinite ease-in-out;
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(100vh) scale(0.8); opacity: 0; }
+      50% { opacity: 0.8; }
+      100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+    }
+
+    header {
+      width: 100%;
+      max-width: 500px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+      margin-bottom: 20px;
+      z-index: 10;
+    }
+    .logo { font-size: 24px; font-weight: 900; color: var(--primary-dark); text-decoration: none; letter-spacing: -1.2px; white-space: nowrap; }
+    .logo span { color: #ff9b35; }
+    .logo i { font-style: normal; color: #ffb72f; font-size: 18px; vertical-align: top; margin-left: 2px; }
+
+    .back-link { text-decoration: none; color: var(--primary-dark); font-size: 13px; font-weight: 800; background: #f1f5f9; padding: 8px 16px; border-radius: 999px; transition: background 0.2s; }
+    .back-link:hover { background: #e2e8f0; color: #ff762f; }
+
+    .quiz-container {
+      width: 100%;
+      max-width: 500px;
+      background: var(--card-bg);
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 0 0 6px rgba(255, 255, 255, 0.4);
+      position: relative;
+      z-index: 10;
+    }
+
+    .quiz-header-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .progress-pill {
+      background: #fef08a;
+      color: #854d0e;
+      padding: 4px 12px;
+      border-radius: 20px;
+      border: 1px solid #fde047;
+    }
+    .score-pill {
+      background: #dbeafe;
+      color: #1e40af;
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
+
+    .progress-bar-container {
+      width: 100%;
+      height: 8px;
+      background: #f1f5f9;
+      border-radius: 4px;
+      margin-bottom: 24px;
+      overflow: hidden;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #f59e0b, #eab308);
+      width: 0%;
+      transition: width 0.4s ease;
+      border-radius: 4px;
+    }
+
+    .question-box {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      margin-bottom: 24px;
+      line-height: 1.4;
+    }
+
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .option-btn {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding: 14px 18px;
+      background: #f8fafc;
+      border: 2px solid #e2e8f0;
+      border-radius: 14px;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #334155;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .option-btn:hover:not(:disabled) {
+      background: #fefce8;
+      border-color: #facc15;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(234, 179, 8, 0.15);
+    }
+    .option-btn.selected {
+      background: #fef9c3;
+      border-color: #eab308;
+      color: #713f12;
+      box-shadow: 0 0 0 3px rgba(234, 179, 8, 0.2);
+    }
+    .option-btn.correct {
+      background: var(--success-bg) !important;
+      border-color: var(--success) !important;
+      color: #15803d !important;
+    }
+    .option-btn.incorrect {
+      background: var(--error-bg) !important;
+      border-color: var(--error) !important;
+      color: var(--error) !important;
+    }
+
+    .option-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      background: #e2e8f0;
+      border-radius: 8px;
+      margin-right: 14px;
+      font-weight: 800;
+      font-size: 0.85rem;
+      color: #475569;
+    }
+    .option-btn.selected .option-badge { background: #facc15; color: #713f12; }
+    .option-btn.correct .option-badge { background: #22c55e; color: #fff; }
+    .option-btn.incorrect .option-badge { background: #ef4444; color: #fff; }
+
+    .feedback-container {
+      padding: 16px;
+      border-radius: 14px;
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      font-weight: 600;
+    }
+    .feedback-container.correct { background: var(--success-bg); color: #15803d; border: 1px solid #86efac; }
+    .feedback-container.incorrect { background: var(--error-bg); color: var(--error); border: 1px solid #fca5a5; }
+
+    .action-btn {
+      width: 100%;
+      padding: 16px;
+      border: none;
+      border-radius: 16px;
+      font-size: 1rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    .btn-primary { background: var(--primary-dark); color: #ffffff; }
+    .btn-primary:hover:not(:disabled) { background: #134074; transform: translateY(-2px); }
+    .btn-primary:disabled { background: #cbd5e1; cursor: not-allowed; box-shadow: none; }
+
+    .results-screen { text-align: center; padding: 10px 0; }
+    .trophy-icon { font-size: 64px; margin-bottom: 15px; }
+    .results-title { font-size: 1.8rem; font-weight: 900; color: var(--primary-dark); margin-bottom: 8px; text-transform: uppercase; }
+    .results-subtitle { font-size: 0.95rem; color: #64748b; margin-bottom: 24px; font-weight: 600; }
+    .score-card-big { background: #f8fafc; border: 2px dashed #cbd5e1; border-radius: 20px; padding: 24px; margin-bottom: 24px; }
+    .score-number { font-size: 3rem; font-weight: 900; color: var(--primary-dark); line-height: 1; margin-bottom: 6px; }
+    .score-percentage { font-size: 1.2rem; font-weight: 800; color: #d97706; }
+    .results-buttons { display: flex; gap: 12px; }
+    .btn-secondary { background: #f1f5f9; color: #334155; border: 1px solid #cbd5e1; border-radius: 16px; flex: 1; text-decoration: none; display: flex; align-items: center; justify-content: center; font-weight: 800; text-transform: uppercase; font-size: 1rem; padding: 16px; transition: all 0.2s ease; }
+    .btn-secondary:hover { background: #e2e8f0; transform: translateY(-2px); }
+    .hidden { display: none !important; }
+
+    .floating-feedback-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; pointer-events: none; z-index: 99; }
+    .floating-emoji { font-size: 110px; animation: floatZoomFade 1.2s ease-out forwards; filter: drop-shadow(0 15px 25px rgba(0,0,0,0.25)); }
+    @keyframes floatZoomFade {
+      0% { transform: scale(0.3) translateY(40px); opacity: 0; }
+      35% { transform: scale(1.2) translateY(-10px); opacity: 1; }
+      70% { transform: scale(1) translateY(-30px); opacity: 1; }
+      100% { transform: scale(1.1) translateY(-70px); opacity: 0; }
+    }
+
+    .start-animation-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(9, 44, 91, 0.92); backdrop-filter: blur(10px); border-radius: 28px; display: flex; align-items: center; justify-content: center; z-index: 999; opacity: 1; transition: opacity 0.5s ease; }
+    .start-animation-text { font-family: 'Impact', 'Arial Black', sans-serif; font-size: 5.5rem; font-weight: 900; color: #fde047; text-transform: uppercase; letter-spacing: 3px; text-shadow: 0 8px 25px rgba(0,0,0,0.6); animation: popZoomFadeStep 1s ease-in-out forwards; }
+    @keyframes popZoomFadeStep {
+      0% { transform: scale(0.4) rotate(-5deg); opacity: 0; }
+      35% { transform: scale(1.2) rotate(3deg); opacity: 1; }
+      75% { transform: scale(1) rotate(0deg); opacity: 1; }
+      100% { transform: scale(1.4); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bubble" style="width: 80px; height: 80px; left: 10%; animation-duration: 7s;"></div>
+  <div class="bubble" style="width: 120px; height: 120px; left: 80%; animation-duration: 10s; animation-delay: 2s;"></div>
+  <div class="bubble" style="width: 50px; height: 50px; left: 40%; animation-duration: 6s; animation-delay: 1s;"></div>
+
+  <header>
+    <a href="index.html" class="logo">iWin <span>Study</span><i aria-hidden="true">✳</i></a>
+    <a href="#" id="backSubLink" class="back-link">&larr; Back to Subject</a>
+  </header>
+
+  <div class="quiz-container" id="quizCardContainer">
+    <div id="quizGameView">
+      <div class="quiz-header-info">
+        <span id="questionCountBadge" class="progress-pill">Question 1 of 10</span>
+        <span id="runningScore" class="score-pill">Score: 0 / 10</span>
+      </div>
+
+      <div class="progress-bar-container">
+        <div id="progressBarFill" class="progress-bar-fill"></div>
+      </div>
+
+      <div id="questionText" class="question-text question-box">Loading exciting question...</div>
+      <div id="optionsContainer" class="options-grid"></div>
+      <div id="feedbackBox" class="feedback-container hidden"></div>
+
+      <button id="actionBtn" class="action-btn btn-primary" disabled>Select an Answer</button>
+    </div>
+
+    <div id="quizResultsView" class="results-screen hidden">
+      <div id="trophyEmoji" class="trophy-icon">🏆</div>
+      <h2 id="resultTitle" class="results-title">Fantastic Job!</h2>
+      <p id="resultSubtitle" class="results-subtitle">You've successfully completed the fun challenge.</p>
+
+      <div class="score-card-big">
+        <div class="score-number"><span id="finalScore">0</span> / <span id="finalMaxScore">10</span></div>
+        <div class="score-percentage"><span id="finalPercentage">0</span>% Accuracy</div>
+      </div>
+
+      <div class="results-buttons">
+        <button onclick="restartQuiz()" class="action-btn btn-primary" style="flex: 1;">Try Again 🔄</button>
+        <a id="backToSubjectBtn" href="#" class="btn-secondary">Subject Hub 🏠</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const subject = urlParams.get('subject') || 'hindi';
+    
+    document.getElementById('backSubLink').href = `subject.html?subject=${subject}`;
+    document.getElementById('backToSubjectBtn').href = `subject.html?subject=${subject}`;
+
+    const TARGET_MARKS = 10;
+    let testQuestions = [];
+    let currentIndex = 0;
+    let earnedMarks = 0;
+    let totalPossibleMarks = 0;
+    let selectedOptionValue = null;
+    let isSubmitted = false;
+    let isInitialized = false;
+
+    window.addEventListener('DOMContentLoaded', initFunQuiz);
+
+    async function fetchQuestionsForQuiz() {
+      try {
+        let allQuestions = [];
+        try {
+          const manifestRes = await fetch(`data/${subject}/manifest.json`);
+          if (manifestRes.ok) {
+            const manifest = await manifestRes.json();
+            for (const ch of manifest.chapters) {
+              try {
+                const chRes = await fetch(`data/${subject}/chapter-${ch}.json`);
+                if (chRes.ok) {
+                  const chData = await chRes.json();
+                  allQuestions = allQuestions.concat(chData);
+                }
+              } catch (err) {
+                console.warn(`Could not load chapter ${ch}`, err);
+              }
+            }
+          } else {
+            throw new Error('No manifest');
+          }
+        } catch (e) {
+          const response = await fetch(`data/${subject}/questions.json`);
+          if (response.ok) {
+            allQuestions = await response.json();
+          }
+        }
+        return allQuestions.filter(q => q.type === 'MCQ');
+      } catch (error) {
+        console.error('Error fetching questions:', error);
+        return [];
+      }
+    }
+
+    async function initFunQuiz() {
+      const mcqList = await fetchQuestionsForQuiz();
+      if (mcqList.length === 0) {
+        document.getElementById('questionText').textContent = 'No MCQ questions found for this subject.';
+        const actionBtn = document.getElementById('actionBtn');
+        actionBtn.textContent = 'Go Back';
+        actionBtn.disabled = false;
+        actionBtn.onclick = () => window.location.href = `subject.html?subject=${subject}`;
+        return;
+      }
+
+      const shuffled = [...mcqList].sort(() => 0.5 - Math.random());
+      testQuestions = [];
+      let currentMarksSum = 0;
+
+      for (const q of shuffled) {
+        if (currentMarksSum + q.marks <= TARGET_MARKS) {
+          testQuestions.push(q);
+          currentMarksSum += q.marks;
+        }
+        if (currentMarksSum === TARGET_MARKS) break;
+      }
+
+      if (testQuestions.length === 0 && shuffled.length > 0) {
+        testQuestions.push(shuffled[0]);
+        currentMarksSum = shuffled[0].marks;
+      }
+
+      totalPossibleMarks = currentMarksSum;
+      currentIndex = 0;
+      earnedMarks = 0;
+
+      document.getElementById('quizGameView').classList.remove('hidden');
+      document.getElementById('quizResultsView').classList.add('hidden');
+
+      renderCurrentQuestion();
+
+      if (!isInitialized) {
+        isInitialized = true;
+        playStartAnimation();
+      }
+    }
+
+    function playStartAnimation() {
+      const quizContainer = document.getElementById('quizCardContainer');
+      const overlay = document.createElement('div');
+      overlay.className = 'start-animation-overlay';
+
+      const textEl = document.createElement('div');
+      textEl.className = 'start-animation-text';
+      textEl.textContent = 'READY';
+      overlay.appendChild(textEl);
+      quizContainer.appendChild(overlay);
+
+      const sequence = ['READY', '3', '2', '1', 'GO!'];
+      let step = 0;
+
+      const interval = setInterval(() => {
+        step++;
+        if (step < sequence.length) {
+          textEl.style.animation = 'none';
+          textEl.offsetHeight;
+          textEl.style.animation = 'popZoomFadeStep 1s ease-in-out forwards';
+          textEl.textContent = sequence[step];
+        } else {
+          clearInterval(interval);
+          overlay.style.opacity = '0';
+          setTimeout(() => {
+            overlay.remove();
+          }, 500);
+        }
+      }, 1000);
+    }
+
+    function renderCurrentQuestion() {
+      isSubmitted = false;
+      selectedOptionValue = null;
+
+      const q = testQuestions[currentIndex];
+      const totalQ = testQuestions.length;
+
+      document.getElementById('questionCountBadge').textContent = `Question ${currentIndex + 1} of ${totalQ}`;
+      document.getElementById('runningScore').textContent = `Score: ${earnedMarks} / ${totalPossibleMarks}`;
+      
+      const progressPercent = (currentIndex / totalQ) * 100;
+      document.getElementById('progressBarFill').style.width = `${progressPercent}%`;
+
+      document.getElementById('questionText').textContent = q.question;
+
+      const optionsContainer = document.getElementById('optionsContainer');
+      optionsContainer.innerHTML = '';
+
+      const letters = ['A', 'B', 'C', 'D', 'E', 'F'];
+      if (q.options) {
+        q.options.forEach((opt, idx) => {
+          const btn = document.createElement('button');
+          btn.className = 'option-btn';
+          btn.innerHTML = `<span class="option-badge">${letters[idx] || (idx + 1)}</span><span>${opt}</span>`;
+          btn.onclick = () => selectOption(opt, btn);
+          optionsContainer.appendChild(btn);
+        });
+      }
+
+      const feedbackBox = document.getElementById('feedbackBox');
+      feedbackBox.className = 'feedback-container hidden';
+      feedbackBox.innerHTML = '';
+
+      const actionBtn = document.getElementById('actionBtn');
+      actionBtn.textContent = 'Submit Answer';
+      actionBtn.disabled = true;
+      actionBtn.onclick = handleActionClick;
+    }
+
+    function selectOption(optValue, btnElement) {
+      if (isSubmitted) return;
+
+      selectedOptionValue = optValue;
+      document.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
+      btnElement.classList.add('selected');
+
+      const actionBtn = document.getElementById('actionBtn');
+      actionBtn.disabled = false;
+    }
+
+    function handleActionClick() {
+      if (!isSubmitted) {
+        isSubmitted = true;
+        const q = testQuestions[currentIndex];
+        const feedbackBox = document.getElementById('feedbackBox');
+        feedbackBox.classList.remove('hidden');
+
+        const isCorrect = (selectedOptionValue === q.answer);
+
+        showFloatingEmoji(isCorrect);
+
+        const optionButtons = document.querySelectorAll('.option-btn');
+        optionButtons.forEach(btn => {
+          const btnText = btn.querySelector('span:nth-child(2)').textContent;
+          btn.disabled = true;
+          if (btnText === q.answer) {
+            btn.classList.add('correct');
+          } else if (btnText === selectedOptionValue && !isCorrect) {
+            btn.classList.add('incorrect');
+          }
+        });
+
+        if (isCorrect) {
+          earnedMarks += q.marks;
+          feedbackBox.className = 'feedback-container correct';
+          feedbackBox.innerHTML = `<strong>Correct! 🎉 (+${q.marks} marks)</strong><br>${q.explanation || 'Great job answering correctly!'}`;
+        } else {
+          feedbackBox.className = 'feedback-container incorrect';
+          feedbackBox.innerHTML = `<strong>Incorrect! ❌ (0/${q.marks} marks)</strong><br><strong>Correct Answer:</strong> ${q.answer}<br>${q.explanation || ''}`;
+        }
+
+        document.getElementById('runningScore').textContent = `Score: ${earnedMarks} / ${totalPossibleMarks}`;
+
+        const actionBtn = document.getElementById('actionBtn');
+        if (currentIndex < testQuestions.length - 1) {
+          actionBtn.textContent = 'Next Question ➔';
+        } else {
+          actionBtn.textContent = 'View Final Results 🏆';
+        }
+        actionBtn.disabled = false;
+
+      } else {
+        currentIndex++;
+        if (currentIndex < testQuestions.length) {
+          renderCurrentQuestion();
+        } else {
+          showResults();
+        }
+      }
+    }
+
+    function showFloatingEmoji(isCorrect) {
+      const quizContainer = document.getElementById('quizCardContainer');
+      const overlay = document.createElement('div');
+      overlay.className = 'floating-feedback-overlay';
+      
+      const emojiSpan = document.createElement('div');
+      emojiSpan.className = 'floating-emoji';
+      emojiSpan.textContent = isCorrect ? '😸' : '😿';
+      
+      overlay.appendChild(emojiSpan);
+      quizContainer.appendChild(overlay);
+
+      setTimeout(() => {
+        overlay.remove();
+      }, 1200);
+    }
+
+    function showResults() {
+      document.getElementById('quizGameView').classList.add('hidden');
+      document.getElementById('quizResultsView').classList.remove('hidden');
+
+      document.getElementById('finalScore').textContent = earnedMarks;
+      document.getElementById('finalMaxScore').textContent = totalPossibleMarks;
+
+      const percentage = totalPossibleMarks > 0 ? Math.round((earnedMarks / totalPossibleMarks) * 100) : 0;
+      document.getElementById('finalPercentage').textContent = percentage;
+
+      const titleEl = document.getElementById('resultTitle');
+      const subtitleEl = document.getElementById('resultSubtitle');
+      const trophyEl = document.getElementById('trophyEmoji');
+
+      if (percentage >= 80) {
+        titleEl.textContent = 'Outstanding Win! 🌟';
+        subtitleEl.textContent = 'You have mastered these concepts brilliantly!';
+        trophyEl.textContent = '🏆';
+      } else if (percentage >= 50) {
+        titleEl.textContent = 'Good Job! 👍';
+        subtitleEl.textContent = 'Solid performance! Keep practicing to get even better.';
+        trophyEl.textContent = '🥇';
+      } else {
+        titleEl.textContent = 'Nice Effort! 💪';
+        subtitleEl.textContent = 'Practice makes perfect. Try again to boost your score!';
+        trophyEl.textContent = '🎯';
+      }
+    }
+
+    function restartQuiz() {
+      playStartAnimation();
+      initFunQuiz();
+    }
+  </script>
+</body>
+</html>
