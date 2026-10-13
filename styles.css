@@ -60,6 +60,15 @@ a { color: inherit; }
   cursor: pointer;
 }
 
+.logo-star {
+  display: inline-block;
+  font-size: 18px;
+  color: #ffb72f;
+  vertical-align: top;
+  margin-left: 2px;
+  font-family: sans-serif; /* Prevents Apple system emoji substitution */
+}
+
 .menu-toggle svg {
   width: 26px;
   height: 26px;
