@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maths Formula Master - iWin Study Centre</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    :root { 
+      --primary-dark: #092c5b; 
+      --accent-gold: #ff9b35; 
+      --bg: #fffdf8; 
+      --card-bg: #ffffff; 
+      --text-main: #12315b; 
+      --border: #e7eaf0; 
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Nunito', 'Segoe UI', sans-serif; }
+    body { background-color: var(--bg); color: var(--text-main); line-height: 1.6; }
+    
+    header { display: flex; justify-content: space-between; align-items: center; padding: 20px 8%; background-color: rgba(255,255,255,0.88); box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+    .logo { font-size: 27px; font-weight: 900; color: var(--primary-dark); text-decoration: none; letter-spacing: -1.2px; white-space: nowrap; }
+    .logo span { color: var(--accent-gold); }
+    .logo i { font-style: normal; color: #ffb72f; font-size: 18px; vertical-align: top; margin-left: 2px; }
+    
+    .back-link { text-decoration: none; color: var(--primary-dark); font-size: 13px; font-weight: 800; transition: all 0.2s ease; background: #f0f4f8; padding: 8px 16px; border-radius: 999px; }
+    .back-link:hover { color: #ff762f; background: #e2e8f0; }
+
+    .hero-banner { background: linear-gradient(115deg,#e0f2fe 0%,#fffaf0 55%,#f4f1ff 100%); color: var(--primary-dark); padding: 45px 8%; text-align: center; border-bottom: 1px solid var(--border); }
+    .hero-banner h1 { font-size: 2.2rem; font-weight: 900; text-transform: uppercase; letter-spacing: -1px; margin-bottom: 8px; }
+    .hero-banner p { font-size: 1rem; opacity: 0.85; font-weight: 600; max-width: 600px; margin: 0 auto; color: #59708e; }
+
+    .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+
+    /* Tabs */
+    .tabs-nav { display: flex; justify-content: center; gap: 12px; margin-bottom: 30px; flex-wrap: wrap; }
+    .tab-btn { background: #e2e8f0; border: none; padding: 10px 22px; border-radius: 30px; font-weight: 800; font-size: 0.9rem; color: #475569; cursor: pointer; transition: all 0.2s; }
+    .tab-btn.active { background: var(--primary-dark); color: #fff; box-shadow: 0 4px 12px rgba(9,44,91,0.2); }
+
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
+    /* Filter dropdown */
+    .filter-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 12px; }
+    .filter-bar select { padding: 10px 16px; border-radius: 12px; border: 1px solid #cbd5e1; font-weight: 700; color: var(--primary-dark); background: #fff; cursor: pointer; }
+
+    /* Flashcard Grid */
+    .flashcard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+    .flashcard { background: #fff; border: 2px solid #e2e8f0; border-radius: 16px; padding: 22px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); transition: transform 0.2s, border-color 0.2s; position: relative; cursor: pointer; display: flex; flex-direction: column; justify-content: space-between; min-height: 180px; }
+    .flashcard:hover { transform: translateY(-3px); border-color: #0284c7; }
+    .flashcard-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+    .ch-badge { background: #e0f2fe; color: #0369a1; font-size: 0.75rem; font-weight: 800; padding: 3px 9px; border-radius: 6px; text-transform: uppercase; }
+    .f-name { font-size: 1.05rem; font-weight: 900; color: var(--primary-dark); }
+    
+    .f-body { margin: 15px 0; text-align: center; }
+    .f-expr { font-size: 1.2rem; font-weight: 800; color: #0284c7; background: #f8fafc; padding: 12px; border-radius: 10px; border: 1px dashed #cbd5e1; word-break: break-all; }
+    .f-hidden { filter: blur(6px); background: #e2e8f0; color: transparent; user-select: none; transition: filter 0.3s; }
+    .flashcard.revealed .f-hidden { filter: none; background: #e0f2fe; color: #0369a1; }
+    .tap-hint { font-size: 0.75rem; font-weight: 800; color: #94a3b8; text-align: center; text-transform: uppercase; margin-top: 8px; }
+
+    /* Common Traps Section */
+    .trap-card { background: #fee2e2; border: 2px solid #fca5a5; border-radius: 16px; padding: 22px; margin-bottom: 20px; }
+    .trap-card h3 { color: #b91c1c; font-size: 1.1rem; font-weight: 900; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+    .trap-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 12px; }
+    @media(max-width: 600px) { .trap-grid { grid-template-columns: 1fr; } }
+    .wrong-box { background: #fff; padding: 12px 16px; border-radius: 10px; border: 1px solid #f87171; font-weight: 700; color: #991b1b; font-size: 0.9rem; }
+    .right-box { background: #dcfce7; padding: 12px 16px; border-radius: 10px; border: 1px solid #86efac; font-weight: 700; color: #166534; font-size: 0.9rem; }
+
+    /* Challenge Quiz */
+    .quiz-box { background: #fff; border: 1px solid var(--border); border-radius: 20px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); max-width: 650px; margin: 0 auto; }
+    .quiz-q { font-size: 1.15rem; font-weight: 900; color: var(--primary-dark); margin-bottom: 20px; }
+    .quiz-opts { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+    .quiz-opt { padding: 12px 18px; border: 2px solid #e2e8f0; border-radius: 12px; background: #f8fafc; font-weight: 700; text-align: left; cursor: pointer; transition: all 0.2s; font-size: 0.95rem; }
+    .quiz-opt:hover:not(:disabled) { background: #e0f2fe; border-color: #0284c7; }
+    .quiz-opt.correct { background: #dcfce7 !important; border-color: #22c55e !important; color: #15803d !important; }
+    .quiz-opt.incorrect { background: #fee2e2 !important; border-color: #ef4444 !important; color: #b91c1c !important; }
+    .quiz-feedback { padding: 14px; border-radius: 12px; font-weight: 700; font-size: 0.9rem; margin-bottom: 20px; line-height: 1.5; }
+    .btn-main { background: var(--primary-dark); color: #fff; border: none; padding: 12px 28px; border-radius: 30px; font-weight: 900; text-transform: uppercase; cursor: pointer; transition: background 0.2s; }
+    .btn-main:hover { background: #134074; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a class="logo" href="index.html" aria-label="iWin Study home">
+        iWin <span>Study</span><span class="logo-star" aria-hidden="true">&#10022;</span>
+    </a>
+    <a href="subject.html?subject=maths" class="back-link">&larr; Back to Maths</a>
+  </header>
+
+  <section class="hero-banner">
+    <h1>Maths Formula Master</h1>
+    <p>Memorize smarter, understand formulas inside-out, and avoid common exam traps!</p>
+  </section>
+
+  <main class="container">
+    <div class="tabs-nav">
+      <button class="tab-btn active" onclick="switchTab('flashcards', this)">🧠 Flashcard Library</button>
+      <button class="tab-btn" onclick="switchTab('traps', this)">⚠️ Spot the Trap</button>
+      <button class="tab-btn" onclick="switchTab('challenge', this)">⚡ Formula Challenge</button>
+    </div>
+
+    <!-- TAB 1: FLASHCARDS -->
+    <div id="tab-flashcards" class="tab-content active">
+      <div class="filter-bar">
+        <h3 style="font-size: 1.2rem; font-weight: 900; color: var(--primary-dark);">Tap Cards to Reveal Formulas</h3>
+        <select id="chapterFilter" onchange="filterFlashcards()">
+          <option value="all">All Chapters</option>
+        </select>
+      </div>
+      <div id="flashcardGrid" class="flashcard-grid"></div>
+    </div>
+
+    <!-- TAB 2: TRAPS -->
+    <div id="tab-traps" class="tab-content">
+      <h3 style="font-size: 1.3rem; font-weight: 900; color: var(--primary-dark); margin-bottom: 20px; text-align: center;">Common Student Traps & How to Avoid Them</h3>
+      
+      <div class="trap-card">
+        <h3>❌ Trap 1: The Binomial Square Distributive Illusion</h3>
+        <p style="font-size: 0.9rem; font-weight: 700; color: #7f1d1d; margin-bottom: 10px;">Students often assume squaring a sum just squares individual terms.</p>
+        <div class="trap-grid">
+          <div class="wrong-box"><strong>❌ WRONG:</strong><br>(a + b)² = a² + b²</div>
+          <div class="right-box"><strong>✅ CORRECT:</strong><br>(a + b)² = a² + <strong>2ab</strong> + b²</div>
+        </div>
+      </div>
+
+      <div class="trap-card">
+        <h3>❌ Trap 2: Forgetting Alternating Signs in Cubes</h3>
+        <p style="font-size: 0.9rem; font-weight: 700; color: #7f1d1d; margin-bottom: 10px;">When cubing a difference, signs alternate (+, -, +, -).</p>
+        <div class="trap-grid">
+          <div class="wrong-box"><strong>❌ WRONG:</strong><br>(a - b)³ = a³ - 3a²b - 3ab² - b³</div>
+          <div class="right-box"><strong>✅ CORRECT:</strong><br>(a - b)³ = a³ - 3a²b + <strong>3ab²</strong> - b³</div>
+        </div>
+      </div>
+
+      <div class="trap-card">
+        <h3>❌ Trap 3: Sum of Cubes vs Binomial Cube Confusion</h3>
+        <p style="font-size: 0.9rem; font-weight: 700; color: #7f1d1d; margin-bottom: 10px;">Factoring separate cubes is completely different from expanding a cubed binomial.</p>
+        <div class="trap-grid">
+          <div class="wrong-box"><strong>❌ WRONG:</strong><br>a³ + b³ = (a + b)³</div>
+          <div class="right-box"><strong>✅ CORRECT:</strong><br>a³ + b³ = (a + b)(a² <strong>- ab</strong> + b²)</div>
+        </div>
+      </div>
+
+      <div class="trap-card">
+        <h3>❌ Trap 4: Quadratic Discriminant Sign Error</h3>
+        <p style="font-size: 0.9rem; font-weight: 700; color: #7f1d1d; margin-bottom: 10px;">The discriminant formula has a minus sign for 4ac.</p>
+        <div class="trap-grid">
+          <div class="wrong-box"><strong>❌ WRONG:</strong><br>D = b² + 4ac</div>
+          <div class="right-box"><strong>✅ CORRECT:</strong><br>D = b² <strong>- 4ac</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 3: CHALLENGE QUIZ -->
+    <div id="tab-challenge" class="tab-content">
+      <div class="quiz-box">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; font-size: 0.85rem; font-weight: 800; color: #64748b;">
+          <span id="quizProgress">Question 1 of 10</span>
+          <span id="quizScore">Score: 0</span>
+        </div>
+        <div id="quizQuestion" class="quiz-q">Loading challenge...</div>
+        <div id="quizOptions" class="quiz-opts"></div>
+        <div id="quizFeedback" class="quiz-feedback hidden"></div>
+        <button id="quizNextBtn" class="btn-main hidden" onclick="nextQuizQuestion()">Next Question ➔</button>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    let allFormulasData = [];
+    let quizQuestions = [];
+    let currentQuizIndex = 0;
+    let quizScore = 0;
+
+    window.addEventListener('DOMContentLoaded', async () => {
+      try {
+        const res = await fetch('data/maths/formulas.json');
+        if (!res.ok) throw new Error('Could not load formulas.json');
+        allFormulasData = await res.json();
+        
+        populateChapterFilter();
+        renderFlashcards(allFormulasData);
+        initQuiz();
+      } catch (err) {
+        console.error('Error loading formulas:', err);
+        document.getElementById('flashcardGrid').innerHTML = '<p style="text-align:center; color: red; font-weight: 800;">Error loading formula database. Please ensure formulas.json is in data/maths/.</p>';
+      }
+    });
+
+    function switchTab(tabId, btnElement) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+      document.getElementById(`tab-${tabId}`).classList.add('active');
+      btnElement.classList.add('active');
+    }
+
+    function populateChapterFilter() {
+      const select = document.getElementById('chapterFilter');
+      allFormulasData.forEach(ch => {
+        const opt = document.createElement('option');
+        opt.value = ch.chapter;
+        opt.textContent = `Chapter ${ch.chapter}: ${ch.chapter_title}`;
+        select.appendChild(opt);
+      });
+    }
+
+    function filterFlashcards() {
+      const val = document.getElementById('chapterFilter').value;
+      if (val === 'all') {
+        renderFlashcards(allFormulasData);
+      } else {
+        const filtered = allFormulasData.filter(ch => ch.chapter === val);
+        renderFlashcards(filtered);
+      }
+    }
+
+    function renderFlashcards(data) {
+      const grid = document.getElementById('flashcardGrid');
+      grid.innerHTML = '';
+
+      data.forEach(ch => {
+        ch.categories.forEach(cat => {
+          cat.formulas.forEach(f => {
+            const card = document.createElement('div');
+            card.className = 'flashcard';
+            card.onclick = () => card.classList.toggle('revealed');
+
+            let deductionsHtml = '';
+            if (f.deductions && f.deductions.length > 0) {
+              deductionsHtml = `<div style="margin-top: 8px; font-size: 0.8rem; color: #475569; font-weight: 700;"><strong>Deductions:</strong><br>${f.deductions.join('<br>')}</div>`;
+            }
+
+            card.innerHTML = `
+              <div>
+                <div class="flashcard-header">
+                  <span class="ch-badge">Ch ${ch.chapter}</span>
+                  <span style="font-size: 0.75rem; font-weight: 800; color: #64748b;">${cat.category_name}</span>
+                </div>
+                <div class="f-name">${f.name}</div>
+              </div>
+              <div class="f-body">
+                <div class="f-expr f-hidden">${f.expression}</div>
+                ${deductionsHtml}
+                <div class="tap-hint">👆 Tap to flip & reveal</div>
+              </div>
+            `;
+            grid.appendChild(card);
+          });
+        });
+      });
+    }
+
+    function initQuiz() {
+      // Restore original layout structure inside .quiz-box if it was replaced by the summary screen
+      const box = document.querySelector('.quiz-box');
+      box.innerHTML = `
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; font-size: 0.85rem; font-weight: 800; color: #64748b;">
+          <span id="quizProgress">Question 1 of 10</span>
+          <span id="quizScore">Score: 0</span>
+        </div>
+        <div id="quizQuestion" class="quiz-q">Loading challenge...</div>
+        <div id="quizOptions" class="quiz-opts"></div>
+        <div id="quizFeedback" class="quiz-feedback hidden"></div>
+        <button id="quizNextBtn" class="btn-main hidden" onclick="nextQuizQuestion()">Next Question ➔</button>
+      `;
+
+      quizQuestions = [
+        {
+          q: "What is the correct expansion for (a + b)²?",
+          options: ["a² + b²", "a² + 2ab + b²", "a² - 2ab + b²", "2a + 2b"],
+          answer: "a² + 2ab + b²",
+          exp: "Squaring a sum produces the first term squared, plus twice the product of both terms, plus the second term squared."
+        },
+        {
+          q: "Which formula represents the Difference of Squares?",
+          options: ["(a + b)²", "(a + b)(a - b) = a² - b²", "a³ - b³", "(a - b)²"],
+          answer: "(a + b)(a - b) = a² - b²",
+          exp: "The product of the sum and difference of two terms is equal to the difference of their squares."
+        },
+        {
+          q: "What is the Quadratic Formula used to solve ax² + bx + c = 0?",
+          options: ["x = (-b ± √(b² - 4ac)) / (2a)", "x = (b ± √(b² + 4ac)) / a", "x = -b / 2a", "x = √(4ac - b²)"],
+          answer: "x = (-b ± √(b² - 4ac)) / (2a)",
+          exp: "The quadratic formula calculates roots using coefficients a, b, and c with discriminant D = b² - 4ac."
+        },
+        {
+          q: "What is the formula for the nth term of an Arithmetic Progression (AP)?",
+          options: ["Sₙ = (n/2)[2a + (n-1)d]", "tₙ = a + (n - 1)d", "tₙ = arⁿ⁻¹", "tₙ = a + nd"],
+          answer: "tₙ = a + (n - 1)d",
+          exp: "The general term tₙ of an AP starts at first term 'a' and adds common difference 'd' (n-1) times."
+        },
+        {
+          q: "What is the discriminant D of a quadratic equation ax² + bx + c = 0?",
+          options: ["D = b² + 4ac", "D = 4ac - b²", "D = b² - 4ac", "D = √(b² - 4ac)"],
+          answer: "D = b² - 4ac",
+          exp: "The discriminant determines the nature of roots: D > 0 (two real roots), D = 0 (equal roots), D < 0 (no real roots)."
+        },
+        {
+          q: "What is the correct factorization for the Sum of Cubes (a³ + b³)?",
+          options: ["(a + b)(a² - ab + b²)", "(a + b)(a² + ab + b²)", "(a - b)(a² + ab + b²)", "(a + b)³"],
+          answer: "(a + b)(a² - ab + b²)",
+          exp: "The sum of cubes splits into a matching binomial (a + b) and a trinomial with an alternating middle sign (-ab)."
+        },
+        {
+          q: "What is the distance formula between two coordinate points (x₁, y₁) and (x₂, y₂)?",
+          options: ["d = √((x₂ - x₁)² + (y₂ - y₁)²)", "d = (x₂ - x₁) + (y₂ - y₁)", "d = √((x₂ + x₁)² + (y₂ + y₁)²)", "d = (x₂ - x₁)² - (y₂ - y₁)²"],
+          answer: "d = √((x₂ - x₁)² + (y₂ - y₁)²)",
+          exp: "Derived from Pythagoras theorem, distance is the square root of the sum of squared coordinate differences."
+        },
+        {
+          q: "What is the curved surface area (CSA) of a right circular cylinder with radius r and height h?",
+          options: ["πr²h", "2πrh", "2πr(r + h)", "πrl"],
+          answer: "2πrh",
+          exp: "Curved surface area of a cylinder rolls out into a rectangle of circumference 2πr and height h."
+        }
+      ];
+      currentQuizIndex = 0;
+      quizScore = 0;
+      renderQuizQuestion();
+    }
+    function renderQuizQuestion() {
+      const q = quizQuestions[currentQuizIndex];
+      document.getElementById('quizProgress').textContent = `Question ${currentQuizIndex + 1} of ${quizQuestions.length}`;
+      document.getElementById('quizScore').textContent = `Score: ${quizScore}`;
+      document.getElementById('quizQuestion').textContent = q.q;
+
+      const optsContainer = document.getElementById('quizOptions');
+      optsContainer.innerHTML = '';
+      
+      // Completely reset feedback element inline styling and hide it
+      const feedback = document.getElementById('quizFeedback');
+      feedback.className = 'quiz-feedback hidden';
+      feedback.style.display = 'none';
+      feedback.style.padding = '0';
+      feedback.style.border = 'none';
+      feedback.style.background = 'transparent';
+      feedback.innerHTML = '';
+
+      document.getElementById('quizNextBtn').classList.add('hidden');
+
+      q.options.forEach(opt => {
+        const btn = document.createElement('button');
+        btn.className = 'quiz-opt';
+        btn.textContent = opt;
+        btn.onclick = () => selectQuizAnswer(opt, btn, q.answer, q.exp);
+        optsContainer.appendChild(btn);
+      });
+    }
+
+    function selectQuizAnswer(selected, btnElement, correctAns, explanation) {
+      document.querySelectorAll('.quiz-opt').forEach(b => b.disabled = true);
+      
+      const feedback = document.getElementById('quizFeedback');
+      feedback.classList.remove('hidden');
+      feedback.style.display = 'block';
+      feedback.style.padding = '14px'; // Restore padding when showing feedback
+
+      if (selected === correctAns) {
+        btnElement.classList.add('correct');
+        quizScore += 1;
+        document.getElementById('quizScore').textContent = `Score: ${quizScore}`;
+        feedback.style.background = '#dcfce7';
+        feedback.style.color = '#15803d';
+        feedback.style.border = '1px solid #86efac';
+        feedback.innerHTML = `<strong>Correct! 🎉</strong><br>${explanation}`;
+      } else {
+        btnElement.classList.add('incorrect');
+        document.querySelectorAll('.quiz-opt').forEach(b => {
+          if (b.textContent === correctAns) b.classList.add('correct');
+        });
+        feedback.style.background = '#fee2e2';
+        feedback.style.color = '#b91c1c';
+        feedback.style.border = '1px solid #fca5a5';
+        feedback.innerHTML = `<strong>Incorrect. ❌</strong><br><strong>Correct Answer:</strong> ${correctAns}<br>${explanation}`;
+      }
+
+      const nextBtn = document.getElementById('quizNextBtn');
+      if (currentQuizIndex < quizQuestions.length - 1) {
+        nextBtn.textContent = 'Next Question ➔';
+      } else {
+        nextBtn.textContent = 'View Challenge Summary 🏆';
+      }
+      nextBtn.classList.remove('hidden');
+    }
+
+    function nextQuizQuestion() {
+      currentQuizIndex++;
+      if (currentQuizIndex < quizQuestions.length) {
+        renderQuizQuestion();
+      } else {
+        const box = document.querySelector('.quiz-box');
+        box.innerHTML = `
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; font-size: 0.85rem; font-weight: 800; color: #64748b;">
+            <span id="quizProgress">Challenge Complete</span>
+            <span id="quizScore">Final Score: ${quizScore} / ${quizQuestions.length}</span>
+          </div>
+          <div style="text-align: center; padding: 20px 0;">
+            <div style="font-size: 50px; margin-bottom: 10px;">🏆</div>
+            <h2 style="font-size: 1.5rem; font-weight: 900; color: var(--primary-dark); margin-bottom: 10px;">Challenge Complete!</h2>
+            <p style="font-weight: 800; font-size: 1.1rem; color: #0284c7; margin-bottom: 20px;">Your Score: ${quizScore} / ${quizQuestions.length}</p>
+            <button class="btn-main" onclick="initQuiz()">Play Again 🔄</button>
+          </div>
+        `;
+      }
+    }
+  </script>
+</body>
+</html>

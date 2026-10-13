@@ -52,7 +52,9 @@
 <body>
 
   <header>
-    <a href="index.html" class="logo">iWin <span>Study</span><i aria-hidden="true">✳</i></a>
+    <a class="logo" href="index.html" aria-label="iWin Study home">
+         iWin <span>Study</span><span class="logo-star" aria-hidden="true">&#10022;</span>
+    </a>
     <a href="index.html" class="back-link">&larr; Back to Home</a>
   </header>
 
@@ -89,6 +91,19 @@
           <p class="card-description">Learn formats, summaries, and rules for Letters, Notices, Reports, Articles, Emails, and more.</p>
         </div>
         <div class="card-arrow" style="color: #f97316;">&rarr;</div>
+      </a>
+
+      <!-- Formula Master (Maths Only) -->
+      <a href="maths-formulas.html" id="formulasCard" class="practice-card" style="background-color: #e0f2fe; display: none;">
+        <span class="fun-badge" style="background: #bae6fd; color: #0369a1;">Interactive</span>
+        <div>
+          <div class="card-icon-wrapper" style="color: #0284c7;">
+            <svg class="card-icon" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+          </div>
+          <h3 class="card-title">Formulas Master</h3>
+          <p class="card-description">Interactive formula flashcards, variable dissectors, and common mistake traps for all maths chapters.</p>
+        </div>
+        <div class="card-arrow" style="color: #0284c7;">&rarr;</div>
       </a>
 
       <!-- Fun Quiz -->
@@ -154,6 +169,17 @@
           writingCard.href = 'english-writing-formats.html';
         } else {
           writingCard.style.display = 'none';
+        }
+      }
+
+      // Show Formulas Master card ONLY when subject is Maths
+      const formulasCard = document.getElementById('formulasCard');
+      if (formulasCard) {
+        if (subject === 'maths') {
+          formulasCard.style.display = 'flex';
+          formulasCard.href = 'maths-formulas.html';
+        } else {
+          formulasCard.style.display = 'none';
         }
       }
 
