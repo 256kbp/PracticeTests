@@ -1,0 +1,521 @@
+[
+  {
+    "chapter": "4",
+    "chapter_title": "Special Products and Factorization",
+    "categories": [
+      {
+        "category_name": "Square Identities & Deductions",
+        "formulas": [
+          {
+            "name": "Square of a Sum",
+            "expression": "(a + b)² = a² + 2ab + b²",
+            "deductions": []
+          },
+          {
+            "name": "Square of a Difference",
+            "expression": "(a - b)² = a² - 2ab + b²",
+            "deductions": []
+          },
+          {
+            "name": "Sum of Squares Deduction",
+            "expression": "(a + b)² + (a - b)² = 2(a² + b²)",
+            "deductions": []
+          },
+          {
+            "name": "Difference of Squares Deduction",
+            "expression": "(a + b)² - (a - b)² = 4ab",
+            "deductions": []
+          },
+          {
+            "name": "Product of Sum and Difference",
+            "expression": "(a + b)(a - b) = a² - b²",
+            "deductions": []
+          }
+        ]
+      },
+      {
+        "category_name": "General Binomial Product Identities",
+        "formulas": [
+          {
+            "name": "Binomials with a Common Term",
+            "expression": "(x + a)(x + b) = x² + (a + b)x + ab",
+            "deductions": [
+              "(x - a)(x - b) = x² - (a + b)x + ab",
+              "(x - a)(x + b) = x² + (b - a)x - ab"
+            ]
+          },
+          {
+            "name": "General Linear Binomials",
+            "expression": "(ax + b)(cx + d) = acx² + (ad + bc)x + bd",
+            "deductions": [
+              "(ax - b)(cx - d) = acx² - (ad + bc)x + bd",
+              "(ax - b)(cx + d) = acx² - (bc - ad)x - bd"
+            ]
+          }
+        ]
+      },
+      {
+        "category_name": "Cube Identities & Factorizations",
+        "formulas": [
+          {
+            "name": "Cube of a Sum",
+            "expression": "(a + b)³ = a³ + 3a²b + 3ab² + b³ = a³ + 3ab(a + b) + b³",
+            "deductions": []
+          },
+          {
+            "name": "Cube of a Difference",
+            "expression": "(a - b)³ = a³ - 3a²b + 3ab² - b³ = a³ - 3ab(a - b) - b³",
+            "deductions": []
+          },
+          {
+            "name": "Sum of Cubes",
+            "expression": "a³ + b³ = (a + b)(a² - ab + b²)",
+            "deductions": []
+          },
+          {
+            "name": "Difference of Cubes",
+            "expression": "a³ - b³ = (a - b)(a² + ab + b²)",
+            "deductions": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "chapter": "5",
+    "chapter_title": "Linear Equations",
+    "categories": [
+      {
+        "category_name": "Linear Equations General Forms",
+        "formulas": [
+          {
+            "name": "Linear Equation in One Variable",
+            "expression": "ax + b = 0 (a ≠ 0)",
+            "deductions": []
+          },
+          {
+            "name": "Linear Equation in Two Variables",
+            "expression": "ax + by + c = 0",
+            "deductions": [
+              "x = (-by - c) / a (a ≠ 0)",
+              "y = (-ax - c) / b (b ≠ 0)"
+            ]
+          },
+          {
+            "name": "System of Two Linear Equations",
+            "expression": "a₁x + b₁y + c₁ = 0 and a₂x + b₂y + c₂ = 0",
+            "deductions": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "chapter": "6",
+    "chapter_title": "Quadratic Equations",
+    "categories": [
+      {
+        "category_name": "Quadratic Formularies & Discriminants",
+        "formulas": [
+          {
+            "name": "Standard Quadratic Equation",
+            "expression": "ax² + bx + c = 0 (a ≠ 0)",
+            "deductions": []
+          },
+          {
+            "name": "Quadratic Formula",
+            "expression": "x = (-b ± √(b² - 4ac)) / (2a)",
+            "deductions": []
+          },
+          {
+            "name": "Discriminant (D)",
+            "expression": "D = b² - 4ac",
+            "deductions": [
+              "D > 0: Two real distinct roots",
+              "D = 0: Two real equal roots",
+              "D < 0: No real roots"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "chapter": "7",
+    "chapter_title": "Arithmetic Progressions",
+    "categories": [
+      {
+        "category_name": "AP Formulas",
+        "formulas": [
+          {
+            "name": "General Term (nth Term) of an AP",
+            "expression": "tₙ = a + (n - 1)d",
+            "deductions": []
+          },
+          {
+            "name": "Sum of First n Terms of an AP",
+            "expression": "Sₙ = (n / 2) * [2a + (n - 1)d]",
+            "deductions": [
+              "Sₙ = (n / 2) * (a + tₙ)",
+              "Sₙ = (n / 2) * (a + l)"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "chapter": "8",
+    "chapter_title": "Percentage and Its Applications",
+    "categories": [
+      {
+        "category_name": "Profit, Loss & Interest Formulas",
+        "formulas": [
+          {
+            "name": "Profit and Loss",
+            "expression": "Profit = S.P. - C.P., Loss = C.P. - S.P.",
+            "deductions": [
+              "Profit % = (Profit / C.P.) * 100",
+              "Loss % = (Loss / C.P.) * 100",
+              "S.P. = [C.P. * (100 + Profit %)] / 100",
+              "S.P. = [C.P. * (100 - Loss %)] / 100"
+            ]
+          },
+          {
+            "name": "Simple Interest and Amount",
+            "expression": "I = (P * R * T) / 100",
+            "deductions": [
+              "A = P + I"
+            ]
+          },
+          {
+            "name": "Compound Interest and Amount",
+            "expression": "A = P * (1 + R / 100)ⁿ",
+            "deductions": [
+              "I = A - P"
+            ]
+          },
+          {
+            "name": "Growth and Depreciation",
+            "expression": "Vₙ = V₀ * (1 + r / 100)ⁿ (Growth)",
+            "deductions": [
+              "Vₙ = V₀ * (1 - r / 100)ⁿ (Depreciation)"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "chapter": "9",
+    "chapter_title": "Instalment Buying",
+    "categories": [
+      {
+        "category_name": "Instalment Calculation Formulas",
+        "formulas": [
+          {
+            "name": "Balance Due Under Instalment",
+            "expression": "Balance = Cash Price - Cash Down Payment",
+            "deductions": []
+          },
+          {
+            "name": "Present Value of Equal Instalments (Compound Interest)",
+            "expression": "Balance = x / (1 + r/100) + x / (1 + r/100)² + ... + x / (1 + r/100)ⁿ",
+            "deductions": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "chapter": "16",
+    "chapter_title": "Angles in a Circle and Cyclic Quadrilateral",
+    "categories": [
+      {
+        "category_name": "Circle Theorems & Arc Relations",
+        "formulas": [
+          {
+            "name": "Arc Length and Degree Measure",
+            "expression": "Length of an arc = Circumference * (Degree measure of the arc / 360°)",
+            "deductions": []
+          },
+          {
+            "name": "Central Angle Theorem",
+            "expression": "Central Angle = 2 * Inscribed Angle",
+            "deductions": []
+          },
+          {
+            "name": "Cyclic Quadrilateral Property",
+            "expression": "∠A + ∠C = 180°, ∠B + ∠D = 180°",
+            "deductions": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "chapter": "17",
+    "chapter_title": "Secants, Tangents and Their Properties",
+    "categories": [
+      {
+        "category_name": "Tangent and Secant Formulas",
+        "formulas": [
+          {
+            "name": "Tangent-Radius Property",
+            "expression": "OP ⊥ XY",
+            "deductions": []
+          },
+          {
+            "name": "Equal Tangents from External Point",
+            "expression": "PT = PT'",
+            "deductions": []
+          },
+          {
+            "name": "Secant-Tangent Theorem",
+            "expression": "PA * PB = PT²",
+            "deductions": []
+          },
+          {
+            "name": "Intersecting Chords Theorem",
+            "expression": "PA * PB = PC * PD",
+            "deductions": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "chapter": "18",
+    "chapter_title": "Constructions",
+    "categories": [
+      {
+        "category_name": "Geometric Construction Ratios",
+        "formulas": [
+          {
+            "name": "Internal Division Ratio",
+            "expression": "m : n division of line segment AB",
+            "deductions": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "chapter": "19",
+    "chapter_title": "Co-ordinate Geometry",
+    "categories": [
+      {
+        "category_name": "Co-ordinate Formulas",
+        "formulas": [
+          {
+            "name": "Distance Formula",
+            "expression": "d = √((x₂ - x₁)² + (y₂ - y₁)²)",
+            "deductions": []
+          },
+          {
+            "name": "Section Formula",
+            "expression": "P(x, y) = ((mx₂ + nx₁) / (m + n), (my₂ + ny₁) / (m + n))",
+            "deductions": []
+          },
+          {
+            "name": "Mid-point Formula",
+            "expression": "C(x, y) = ((x₁ + x₂) / 2, (y₁ + y₂) / 2)",
+            "deductions": []
+          },
+          {
+            "name": "Centroid Formula",
+            "expression": "G(x, y) = ((x₁ + x₂ + x₃) / 3, (y₁ + y₂ + y₃) / 3)",
+            "deductions": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "chapter": "20",
+    "chapter_title": "Perimeters and Areas of Plane Figures",
+    "categories": [
+      {
+        "category_name": "Perimeters and Areas of Basic Figures",
+        "formulas": [
+          {
+            "name": "Rectangle Perimeter and Area",
+            "expression": "Perimeter = 2(length + breadth), Area = length * breadth",
+            "deductions": []
+          },
+          {
+            "name": "Square Perimeter and Area",
+            "expression": "Perimeter = 4 * side, Area = side², Diagonal = side * √2",
+            "deductions": []
+          },
+          {
+            "name": "Parallelogram Area",
+            "expression": "Area = base * corresponding altitude",
+            "deductions": []
+          },
+          {
+            "name": "Triangle Area",
+            "expression": "Area = (1 / 2) * base * corresponding altitude",
+            "deductions": [
+              "Heron's Formula: Area = √(s(s - a)(s - b)(s - c)) where s = (a + b + c) / 2"
+            ]
+          },
+          {
+            "name": "Rhombus Area",
+            "expression": "Area = (1 / 2) * product of diagonals",
+            "deductions": []
+          },
+          {
+            "name": "Trapezium Area",
+            "expression": "Area = (1 / 2) * (sum of parallel sides) * distance between them",
+            "deductions": []
+          }
+        ]
+      },
+      {
+        "category_name": "Circles and Sectors",
+        "formulas": [
+          {
+            "name": "Circle Circumference and Area",
+            "expression": "Circumference = 2πr, Area = πr²",
+            "deductions": []
+          },
+          {
+            "name": "Circular Path (Ring) Area",
+            "expression": "Area = π(R² - r²)",
+            "deductions": []
+          },
+          {
+            "name": "Sector Arc Length",
+            "expression": "l = (πrθ) / 180°",
+            "deductions": []
+          },
+          {
+            "name": "Sector Perimeter and Area",
+            "expression": "Perimeter = 2r + (πrθ) / 180°, Area = (πr²θ) / 360°",
+            "deductions": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "chapter": "21",
+    "chapter_title": "Surface Areas and Volumes of Solid Figures",
+    "categories": [
+      {
+        "category_name": "Cuboid and Cube",
+        "formulas": [
+          {
+            "name": "Cuboid Surface Area and Volume",
+            "expression": "Surface Area = 2(lb + bh + hl), Volume = lbh, Diagonal = √(l² + b² + h²)",
+            "deductions": []
+          },
+          {
+            "name": "Cube Surface Area and Volume",
+            "expression": "Surface Area = 6a², Volume = a³, Diagonal = a√3",
+            "deductions": []
+          }
+        ]
+      },
+      {
+        "category_name": "Cylinder, Cone and Sphere",
+        "formulas": [
+          {
+            "name": "Right Circular Cylinder",
+            "expression": "Curved Surface Area = 2πrh, Total Surface Area = 2πrh + 2πr², Volume = πr²h",
+            "deductions": []
+          },
+          {
+            "name": "Right Circular Cone",
+            "expression": "Slant Height l = √(r² + h²), CSA = πrl, TSA = πrl + πr², Volume = (1 / 3)πr²h",
+            "deductions": []
+          },
+          {
+            "name": "Sphere and Hemisphere",
+            "expression": "Sphere CSA = 4πr², Sphere Volume = (4 / 3)πr³, Hemisphere CSA = 2πr², Hemisphere TSA = 3πr², Hemisphere Volume = (2 / 3)πr³",
+            "deductions": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "chapter": "22",
+    "chapter_title": "Introduction to Trigonometry",
+    "categories": [
+      {
+        "category_name": "Trigonometric Ratios",
+        "formulas": [
+          {
+            "name": "Basic T-Ratios",
+            "expression": "sin θ = opposite / hypotenuse, cos θ = adjacent / hypotenuse, tan θ = opposite / adjacent",
+            "deductions": [
+              "cosec θ = 1 / sin θ",
+              "sec θ = 1 / cos θ",
+              "cot θ = 1 / tan θ = cos θ / sin θ",
+              "tan θ = sin θ / cos θ"
+            ]
+          }
+        ]
+      },
+      {
+        "category_name": "Trigonometric Identities & Complementary Angles",
+        "formulas": [
+          {
+            "name": "Pythagorean Identities",
+            "expression": "sin² θ + cos² θ = 1, sec² θ - tan² θ = 1, cosec² θ - cot² θ = 1",
+            "deductions": []
+          },
+          {
+            "name": "Complementary Angles Ratios",
+            "expression": "sin(90° - θ) = cos θ, cos(90° - θ) = sin θ, tan(90° - θ) = cot θ",
+            "deductions": [
+              "cot(90° - θ) = tan θ",
+              "sec(90° - θ) = cosec θ",
+              "cosec(90° - θ) = sec θ"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "chapter": "23",
+    "chapter_title": "Trigonometric Ratios of Some Special Angles",
+    "categories": [
+      {
+        "category_name": "Special Angle Values",
+        "formulas": [
+          {
+            "name": "Special Angles (0°, 30°, 45°, 60°, 90°)",
+            "expression": "sin 0° = 0, sin 30° = 1/2, sin 45° = 1/√2, sin 60° = √3/2, sin 90° = 1",
+            "deductions": [
+              "cos 0° = 1, cos 30° = √3/2, cos 45° = 1/√2, cos 60° = 1/2, cos 90° = 0",
+              "tan 0° = 0, tan 30° = 1/√3, tan 45° = 1, tan 60° = √3, tan 90° = Not Defined"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "chapter": "26",
+    "chapter_title": "Introduction to Probability",
+    "categories": [
+      {
+        "category_name": "Probability Formulas[cite: 1]",
+        "formulas": [
+          {
+            "name": "Probability of an Event[cite: 1]",
+            "expression": "P(E) = (Number of outcomes favourable to E) / (Number of all possible outcomes)",
+            "deductions": [
+              "0 ≤ P(E) ≤ 1",
+              "P(E) + P(not E) = 1"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
