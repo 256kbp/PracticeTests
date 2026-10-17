@@ -241,7 +241,7 @@
       100% { transform: scale(1.05) translateY(-50px); opacity: 0; }
     }
 
-    /* Mobile-optimized Countdown Overlay (Fixes text overflow) */
+    /* Mobile-optimized Countdown Overlay */
     .start-animation-overlay {
       position: absolute;
       top: 0;
@@ -372,7 +372,8 @@
             allQuestions = await response.json();
           }
         }
-        return allQuestions.filter(q => q.type === 'MCQ');
+        // Only display Easy type questions for Fun Quiz
+        return allQuestions.filter(q => q.type === 'MCQ' && q.difficulty === 'Easy');
       } catch (error) {
         console.error('Error fetching questions:', error);
         return [];
@@ -382,7 +383,7 @@
     async function initFunQuiz() {
       const mcqList = await fetchQuestionsForQuiz();
       if (mcqList.length === 0) {
-        document.getElementById('questionText').textContent = 'No MCQ questions found for this subject.';
+        document.getElementById('questionText').textContent = 'No easy MCQ questions found for this subject.';
         const actionBtn = document.getElementById('actionBtn');
         actionBtn.textContent = 'Go Back';
         actionBtn.disabled = false;
