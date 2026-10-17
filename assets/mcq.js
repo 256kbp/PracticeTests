@@ -1,4 +1,5 @@
-const TARGET_MARKS = 20;
+// Variable for number of questions displayed per test (can be changed when needed)
+const QUESTIONS_PER_TEST = 10;
 let currentTestQuestions = [];
 
 const DIFFICULTY_ORDER = {
@@ -51,7 +52,8 @@ async function fetchQuestions() {
       }
     }
     
-    return allQuestions.filter(q => q.type === 'MCQ');
+    // Include both MCQ and True/False question types
+    return allQuestions.filter(q => q.type === 'MCQ' || q.type === 'True/False');
   } catch (error) {
     console.error('Could not load questions:', error);
     alert('Error loading question bank. Check your data folder.');
@@ -60,33 +62,30 @@ async function fetchQuestions() {
 }
 
 async function generateTest() {
-  const mcqQuestions = await fetchQuestions();
-  if (mcqQuestions.length === 0) return;
+  const questionPool = await fetchQuestions();
+  if (questionPool.length === 0) return;
 
-  const shuffled = [...mcqQuestions].sort(() => 0.5 - Math.random());
+  // Randomly shuffle all available questions
+  const shuffled = [...questionPool].sort(() => 0.5 - Math.random());
 
-  currentTestQuestions = [];
-  let currentMarks = 0;
+  // Select exactly QUESTIONS_PER_TEST (10) questions per test
+  currentTestQuestions = shuffled.slice(0, QUESTIONS_PER_TEST);
 
-  for (const q of shuffled) {
-    if (currentMarks + q.marks <= TARGET_MARKS) {
-      currentTestQuestions.push(q);
-      currentMarks += q.marks;
-    }
-    if (currentMarks === TARGET_MARKS) break;
-  }
-
+  // Sort selected questions by difficulty for a smooth testing experience
   currentTestQuestions.sort((a, b) => {
     const diffA = DIFFICULTY_ORDER[a.difficulty] || 2;
     const diffB = DIFFICULTY_ORDER[b.difficulty] || 2;
     if (diffA !== diffB) return diffA - diffB;
-    return a.marks - b.marks;
+    return (a.marks || 1) - (b.marks || 1);
   });
+
+  // Calculate total marks available for the selected test questions
+  const totalMarks = currentTestQuestions.reduce((sum, q) => sum + (q.marks || 1), 0);
 
   document.getElementById('resultsBanner').classList.add('hidden');
   document.getElementById('submitBtn').disabled = false;
 
-  renderTest(currentTestQuestions, currentMarks);
+  renderTest(currentTestQuestions, totalMarks);
 }
 
 function renderTest(questions, totalMarks) {
@@ -95,7 +94,7 @@ function renderTest(questions, totalMarks) {
   container.innerHTML = '';
 
   if (questions.length === 0) {
-    container.innerHTML = '<p>No MCQ questions could be selected to reach 20 marks.</p>';
+    container.innerHTML = '<p>No questions could be selected for this test.</p>';
     return;
   }
 
@@ -118,11 +117,12 @@ function renderTest(questions, totalMarks) {
     `;
 
     const chapterBadge = q.chapter && q.chapter !== '-' ? `<span class="badge badge-small">Chapter ${q.chapter}</span>` : '';
+    const qMarks = q.marks !== undefined ? q.marks : 1;
 
     card.innerHTML = `
       <div class="question-meta-top">
         <span class="badge">Q${index + 1}</span>
-        <span class="badge"><strong>${q.marks} Mark${q.marks > 1 ? 's' : ''}</strong></span>
+        <span class="badge"><strong>${qMarks} Mark${qMarks > 1 ? 's' : ''}</strong></span>
       </div>
       <div class="question-text">${q.question}</div>
       ${inputHtml}
@@ -140,7 +140,7 @@ function renderTest(questions, totalMarks) {
 
 function submitTest() {
   let earnedMarks = 0;
-  const totalPossible = currentTestQuestions.reduce((sum, q) => sum + q.marks, 0);
+  const totalPossible = currentTestQuestions.reduce((sum, q) => sum + (q.marks || 1), 0);
 
   currentTestQuestions.forEach((q) => {
     const feedbackBox = document.getElementById(`feedback_${q.id}`);
@@ -148,15 +148,30 @@ function submitTest() {
 
     const selectedOption = document.querySelector(`input[name="q_${q.id}"]:checked`);
     const userAnswer = selectedOption ? selectedOption.value : null;
+    const qMarks = q.marks !== undefined ? q.marks : 1;
+
+    // Highlight options (correct and incorrect selections)
+    const radios = document.querySelectorAll(`input[name="q_${q.id}"]`);
+    radios.forEach(radio => {
+      const label = radio.closest('label');
+      if (label) {
+        label.classList.remove('correct', 'incorrect');
+        if (radio.value === q.answer) {
+          label.classList.add('correct');
+        } else if (radio.checked && radio.value !== q.answer) {
+          label.classList.add('incorrect');
+        }
+      }
+    });
 
     if (userAnswer === q.answer) {
-      earnedMarks += q.marks;
+      earnedMarks += qMarks;
       feedbackBox.classList.add('feedback-correct');
-      feedbackBox.innerHTML = `<strong>Correct! (+${q.marks} marks)</strong><br>${q.explanation}`;
+      feedbackBox.innerHTML = `<strong>Correct! (+${qMarks} mark${qMarks > 1 ? 's' : ''})</strong><br>${q.explanation}`;
     } else {
       feedbackBox.classList.add('feedback-incorrect');
       feedbackBox.innerHTML = `
-        <strong>Incorrect (0/${q.marks} marks)</strong><br>
+        <strong>Incorrect (0/${qMarks} mark${qMarks > 1 ? 's' : ''})</strong><br>
         <strong>Correct Answer:</strong> ${q.answer}<br>
         <strong>Explanation:</strong> ${q.explanation}
       `;
