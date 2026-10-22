@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIOS 10th Maths: Rapid Revision & Testing Module</title>
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --secondary: #0284c7;
+            --accent: #f59e0b;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #0f172a;
+            --success: #16a34a;
+            --error: #dc2626;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 { margin: 0; font-size: 2rem; }
+        header p { margin-top: 0.5rem; opacity: 0.9; }
+
+        .container {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        /* Nav Tabs */
+        .tab-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+
+        .tab-btn {
+            background-color: #e2e8f0;
+            border: none;
+            padding: 0.75rem 1.25rem;
+            border-radius: 0.5rem 0.5rem 0 0;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--text);
+            transition: all 0.2s ease;
+        }
+
+        .tab-btn.active {
+            background-color: var(--secondary);
+            color: white;
+        }
+
+        .tab-content {
+            display: none;
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Section Styling */
+        h2 { color: var(--primary); border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem; }
+        h3 { color: var(--secondary); margin-top: 1.5rem; }
+
+        .badge {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        .visual-box {
+            background: #f1f5f9;
+            border-left: 4px solid var(--secondary);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 0.5rem 0.5rem 0;
+        }
+
+        /* Quiz Styling */
+        .quiz-section {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin-top: 2rem;
+        }
+
+        .question-box {
+            margin-bottom: 1.5rem;
+            background: white;
+            padding: 1rem;
+            border-radius: 0.375rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .options label {
+            display: block;
+            margin: 0.5rem 0;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+            border: 1px solid #cbd5e1;
+            transition: background 0.2s;
+        }
+
+        .options label:hover { background: #e2e8f0; }
+
+        button.submit-quiz {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 0.375rem;
+            cursor: pointer;
+        }
+
+        button.submit-quiz:hover { background: var(--secondary); }
+
+        .result-box {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 0.375rem;
+            display: none;
+            font-weight: bold;
+        }
+
+        .correct { color: var(--success); }
+        .incorrect { color: var(--error); }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>NIOS Class 10 Mathematics: Targeted Revision Module</h1>
+    <p>Master identified weak topics, practice core formulas, and test yourself before the exam!</p>
+</header>
+
+<div class="container">
+    <!-- Navigation Tabs -->
+    <div class="tab-nav">
+        <button class="tab-btn active" onclick="switchTab('overview')">Overview</button>
+        <button class="tab-btn" onclick="switchTab('day1')">Day 1: Geometry</button>
+        <button class="tab-btn" onclick="switchTab('day2')">Day 2: Mensuration</button>
+        <button class="tab-btn" onclick="switchTab('day3')">Day 3: Algebra</button>
+        <button class="tab-btn" onclick="switchTab('day4')">Day 4: Trig & Coordinates</button>
+        <button class="tab-btn" onclick="switchTab('day5')">Day 5: Stats & AP</button>
+    </div>
+
+    <!-- OVERVIEW TAB -->
+    <div id="overview" class="tab-content active">
+        <h2>Study Strategy & Target Focus Areas</h2>
+        <p>Based on your exam diagnostic, this interactive course targets your exact weak areas</p>
+        
+        <ul>
+            <li><strong>Geometry Theorems & Proofs:</strong> Circles, Tangents, Cyclic Quadrilaterals. (Target Q8, Q21, Q22, Q23, Q33, Q34, Q40)</li>
+            <li><strong>Mensuration & Calculations:</strong> Cylinder, Hemisphere volumes, Unit Conversions. (Target Q7, Q9, Q10, Q24, Q25, Q41)</li>
+            <li><strong>Algebra & Word Problems:</strong> Speed-Time-Distance, Upstream/Downstream, Discounts. (Target Q28, Q30, Q31)</li>
+            <li><strong>Trigonometry & Coordinate Geometry:</strong> Triples, Section Formula, Perpendicular Distances. (Target Q6, Q12-14, Q26, Q35)</li>
+            <li><strong>Statistics & AP:</strong> Cumulative Frequency, Median shift properties, AP summation. (Target Q3, Q19, Q27, Q36-38)</li>
+        </ul>
+
+        <div class="visual-box">
+            <strong>💡 Quick Exam Tip:</strong> Never leave a Section-B descriptive answer empty. Always state the Given Data, draw a clear diagram, write the relevant formula, and substitute the values for partial marks!
+        </div>
+    </div>
+
+    <!-- DAY 1 TAB -->
+    <div id="day1" class="tab-content">
+        <h2>Day 1: Circle Theorems & Proofs <span class="badge">High Priority</span></h2>
+        <p><strong>Target Questions:</strong> Q8, Q21(ii), Q22(ii), Q23(ii), Q33, Q34, Q40</p>
+        
+        <h3>1. Key Geometric Rules to Remember</h3>
+        <ul>
+            <li><strong>Tangent-Radius Theorem:</strong> A tangent is perpendicular to the radius at the point of contact (Angle = 90°).</li>
+            <li><strong>Tangent Lengths:</strong> Tangents drawn from an external point to a circle are equal in length (PA = PB).</li>
+            <li><strong>Angle in Semicircle:</strong> Angle subtended by a semicircle is always a <strong>Right Angle (90°)</strong>.</li>
+            <li><strong>Cyclic Quadrilateral:</strong> Opposite angles add up to 180°. Exterior angle equals interior opposite angle.</li>
+        </ul>
+
+        <div class="visual-box">
+            <strong>📐 Model Proof (Q40): Equal Tangents from External Point</strong><br>
+            Given a circle with center O and tangents PA, PB from external point P:
+            <ol>
+                <li>In △OAP and △OBP: OA = OB (radii).</li>
+                <li>OP = OP (common hypotenuse).</li>
+                <li>∠OAP = ∠OBP = 90° (radius ⊥ tangent).</li>
+                <li>By <strong>RHS Congruence Criterion</strong>, △OAP ≅ △OBP ⟹ PA = PB (by CPCT).</li>
+            </ol>
+        </div>
+
+        <!-- Day 1 Quiz -->
+        <div class="quiz-section">
+            <h3>Day 1 Practice Test</h3>
+            <form id="quiz-day1">
+                <div class="question-box">
+                    <p><strong>Q1 (Ref: Q8):</strong> What is the measure of an angle subtended by a semicircle?</p>
+                    <div class="options">
+                        <label><input type="radio" name="d1q1" value="A"> Acute angle</label>
+                        <label><input type="radio" name="d1q1" value="B"> Obtuse angle</label>
+                        <label><input type="radio" name="d1q1" value="C"> Right angle (90°)</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p><strong>Q2 (Ref: Q23):</strong> Two chords AB and CD intersect inside a circle at P. If PA = 4, PB = x + 3, PD = 3, PC = x + 5, what is x?</p>
+                    <div class="options">
+                        <label><input type="radio" name="d1q2" value="A"> x = 2</label>
+                        <label><input type="radio" name="d1q2" value="B"> x = 3</label>
+                        <label><input type="radio" name="d1q2" value="C"> x = 4</label>
+                    </div>
+                </div>
+
+                <button type="button" class="submit-quiz" onclick="checkQuiz('day1', ['C', 'B'])">Submit Day 1 Quiz</button>
+            </form>
+            <div id="result-day1" class="result-box"></div>
+        </div>
+    </div>
+
+    <!-- DAY 2 TAB -->
+    <div id="day2" class="tab-content">
+        <h2>Day 2: Mensuration & Units <span class="badge">Calculation Focus</span></h2>
+        <p><strong>Target Questions:</strong> Q7, Q9, Q10, Q24(ii), Q25, Q41</p>
+
+        <h3>1. Essential Formulas</h3>
+        <ul>
+            <li><strong>Cylinder:</strong> Volume = πr²h, Curved Surface Area (CSA) = 2πrh.</li>
+            <li><strong>Hemisphere:</strong> Volume = ⅔πr³, CSA = 2πr².</li>
+            <li><strong>Circle:</strong> Circumference = 2πr, Area = πr².</li>
+        </ul>
+
+        <div class="visual-box">
+            <strong>⚠️ Caution - Unit Conversions & Multipliers (Q41):</strong><br>
+            If diameter is 40 cm ⟹ r = 20 cm. Height = 10 m = 1000 cm.<br>
+            Always make sure units match! And if calculating for <strong>14 pillars</strong>, multiply final volume by 14:<br><br>
+            Total Volume = 14 × (²²/₇ × 20² × 1000) = 17,600,000 cm³
+        </div>
+
+        <div class="quiz-section">
+            <h3>Day 2 Practice Test</h3>
+            <form id="quiz-day2">
+                <div class="question-box">
+                    <p><strong>Q1 (Ref: Q10):</strong> The curved surface area of a cylinder of height 14 cm is 88 cm². What is the base diameter?</p>
+                    <div class="options">
+                        <label><input type="radio" name="d2q1" value="A"> 2 cm</label>
+                        <label><input type="radio" name="d2q1" value="B"> 4 cm</label>
+                        <label><input type="radio" name="d2q1" value="C"> 7 cm</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p><strong>Q2 (Ref: Q25):</strong> If volume and curved surface area of a solid hemisphere are numerically equal, what is its diameter?</p>
+                    <div class="options">
+                        <label><input type="radio" name="d2q2" value="A"> 3 units</label>
+                        <label><input type="radio" name="d2q2" value="B"> 6 units</label>
+                        <label><input type="radio" name="d2q2" value="C"> 12 units</label>
+                    </div>
+                </div>
+
+                <button type="button" class="submit-quiz" onclick="checkQuiz('day2', ['A', 'B'])">Submit Day 2 Quiz</button>
+            </form>
+            <div id="result-day2" class="result-box"></div>
+        </div>
+    </div>
+
+    <!-- DAY 3 TAB -->
+    <div id="day3" class="tab-content">
+        <h2>Day 3: Algebra & Word Problems</h2>
+        <p><strong>Target Questions:</strong> Q28(i-v), Q30, Q31</p>
+
+        <h3>1. Boat Upstream/Downstream Framework (Q28)</h3>
+        <p>Let speed of boat in still water = b km/h, speed of stream = x km/h.</p>
+        <ul>
+            <li><strong>Upstream Speed:</strong> (b - x) km/h</li>
+            <li><strong>Downstream Speed:</strong> (b + x) km/h</li>
+            <li><strong>Time Equation:</strong> Time = Distance / Speed</li>
+        </ul>
+
+        <div class="quiz-section">
+            <h3>Day 3 Practice Test</h3>
+            <form id="quiz-day3">
+                <div class="question-box">
+                    <p><strong>Q1 (Ref: Q28):</strong> A motorboat speed in still water is 18 km/h. If stream speed is x km/h, what is the upstream speed?</p>
+                    <div class="options">
+                        <label><input type="radio" name="d3q1" value="A"> (18 + x) km/h</label>
+                        <label><input type="radio" name="d3q1" value="B"> (18 - x) km/h</label>
+                        <label><input type="radio" name="d3q1" value="C"> (x - 18) km/h</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p><strong>Q2 (Ref: Q30):</strong> A machine listed at ₹9,500 is sold for ₹7,600. What is the discount percentage?</p>
+                    <div class="options">
+                        <label><input type="radio" name="d3q2" value="A"> 15%</label>
+                        <label><input type="radio" name="d3q2" value="B"> 20%</label>
+                        <label><input type="radio" name="d3q2" value="C"> 25%</label>
+                    </div>
+                </div>
+
+                <button type="button" class="submit-quiz" onclick="checkQuiz('day3', ['B', 'B'])">Submit Day 3 Quiz</button>
+            </form>
+            <div id="result-day3" class="result-box"></div>
+        </div>
+    </div>
+
+    <!-- DAY 4 TAB -->
+    <div id="day4" class="tab-content">
+        <h2>Day 4: Trigonometry & Coordinate Geometry</h2>
+        <p><strong>Target Questions:</strong> Q6, Q12, Q13, Q14, Q26, Q35</p>
+
+        <h3>1. Key Trigonometric Identities & Triples</h3>
+        <ul>
+            <li>Pythagorean Triple (3, 4, 5): If tan A = ⁴/₃, Hypotenuse = 5 ⟹ cos A = ³/₅.</li>
+            <li>Complementary Angles: tan(2A) = cot(90° - 2A) ⟹ 90° - 2A = A - 18° ⟹ A = 36°.</li>
+        </ul>
+
+        <h3>2. Distance from Axes</h3>
+        <p>For point P(x, y): Distance from y-axis = |x|; Distance from x-axis = |y|.</p>
+
+        <div class="quiz-section">
+            <h3>Day 4 Practice Test</h3>
+            <form id="quiz-day4">
+                <div class="question-box">
+                    <p><strong>Q1 (Ref: Q6):</strong> Perpendicular distance of point P(3, 4) from the y-axis is:</p>
+                    <div class="options">
+                        <label><input type="radio" name="d4q1" value="A"> 3 units</label>
+                        <label><input type="radio" name="d4q1" value="B"> 4 units</label>
+                        <label><input type="radio" name="d4q1" value="C"> 5 units</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p><strong>Q2 (Ref: Q14):</strong> If 3 tan A = 4, then cos A is:</p>
+                    <div class="options">
+                        <label><input type="radio" name="d4q2" value="A"> 3/5</label>
+                        <label><input type="radio" name="d4q2" value="B"> 5/3</label>
+                        <label><input type="radio" name="d4q2" value="C"> 4/3</label>
+                    </div>
+                </div>
+
+                <button type="button" class="submit-quiz" onclick="checkQuiz('day4', ['A', 'A'])">Submit Day 4 Quiz</button>
+            </form>
+            <div id="result-day4" class="result-box"></div>
+        </div>
+    </div>
+
+    <!-- DAY 5 TAB -->
+    <div id="day5" class="tab-content">
+        <h2>Day 5: Statistics & Arithmetic Progression</h2>
+        <p><strong>Target Questions:</strong> Q3, Q19, Q27, Q36, Q37, Q38</p>
+
+        <h3>1. Core Rules</h3>
+        <ul>
+            <li><strong>Median Shift Property:</strong> If every raw data value is increased by k, the new median = Old Median + k.</li>
+            <li><strong>Sum of Odd Numbers:</strong> Sum of first n odd natural numbers = n². (e.g., first 20 odd numbers = 20² = 400).</li>
+            <li><strong>Median of Frequency Table:</strong> Construct Cumulative Frequency (cf) column, find N/2 position, locate corresponding xᵢ.</li>
+        </ul>
+
+        <div class="quiz-section">
+            <h3>Day 5 Practice Test</h3>
+            <form id="quiz-day5">
+                <div class="question-box">
+                    <p><strong>Q1 (Ref: Q27):</strong> The median of raw data is 24. If each item is increased by 2, what is the new median?</p>
+                    <div class="options">
+                        <label><input type="radio" name="d5q1" value="A"> 24</label>
+                        <label><input type="radio" name="d5q1" value="B"> 26</label>
+                        <label><input type="radio" name="d5q1" value="C"> 48</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p><strong>Q2 (Ref: Q19):</strong> True or False: Sum of the first 20 odd natural numbers is 400.</p>
+                    <div class="options">
+                        <label><input type="radio" name="d5q2" value="A"> True</label>
+                        <label><input type="radio" name="d5q2" value="B"> False</label>
+                    </div>
+                </div>
+
+                <button type="button" class="submit-quiz" onclick="checkQuiz('day5', ['B', 'A'])">Submit Day 5 Quiz</button>
+            </form>
+            <div id="result-day5" class="result-box"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function switchTab(tabId) {
+        document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+        
+        document.getElementById(tabId).classList.add('active');
+        event.currentTarget.classList.add('active');
+    }
+
+    function checkQuiz(day, correctAnswers) {
+        let score = 0;
+        let total = correctAnswers.length;
+        let form = document.getElementById('quiz-' + day);
+        let resultDiv = document.getElementById('result-' + day);
+
+        for (let i = 0; i < total; i++) {
+            let qName = 'd' + day.replace('day', '') + 'q' + (i + 1);
+            let selected = form.querySelector('input[name="' + qName + '"]:checked');
+            
+            if (selected && selected.value === correctAnswers[i]) {
+                score++;
+            }
+        }
+
+        resultDiv.style.display = 'block';
+        if (score === total) {
+            resultDiv.className = 'result-box correct';
+            resultDiv.innerHTML = `🎉 Excellent! Perfect Score: ${score}/${total}. You are ready for this section!`;
+        } else {
+            resultDiv.className = 'result-box incorrect';
+            resultDiv.innerHTML = `⚠️ Score: ${score}/${total}. Review the formulas above and try again!`;
+        }
+    }
+</script>
+
+</body>
+</html>
