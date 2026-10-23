@@ -1,0 +1,1307 @@
+[
+  {
+    "chapter": "4",
+    "chapter_title": "Special Products and Factorization",
+    "formula_name": "Square of a Sum",
+    "formula_expression": "(a + b)² = a² + 2ab + b²",
+    "question": "What is the following formula used for?\n\n(a + b)² = a² + 2ab + b²",
+    "options": [
+      "Expands the square of a binomial sum into three terms containing twice the product of both variables.",
+      "Calculates the difference of two squared quantities.",
+      "Computes the cube of a binomial sum.",
+      "Finds the sum of two separate cubes."
+    ],
+    "correct_answer": "Expands the square of a binomial sum into three terms containing twice the product of both variables.",
+    "explanation": "This identity expands the square of a sum into the sum of the square of the first term, twice their product, and the square of the second term."
+  },
+  {
+    "chapter": "4",
+    "chapter_title": "Special Products and Factorization",
+    "formula_name": "Square of a Difference",
+    "formula_expression": "(a - b)² = a² - 2ab + b²",
+    "question": "What is the following formula used for?\n\n(a - b)² = a² - 2ab + b²",
+    "options": [
+      "Expands the square of a binomial difference with a negative middle term (-2ab).",
+      "Calculates the difference of two individual squares.",
+      "Expands the cube of a binomial difference.",
+      "Finds the difference between two separate cubes."
+    ],
+    "correct_answer": "Expands the square of a binomial difference with a negative middle term (-2ab).",
+    "explanation": "This identity expands the square of a difference into the square of the first term minus twice their product plus the square of the second term."
+  },
+  {
+    "chapter": "4",
+    "chapter_title": "Special Products and Factorization",
+    "formula_name": "Sum of Squares Deduction",
+    "formula_expression": "(a + b)² + (a - b)² = 2(a² + b²)",
+    "question": "What is the following formula used for?\n\n(a + b)² + (a - b)² = 2(a² + b²)",
+    "options": [
+      "Combines the sum and difference squares to eliminate cross-terms and yield twice the sum of individual squares.",
+      "Finds the difference of two squares.",
+      "Calculates the product of a sum and difference.",
+      "Expands the cube of a sum."
+    ],
+    "correct_answer": "Combines the sum and difference squares to eliminate cross-terms and yield twice the sum of individual squares.",
+    "explanation": "Adding (a + b)² and (a - b)² cancels out the +2ab and -2ab middle terms, resulting in 2(a² + b²)."
+  },
+  {
+    "chapter": "4",
+    "chapter_title": "Special Products and Factorization",
+    "formula_name": "Difference of Squares Deduction",
+    "formula_expression": "(a + b)² - (a - b)² = 4ab",
+    "question": "What is the following formula used for?\n\n(a + b)² - (a - b)² = 4ab",
+    "options": [
+      "Finds the algebraic identity resulting from subtracting the square of a difference from the square of a sum.",
+      "Calculates the square of a binomial sum.",
+      "Finds the product of sum and difference.",
+      "Expands the sum of two cubes."
+    ],
+    "correct_answer": "Finds the algebraic identity resulting from subtracting the square of a difference from the square of a sum.",
+    "explanation": "Subtracting (a - b)² from (a + b)² cancels out the squared terms and leaves 4ab."
+  },
+  {
+    "chapter": "4",
+    "chapter_title": "Special Products and Factorization",
+    "formula_name": "Product of Sum and Difference",
+    "formula_expression": "(a + b)(a - b) = a² - b²",
+    "question": "What is the following formula used for?\n\n(a + b)(a - b) = a² - b²",
+    "options": [
+      "Computes the difference of two squares from the product of conjugate binomials.",
+      "Expands the square of a binomial sum.",
+      "Calculates the sum of two cubes.",
+      "Expands the cube of a difference."
+    ],
+    "correct_answer": "Computes the difference of two squares from the product of conjugate binomials.",
+    "explanation": "Multiplying conjugate binomials (a + b) and (a - b) eliminates the middle cross-term, leaving the difference of their squares (a² - b²)."
+  },
+  {
+    "chapter": "4",
+    "chapter_title": "Special Products and Factorization",
+    "formula_name": "Binomials with a Common Term",
+    "formula_expression": "(x + a)(x + b) = x² + (a + b)x + ab",
+    "question": "What is the following formula used for?\n\n(x + a)(x + b) = x² + (a + b)x + ab",
+    "options": [
+      "Expands the product of two binomials sharing a common variable term.",
+      "Calculates the square of a binomial sum.",
+      "Computes the difference of squares.",
+      "Expands the cube of a binomial sum."
+    ],
+    "correct_answer": "Expands the product of two binomials sharing a common variable term.",
+    "explanation": "This formula expands products of binomials with a common term x, where the coefficient of x is the sum of constants (a + b) and the constant term is their product ab."
+  },
+  {
+    "chapter": "4",
+    "chapter_title": "Special Products and Factorization",
+    "formula_name": "Binomials with a Common Term (Deduction 1)",
+    "formula_expression": "(x - a)(x - b) = x² - (a + b)x + ab",
+    "question": "What is the following formula used for?\n\n(x - a)(x - b) = x² - (a + b)x + ab",
+    "options": [
+      "Expands the product of two binomials with negative constants and a common term.",
+      "Calculates the sum of squares.",
+      "Computes the difference of two cubes.",
+      "Expands the square of a binomial sum."
+    ],
+    "correct_answer": "Expands the product of two binomials with negative constants and a common term.",
+    "explanation": "This deduction adapts the common term binomial product when both constant terms are negative."
+  },
+  {
+    "chapter": "4",
+    "chapter_title": "Special Products and Factorization",
+    "formula_name": "Binomials with a Common Term (Deduction 2)",
+    "formula_expression": "(x - a)(x + b) = x² + (b - a)x - ab",
+    "question": "What is the following formula used for?\n\n(x - a)(x + b) = x² + (b - a)x - ab",
+    "options": [
+      "Expands the product of binomials with mixed signs sharing a common term.",
+      "Calculates the difference of squares.",
+      "Finds the square of a binomial difference.",
+      "Computes the sum of cubes."
+    ],
+    "correct_answer": "Expands the product of binomials with mixed signs sharing a common term.",
+    "explanation": "This deduction handles mixed-sign binomial products with a common variable term x."
+  },
+  {
+    "chapter": "4",
+    "chapter_title": "Special Products and Factorization",
+    "formula_name": "General Linear Binomials",
+    "formula_expression": "(ax + b)(cx + d) = acx² + (ad + bc)x + bd",
+    "question": "What is the following formula used for?\n\n(ax + b)(cx + d) = acx² + (ad + bc)x + bd",
+    "options": [
+      "Expands the product of two general linear binomials with distinct coefficients.",
+      "Calculates the difference of squares.",
+      "Computes the cube of a binomial sum.",
+      "Finds the sum of two cubes."
+    ],
+    "correct_answer": "Expands the product of two general linear binomials with distinct coefficients.",
+    "explanation": "This formula applies FOIL (First, Outer, Inner, Last) to expand general linear binomials where x has non-unit coefficients."
+  },
+  {
+    "chapter": "4",
+    "chapter_title": "Special Products and Factorization",
+    "formula_name": "General Linear Binomials (Deduction 1)",
+    "formula_expression": "(ax - b)(cx - d) = acx² - (ad + bc)x + bd",
+    "question": "What is the following formula used for?\n\n(ax - b)(cx - d) = acx² - (ad + bc)x + bd",
+    "options": [
+      "Expands the product of linear binomials with negative constant terms.",
+      "Calculates the square of a binomial difference.",
+      "Finds the difference of squares.",
+      "Computes the sum of cubes."
+    ],
+    "correct_answer": "Expands the product of linear binomials with negative constant terms.",
+    "explanation": "This deduction expands linear binomial products when both constant terms are negative."
+  },
+  {
+    "chapter": "4",
+    "chapter_title": "Special Products and Factorization",
+    "formula_name": "General Linear Binomials (Deduction 2)",
+    "formula_expression": "(ax - b)(cx + d) = acx² - (bc - ad)x - bd",
+    "question": "What is the following formula used for?\n\n(ax - b)(cx + d) = acx² - (bc - ad)x - bd",
+    "options": [
+      "Expands the product of linear binomials with mixed constant signs.",
+      "Calculates the sum of squares.",
+      "Computes the difference of two cubes.",
+      "Finds the square of a sum."
+    ],
+    "correct_answer": "Expands the product of linear binomials with mixed constant signs.",
+    "explanation": "This deduction handles linear binomial products where one constant is negative and the other is positive."
+  },
+  {
+    "chapter": "4",
+    "chapter_title": "Special Products and Factorization",
+    "formula_name": "Cube of a Sum",
+    "formula_expression": "(a + b)³ = a³ + 3a²b + 3ab² + b³ = a³ + 3ab(a + b) + b³",
+    "question": "What is the following formula used for?\n\n(a + b)³ = a³ + 3a²b + 3ab² + b³ = a³ + 3ab(a + b) + b³",
+    "options": [
+      "Expands the cube of a binomial sum into four terms or a factored grouping form.",
+      "Calculates the sum of two individual cubes.",
+      "Computes the difference of cubes.",
+      "Expands the square of a sum."
+    ],
+    "correct_answer": "Expands the cube of a binomial sum into four terms or a factored grouping form.",
+    "explanation": "This identity expands the cube of a binomial sum using binomial coefficients (1, 3, 3, 1)."
+  },
+  {
+    "chapter": "4",
+    "chapter_title": "Special Products and Factorization",
+    "formula_name": "Cube of a Difference",
+    "formula_expression": "(a - b)³ = a³ - 3a²b + 3ab² - b³ = a³ - 3ab(a - b) - b³",
+    "question": "What is the following formula used for?\n\n(a - b)³ = a³ - 3a²b + 3ab² - b³ = a³ - 3ab(a - b) - b³",
+    "options": [
+      "Expands the cube of a binomial difference with alternating signs.",
+      "Calculates the difference of two separate cubes.",
+      "Computes the sum of cubes.",
+      "Expands the square of a difference."
+    ],
+    "correct_answer": "Expands the cube of a binomial difference with alternating signs.",
+    "explanation": "This identity expands the cube of a difference with alternating positive and negative signs across its terms."
+  },
+  {
+    "chapter": "4",
+    "chapter_title": "Special Products and Factorization",
+    "formula_name": "Sum of Cubes",
+    "formula_expression": "a³ + b³ = (a + b)(a² - ab + b²)",
+    "question": "What is the following formula used for?\n\na³ + b³ = (a + b)(a² - ab + b²)",
+    "options": [
+      "Factors the sum of two cubes into a binomial and a trinomial with a minus cross-term.",
+      "Expands the cube of a sum.",
+      "Calculates the difference of cubes.",
+      "Finds the sum of squares."
+    ],
+    "correct_answer": "Factors the sum of two cubes into a binomial and a trinomial with a minus cross-term.",
+    "explanation": "This factorization formula breaks down the sum of two cubed terms into a linear binomial and a quadratic trinomial."
+  },
+  {
+    "chapter": "4",
+    "chapter_title": "Special Products and Factorization",
+    "formula_name": "Difference of Cubes",
+    "formula_expression": "a³ - b³ = (a - b)(a² + ab + b²)",
+    "question": "What is the following formula used for?\n\na³ - b³ = (a - b)(a² + ab + b²)",
+    "options": [
+      "Factors the difference of two cubes into a binomial and a trinomial with a plus cross-term.",
+      "Expands the cube of a difference.",
+      "Calculates the sum of cubes.",
+      "Finds the difference of squares."
+    ],
+    "correct_answer": "Factors the difference of two cubes into a binomial and a trinomial with a plus cross-term.",
+    "explanation": "This factorization formula breaks down the difference of two cubed terms into a linear binomial and a quadratic trinomial with all positive inner terms."
+  },
+  {
+    "chapter": "5",
+    "chapter_title": "Linear Equations",
+    "formula_name": "Linear Equation in One Variable",
+    "formula_expression": "ax + b = 0 (a ≠ 0)",
+    "question": "What is the following formula used for?\n\nax + b = 0 (a ≠ 0)",
+    "options": [
+      "Represents the general standard form of a linear equation in a single variable.",
+      "Calculates the roots of a quadratic equation.",
+      "Finds the distance between two points.",
+      "Computes the slope of a line."
+    ],
+    "correct_answer": "Represents the general standard form of a linear equation in a single variable.",
+    "explanation": "This is the foundational standard form for linear equations in one variable, where a is non-zero."
+  },
+  {
+    "chapter": "5",
+    "chapter_title": "Linear Equations",
+    "formula_name": "Linear Equation in Two Variables",
+    "formula_expression": "ax + by + c = 0",
+    "question": "What is the following formula used for?\n\nax + by + c = 0",
+    "options": [
+      "Represents the general linear equation in two variables on a Cartesian plane.",
+      "Calculates the quadratic formula.",
+      "Computes the area of a rectangle.",
+      "Defines the equation of a circle."
+    ],
+    "correct_answer": "Represents the general linear equation in two variables on a Cartesian plane.",
+    "explanation": "This standard form represents any straight line on a Cartesian coordinate plane with variables x and y."
+  },
+  {
+    "chapter": "5",
+    "chapter_title": "Linear Equations",
+    "formula_name": "Linear Equation in Two Variables (Deduction 1)",
+    "formula_expression": "x = (-by - c) / a (a ≠ 0)",
+    "question": "What is the following formula used for?\n\nx = (-by - c) / a (a ≠ 0)",
+    "options": [
+      "Expresses variable x in terms of y by rearranging a two-variable linear equation.",
+      "Calculates the quadratic root.",
+      "Finds the midpoint of a line segment.",
+      "Computes simple interest."
+    ],
+    "correct_answer": "Expresses variable x in terms of y by rearranging a two-variable linear equation.",
+    "explanation": "This deduction isolates x from the standard linear equation in two variables."
+  },
+  {
+    "chapter": "5",
+    "chapter_title": "Linear Equations",
+    "formula_name": "Linear Equation in Two Variables (Deduction 2)",
+    "formula_expression": "y = (-ax - c) / b (b ≠ 0)",
+    "question": "What is the following formula used for?\n\ny = (-ax - c) / b (b ≠ 0)",
+    "options": [
+      "Expresses variable y in terms of x by rearranging a two-variable linear equation.",
+      "Finds the distance formula.",
+      "Calculates the centroid.",
+      "Computes compound interest."
+    ],
+    "correct_answer": "Expresses variable y in terms of x by rearranging a two-variable linear equation.",
+    "explanation": "This deduction isolates y from the standard linear equation in two variables."
+  },
+  {
+    "chapter": "5",
+    "chapter_title": "Linear Equations",
+    "formula_name": "System of Two Linear Equations",
+    "formula_expression": "a₁x + b₁y + c₁ = 0 and a₂x + b₂y + c₂ = 0",
+    "question": "What is the following formula used for?\n\na₁x + b₁y + c₁ = 0 and a₂x + b₂y + c₂ = 0",
+    "options": [
+      "Represents a simultaneous pair of linear equations in two variables.",
+      "Calculates the quadratic discriminant.",
+      "Defines an arithmetic progression.",
+      "Computes arc length in a circle."
+    ],
+    "correct_answer": "Represents a simultaneous pair of linear equations in two variables.",
+    "explanation": "This represents a system of two linear equations solved simultaneously to find common intersection points."
+  },
+  {
+    "chapter": "6",
+    "chapter_title": "Quadratic Equations",
+    "formula_name": "Standard Quadratic Equation",
+    "formula_expression": "ax² + bx + c = 0 (a ≠ 0)",
+    "question": "What is the following formula used for?\n\nax² + bx + c = 0 (a ≠ 0)",
+    "options": [
+      "Represents the standard form of a quadratic equation in one variable.",
+      "Calculates linear equations in two variables.",
+      "Defines the nth term of an AP.",
+      "Computes the area of a circle."
+    ],
+    "correct_answer": "Represents the standard form of a quadratic equation in one variable.",
+    "explanation": "This standard form defines second-degree polynomial equations where coefficient a cannot be zero."
+  },
+  {
+    "chapter": "6",
+    "chapter_title": "Quadratic Equations",
+    "formula_name": "Quadratic Formula",
+    "formula_expression": "x = (-b ± √(b² - 4ac)) / (2a)",
+    "question": "What is the following formula used for?\n\nx = (-b ± √(b² - 4ac)) / (2a)",
+    "options": [
+      "Calculates the exact roots (solutions) of any standard quadratic equation.",
+      "Finds the distance between two coordinates.",
+      "Computes the sum of an arithmetic progression.",
+      "Determines the midpoint of a line."
+    ],
+    "correct_answer": "Calculates the exact roots (solutions) of any standard quadratic equation.",
+    "explanation": "The quadratic formula uses coefficients a, b, and c to compute real or complex roots of a quadratic equation."
+  },
+  {
+    "chapter": "6",
+    "chapter_title": "Quadratic Equations",
+    "formula_name": "Discriminant (D)",
+    "formula_expression": "D = b² - 4ac",
+    "question": "What is the following formula used for?\n\nD = b² - 4ac",
+    "options": [
+      "Calculates the discriminant to determine the nature of roots for a quadratic equation.",
+      "Finds the vertex of a parabola.",
+      "Computes the hypotenuse of a right triangle.",
+      "Determines the common difference of an AP."
+    ],
+    "correct_answer": "Calculates the discriminant to determine the nature of roots for a quadratic equation.",
+    "explanation": "The discriminant D indicates whether quadratic roots are real and distinct, real and equal, or non-real."
+  },
+  {
+    "chapter": "6",
+    "chapter_title": "Quadratic Equations",
+    "formula_name": "Discriminant (D) (Deduction 1)",
+    "formula_expression": "D > 0: Two real distinct roots",
+    "question": "What is the following formula used for?\n\nD > 0: Two real distinct roots",
+    "options": [
+      "Indicates that a positive discriminant yields two distinct real roots.",
+      "Indicates equal roots.",
+      "Indicates no real roots.",
+      "Indicates complex conjugate roots only."
+    ],
+    "correct_answer": "Indicates that a positive discriminant yields two distinct real roots.",
+    "explanation": "When D > 0, the square root term in the quadratic formula is positive, resulting in two distinct real number solutions."
+  },
+  {
+    "chapter": "6",
+    "chapter_title": "Quadratic Equations",
+    "formula_name": "Discriminant (D) (Deduction 2)",
+    "formula_expression": "D = 0: Two real equal roots",
+    "question": "What is the following formula used for?\n\nD = 0: Two real equal roots",
+    "options": [
+      "Indicates that a zero discriminant yields a single repeated real root (equal roots).",
+      "Indicates distinct real roots.",
+      "Indicates imaginary roots.",
+      "Indicates parallel lines."
+    ],
+    "correct_answer": "Indicates that a zero discriminant yields a single repeated real root (equal roots).",
+    "explanation": "When D = 0, the ± term vanishes, leaving a single repeated real root value (-b / 2a)."
+  },
+  {
+    "chapter": "6",
+    "chapter_title": "Quadratic Equations",
+    "formula_name": "Discriminant (D) (Deduction 3)",
+    "formula_expression": "D < 0: No real roots",
+    "question": "What is the following formula used for?\n\nD < 0: No real roots",
+    "options": [
+      "Indicates that a negative discriminant results in no real number solutions.",
+      "Indicates two real roots.",
+      "Indicates equal roots.",
+      "Indicates infinite solutions."
+    ],
+    "correct_answer": "Indicates that a negative discriminant results in no real number solutions.",
+    "explanation": "When D < 0, taking the square root requires imaginary numbers, meaning there are no real roots."
+  },
+  {
+    "chapter": "7",
+    "chapter_title": "Arithmetic Progressions",
+    "formula_name": "General Term (nth Term) of an AP",
+    "formula_expression": "tₙ = a + (n - 1)d",
+    "question": "What is the following formula used for?\n\ntₙ = a + (n - 1)d",
+    "options": [
+      "Calculates the exact value of the nth term in an arithmetic progression.",
+      "Computes the sum of n terms.",
+      "Finds the common ratio in a geometric sequence.",
+      "Calculates compound interest."
+    ],
+    "correct_answer": "Calculates the exact value of the nth term in an arithmetic progression.",
+    "explanation": "This formula uses the first term 'a', term index 'n', and common difference 'd' to find any term in an AP."
+  },
+  {
+    "chapter": "7",
+    "chapter_title": "Arithmetic Progressions",
+    "formula_name": "Sum of First n Terms of an AP",
+    "formula_expression": "Sₙ = (n / 2) * [2a + (n - 1)d]",
+    "question": "What is the following formula used for?\n\nSₙ = (n / 2) * [2a + (n - 1)d]",
+    "options": [
+      "Calculates the total sum of the first n terms of an arithmetic progression.",
+      "Finds the nth term value.",
+      "Computes simple interest.",
+      "Calculates the area of a trapezoid."
+    ],
+    "correct_answer": "Calculates the total sum of the first n terms of an arithmetic progression.",
+    "explanation": "This formula sums n terms of an AP when the first term and common difference are known."
+  },
+  {
+    "chapter": "7",
+    "chapter_title": "Arithmetic Progressions",
+    "formula_name": "Sum of First n Terms of an AP (Deduction 1)",
+    "formula_expression": "Sₙ = (n / 2) * (a + tₙ)",
+    "question": "What is the following formula used for?\n\nSₙ = (n / 2) * (a + tₙ)",
+    "options": [
+      "Calculates the sum of an AP using the first term and the nth term.",
+      "Finds the common difference.",
+      "Computes compound interest amount.",
+      "Finds the distance between coordinates."
+    ],
+    "correct_answer": "Calculates the sum of an AP using the first term and the nth term.",
+    "explanation": "This deduction is a shorthand sum formula when both the starting term 'a' and ending term tₙ are known."
+  },
+  {
+    "chapter": "7",
+    "chapter_title": "Arithmetic Progressions",
+    "formula_name": "Sum of First n Terms of an AP (Deduction 2)",
+    "formula_expression": "Sₙ = (n / 2) * (a + l)",
+    "question": "What is the following formula used for?\n\nSₙ = (n / 2) * (a + l)",
+    "options": [
+      "Calculates the sum of an AP using the first term and the last term (l).",
+      "Finds the nth term value.",
+      "Calculates profit percentage.",
+      "Computes sector area."
+    ],
+    "correct_answer": "Calculates the sum of an AP using the first term and the last term (l).",
+    "explanation": "This deduction computes the sum when the final term 'l' of the sequence is specified."
+  },
+  {
+    "chapter": "8",
+    "chapter_title": "Percentage and Its Applications",
+    "formula_name": "Profit and Loss",
+    "formula_expression": "Profit = S.P. - C.P., Loss = C.P. - S.P.",
+    "question": "What is the following formula used for?\n\nProfit = S.P. - C.P., Loss = C.P. - S.P.",
+    "options": [
+      "Calculates monetary profit or loss from selling price (S.P.) and cost price (C.P.).",
+      "Computes simple interest.",
+      "Calculates compound growth.",
+      "Finds percentage discount."
+    ],
+    "correct_answer": "Calculates monetary profit or loss from selling price (S.P.) and cost price (C.P.).",
+    "explanation": "Profit occurs when selling price exceeds cost price; loss occurs when cost price exceeds selling price."
+  },
+  {
+    "chapter": "8",
+    "chapter_title": "Percentage and Its Applications",
+    "formula_name": "Profit and Loss (Deduction 1)",
+    "formula_expression": "Profit % = (Profit / C.P.) * 100",
+    "question": "What is the following formula used for?\n\nProfit % = (Profit / C.P.) * 100",
+    "options": [
+      "Calculates the percentage profit based on the cost price.",
+      "Calculates percentage loss.",
+      "Computes simple interest rate.",
+      "Finds discount percentage."
+    ],
+    "correct_answer": "Calculates the percentage profit based on the cost price.",
+    "explanation": "Profit percentage is always evaluated against the original cost price multiplied by 100."
+  },
+  {
+    "chapter": "8",
+    "chapter_title": "Percentage and Its Applications",
+    "formula_name": "Profit and Loss (Deduction 2)",
+    "formula_expression": "Loss % = (Loss / C.P.) * 100",
+    "question": "What is the following formula used for?\n\nLoss % = (Loss / C.P.) * 100",
+    "options": [
+      "Calculates the percentage loss based on the cost price.",
+      "Calculates profit percentage.",
+      "Computes compound depreciation.",
+      "Finds markup rate."
+    ],
+    "correct_answer": "Calculates the percentage loss based on the cost price.",
+    "explanation": "Loss percentage is evaluated by dividing the monetary loss by the cost price and multiplying by 100."
+  },
+  {
+    "chapter": "8",
+    "chapter_title": "Percentage and Its Applications",
+    "formula_name": "Profit and Loss (Deduction 3)",
+    "formula_expression": "S.P. = [C.P. * (100 + Profit %)] / 100",
+    "question": "What is the following formula used for?\n\nS.P. = [C.P. * (100 + Profit %)] / 100",
+    "options": [
+      "Directly calculates the selling price when cost price and profit percentage are known.",
+      "Calculates cost price from loss.",
+      "Computes compound interest amount.",
+      "Finds simple interest."
+    ],
+    "correct_answer": "Directly calculates the selling price when cost price and profit percentage are known.",
+    "explanation": "This formula allows direct calculation of S.P. from C.P. and a given profit percentage."
+  },
+  {
+    "chapter": "8",
+    "chapter_title": "Percentage and Its Applications",
+    "formula_name": "Profit and Loss (Deduction 4)",
+    "formula_expression": "S.P. = [C.P. * (100 - Loss %)] / 100",
+    "question": "What is the following formula used for?\n\nS.P. = [C.P. * (100 - Loss %)] / 100",
+    "options": [
+      "Directly calculates the selling price when cost price and loss percentage are known.",
+      "Calculates profit from selling price.",
+      "Computes depreciation value.",
+      "Finds simple interest."
+    ],
+    "correct_answer": "Directly calculates the selling price when cost price and loss percentage are known.",
+    "explanation": "This formula directly computes S.P. when an item is sold at a specified percentage loss."
+  },
+  {
+    "chapter": "8",
+    "chapter_title": "Percentage and Its Applications",
+    "formula_name": "Simple Interest and Amount",
+    "formula_expression": "I = (P * R * T) / 100",
+    "question": "What is the following formula used for?\n\nI = (P * R * T) / 100",
+    "options": [
+      "Calculates simple interest earned on principal P at rate R for time T years.",
+      "Calculates compound interest amount.",
+      "Computes profit percentage.",
+      "Finds installment balances."
+    ],
+    "correct_answer": "Calculates simple interest earned on principal P at rate R for time T years.",
+    "explanation": "Simple interest is calculated directly from Principal, Rate, and Time divided by 100."
+  },
+  {
+    "chapter": "8",
+    "chapter_title": "Percentage and Its Applications",
+    "formula_name": "Simple Interest and Amount (Deduction 1)",
+    "formula_expression": "A = P + I",
+    "question": "What is the following formula used for?\n\nA = P + I",
+    "options": [
+      "Calculates the total accumulated amount by adding principal and interest.",
+      "Computes compound interest directly.",
+      "Calculates net profit.",
+      "Finds distance."
+    ],
+    "correct_answer": "Calculates the total accumulated amount by adding principal and interest.",
+    "explanation": "Total amount A is the sum of the initial principal P and the accrued interest I."
+  },
+  {
+    "chapter": "8",
+    "chapter_title": "Percentage and Its Applications",
+    "formula_name": "Compound Interest and Amount",
+    "formula_expression": "A = P * (1 + R / 100)ⁿ",
+    "question": "What is the following formula used for?\n\nA = P * (1 + R / 100)ⁿ",
+    "options": [
+      "Calculates the total compound amount over n periods at interest rate R.",
+      "Calculates simple interest.",
+      "Computes population depreciation.",
+      "Finds linear progression sums."
+    ],
+    "correct_answer": "Calculates the total compound amount over n periods at interest rate R.",
+    "explanation": "Compound amount formula multiplies principal by growth factors compounded annually over n time periods."
+  },
+  {
+    "chapter": "8",
+    "chapter_title": "Percentage and Its Applications",
+    "formula_name": "Compound Interest and Amount (Deduction 1)",
+    "formula_expression": "I = A - P",
+    "question": "What is the following formula used for?\n\nI = A - P",
+    "options": [
+      "Calculates compound interest by subtracting principal from the total amount.",
+      "Computes simple interest rate.",
+      "Finds profit and loss.",
+      "Calculates discount amount."
+    ],
+    "correct_answer": "Calculates compound interest by subtracting principal from the total amount.",
+    "explanation": "Compound interest is derived by subtracting the initial principal from the final compound amount."
+  },
+  {
+    "chapter": "8",
+    "chapter_title": "Percentage and Its Applications",
+    "formula_name": "Growth and Depreciation",
+    "formula_expression": "Vₙ = V₀ * (1 + r / 100)ⁿ (Growth)",
+    "question": "What is the following formula used for?\n\nVₙ = V₀ * (1 + r / 100)ⁿ (Growth)",
+    "options": [
+      "Calculates population or value growth over n periods at rate r.",
+      "Calculates depreciation loss.",
+      "Computes compound interest amount.",
+      "Finds simple interest."
+    ],
+    "correct_answer": "Calculates population or value growth over n periods at rate r.",
+    "explanation": "Exponential growth formula increases initial value V₀ by growth rate r over n periods."
+  },
+  {
+    "chapter": "8",
+    "chapter_title": "Percentage and Its Applications",
+    "formula_name": "Growth and Depreciation (Deduction 1)",
+    "formula_expression": "Vₙ = V₀ * (1 - r / 100)ⁿ (Depreciation)",
+    "question": "What is the following formula used for?\n\nVₙ = V₀ * (1 - r / 100)ⁿ (Depreciation)",
+    "options": [
+      "Calculates asset depreciation or value reduction over n periods at rate r.",
+      "Calculates population growth.",
+      "Computes compound interest.",
+      "Finds simple interest."
+    ],
+    "correct_answer": "Calculates asset depreciation or value reduction over n periods at rate r.",
+    "explanation": "Exponential decay/depreciation formula reduces initial value V₀ by depreciation rate r over n periods."
+  },
+  {
+    "chapter": "9",
+    "chapter_title": "Instalment Buying",
+    "formula_name": "Balance Due Under Instalment",
+    "formula_expression": "Balance = Cash Price - Cash Down Payment",
+    "question": "What is the following formula used for?\n\nBalance = Cash Price - Cash Down Payment",
+    "options": [
+      "Calculates the remaining principal balance financed under an instalment plan.",
+      "Computes compound interest.",
+      "Calculates profit and loss.",
+      "Finds simple interest."
+    ],
+    "correct_answer": "Calculates the remaining principal balance financed under an instalment plan.",
+    "explanation": "The financed balance is the total cash price minus any upfront cash down payment."
+  },
+  {
+    "chapter": "9",
+    "chapter_title": "Instalment Buying",
+    "formula_name": "Present Value of Equal Instalments (Compound Interest)",
+    "formula_expression": "Balance = x / (1 + r/100) + x / (1 + r/100)² + ... + x / (1 + r/100)ⁿ",
+    "question": "What is the following formula used for?\n\nBalance = x / (1 + r/100) + x / (1 + r/100)² + ... + x / (1 + r/100)ⁿ",
+    "options": [
+      "Equates financed cash balance to the sum of present values of future equal instalments.",
+      "Calculates simple interest.",
+      "Computes arithmetic progression sums.",
+      "Finds compound amount."
+    ],
+    "correct_answer": "Equates financed cash balance to the sum of present values of future equal instalments.",
+    "explanation": "This formula sums discounted cash flows of equal instalments x to match the initial borrowed balance."
+  },
+  {
+    "chapter": "16",
+    "chapter_title": "Angles in a Circle and Cyclic Quadrilateral",
+    "formula_name": "Arc Length and Degree Measure",
+    "formula_expression": "Length of an arc = Circumference * (Degree measure of the arc / 360°)",
+    "question": "What is the following formula used for?\n\nLength of an arc = Circumference * (Degree measure of the arc / 360°)",
+    "options": [
+      "Calculates the arc length of a circle given its central angle degree measure.",
+      "Computes total circle area.",
+      "Finds sector perimeter.",
+      "Calculates cyclic quadrilateral angles."
+    ],
+    "correct_answer": "Calculates the arc length of a circle given its central angle degree measure.",
+    "explanation": "Arc length is proportional to the fraction of the circle's 360° total degrees represented by the central angle."
+  },
+  {
+    "chapter": "16",
+    "chapter_title": "Angles in a Circle and Cyclic Quadrilateral",
+    "formula_name": "Central Angle Theorem",
+    "formula_expression": "Central Angle = 2 * Inscribed Angle",
+    "question": "What is the following formula used for?\n\nCentral Angle = 2 * Inscribed Angle",
+    "options": [
+      "Relates the angle subtended by an arc at the center to the angle subtended at the circumference.",
+      "Calculates cyclic quadrilateral opposite angles.",
+      "Computes tangent-radius angles.",
+      "Finds circle circumference."
+    ],
+    "correct_answer": "Relates the angle subtended by an arc at the center to the angle subtended at the circumference.",
+    "explanation": "The angle subtended by an arc at the center is always twice the angle subtended at any point on the remaining circumference."
+  },
+  {
+    "chapter": "16",
+    "chapter_title": "Angles in a Circle and Cyclic Quadrilateral",
+    "formula_name": "Cyclic Quadrilateral Property",
+    "formula_expression": "∠A + ∠C = 180°, ∠B + ∠D = 180°",
+    "question": "What is the following formula used for?\n\n∠A + ∠C = 180°, ∠B + ∠D = 180°",
+    "options": [
+      "States that opposite angles of a cyclic quadrilateral are supplementary (sum to 180°).",
+      "Calculates central angles.",
+      "Finds arc lengths.",
+      "Computes tangent lengths."
+    ],
+    "correct_answer": "States that opposite angles of a cyclic quadrilateral are supplementary (sum to 180°).",
+    "explanation": "In any cyclic quadrilateral inscribed in a circle, opposite interior angles always add up to 180°."
+  },
+  {
+    "chapter": "17",
+    "chapter_title": "Secants, Tangents and Their Properties",
+    "formula_name": "Tangent-Radius Property",
+    "formula_expression": "OP ⊥ XY",
+    "question": "What is the following formula used for?\n\nOP ⊥ XY",
+    "options": [
+      "Shows that a circle's radius is perpendicular to the tangent line at the point of contact.",
+      "Calculates intersecting chord lengths.",
+      "Computes secant-tangent products.",
+      "Finds cyclic angles."
+    ],
+    "correct_answer": "Shows that a circle's radius is perpendicular to the tangent line at the point of contact.",
+    "explanation": "The radius drawn to the point of tangency is always perpendicular (at 90°) to the tangent line."
+  },
+  {
+    "chapter": "17",
+    "chapter_title": "Secants, Tangents and Their Properties",
+    "formula_name": "Equal Tangents from External Point",
+    "formula_expression": "PT = PT'",
+    "question": "What is the following formula used for?\n\nPT = PT'",
+    "options": [
+      "Proves that tangent segments drawn from an external point to a circle are equal in length.",
+      "Calculates chord intersections.",
+      "Computes arc lengths.",
+      "Finds sector areas."
+    ],
+    "correct_answer": "Proves that tangent segments drawn from an external point to a circle are equal in length.",
+    "explanation": "Lengths of tangents drawn from the same external point to a circle are always equal."
+  },
+  {
+    "chapter": "17",
+    "chapter_title": "Secants, Tangents and Their Properties",
+    "formula_name": "Secant-Tangent Theorem",
+    "formula_expression": "PA * PB = PT²",
+    "question": "What is the following formula used for?\n\nPA * PB = PT²",
+    "options": [
+      "Relates the lengths of a secant segment and a tangent segment from an external point.",
+      "Calculates intersecting chords.",
+      "Computes tangent-radius perpendicularity.",
+      "Finds central angles."
+    ],
+    "correct_answer": "Relates the lengths of a secant segment and a tangent segment from an external point.",
+    "explanation": "The product of the external secant segment and total secant equals the square of the tangent segment from the same point."
+  },
+  {
+    "chapter": "17",
+    "chapter_title": "Secants, Tangents and Their Properties",
+    "formula_name": "Intersecting Chords Theorem",
+    "formula_expression": "PA * PB = PC * PD",
+    "question": "What is the following formula used for?\n\nPA * PB = PC * PD",
+    "options": [
+      "Relates segment lengths when two chords intersect inside a circle.",
+      "Calculates secant-tangent products.",
+      "Computes tangent lengths.",
+      "Finds arc lengths."
+    ],
+    "correct_answer": "Relates segment lengths when two chords intersect inside a circle.",
+    "explanation": "When two chords intersect inside a circle, the product of the segments of one chord equals the product of the segments of the other."
+  },
+  {
+    "chapter": "18",
+    "chapter_title": "Constructions",
+    "formula_name": "Internal Division Ratio",
+    "formula_expression": "m : n division of line segment AB",
+    "question": "What is the following formula used for?\n\nm : n division of line segment AB",
+    "options": [
+      "Specifies the geometric ratio for dividing a line segment into proportional parts.",
+      "Calculates coordinate distances.",
+      "Computes triangle areas.",
+      "Finds circle radii."
+    ],
+    "correct_answer": "Specifies the geometric ratio for dividing a line segment into proportional parts.",
+    "explanation": "This ratio guides geometric line segment division constructions."
+  },
+  {
+    "chapter": "19",
+    "chapter_title": "Co-ordinate Geometry",
+    "formula_name": "Distance Formula",
+    "formula_expression": "d = √((x₂ - x₁)² + (y₂ - y₁)²)",
+    "question": "What is the following formula used for?\n\nd = √((x₂ - x₁)² + (y₂ - y₁)²)",
+    "options": [
+      "Calculates the straight-line distance between two coordinate points.",
+      "Finds the midpoint of a line.",
+      "Computes the centroid of a triangle.",
+      "Calculates section ratio coordinates."
+    ],
+    "correct_answer": "Calculates the straight-line distance between two coordinate points.",
+    "explanation": "Derived from the Pythagorean theorem, this formula computes Euclidean distance between coordinates."
+  },
+  {
+    "chapter": "19",
+    "chapter_title": "Co-ordinate Geometry",
+    "formula_name": "Section Formula",
+    "formula_expression": "P(x, y) = ((mx₂ + nx₁) / (m + n), (my₂ + ny₁) / (m + n))",
+    "question": "What is the following formula used for?\n\nP(x, y) = ((mx₂ + nx₁) / (m + n), (my₂ + ny₁) / (m + n))",
+    "options": [
+      "Calculates the coordinates of a point dividing a line segment in ratio m:n.",
+      "Finds the midpoint coordinates.",
+      "Computes triangle centroid coordinates.",
+      "Calculates distance between points."
+    ],
+    "correct_answer": "Calculates the coordinates of a point dividing a line segment in ratio m:n.",
+    "explanation": "The section formula determines coordinates of an internal dividing point based on ratio m:n."
+  },
+  {
+    "chapter": "19",
+    "chapter_title": "Co-ordinate Geometry",
+    "formula_name": "Mid-point Formula",
+    "formula_expression": "C(x, y) = ((x₁ + x₂) / 2, (y₁ + y₂) / 2)",
+    "question": "What is the following formula used for?\n\nC(x, y) = ((x₁ + x₂) / 2, (y₁ + y₂) / 2)",
+    "options": [
+      "Calculates the exact midpoint coordinates of a line segment.",
+      "Finds the section ratio.",
+      "Computes triangle centroid.",
+      "Calculates distance."
+    ],
+    "correct_answer": "Calculates the exact midpoint coordinates of a line segment.",
+    "explanation": "A special case of the section formula where m:n is 1:1, averaging x and y coordinates."
+  },
+  {
+    "chapter": "19",
+    "chapter_title": "Co-ordinate Geometry",
+    "formula_name": "Centroid Formula",
+    "formula_expression": "G(x, y) = ((x₁ + x₂ + x₃) / 3, (y₁ + y₂ + y₃) / 3)",
+    "question": "What is the following formula used for?\n\nG(x, y) = ((x₁ + x₂ + x₃) / 3, (y₁ + y₂ + y₃) / 3)",
+    "options": [
+      "Calculates the centroid coordinates of a triangle from its three vertices.",
+      "Finds the midpoint of a side.",
+      "Computes section ratio.",
+      "Calculates distance."
+    ],
+    "correct_answer": "Calculates the centroid coordinates of a triangle from its three vertices.",
+    "explanation": "The centroid is found by averaging the x-coordinates and y-coordinates of the three triangle vertices."
+  },
+  {
+    "chapter": "20",
+    "chapter_title": "Perimeters and Areas of Plane Figures",
+    "formula_name": "Rectangle Perimeter and Area",
+    "formula_expression": "Perimeter = 2(length + breadth), Area = length * breadth",
+    "question": "What is the following formula used for?\n\nPerimeter = 2(length + breadth), Area = length * breadth",
+    "options": [
+      "Calculates the perimeter and area of a rectangle.",
+      "Computes square properties.",
+      "Finds parallelogram area.",
+      "Calculates circle area."
+    ],
+    "correct_answer": "Calculates the perimeter and area of a rectangle.",
+    "explanation": "Standard mensuration formulas for perimeter (distance around) and area (surface coverage) of a rectangle."
+  },
+  {
+    "chapter": "20",
+    "chapter_title": "Perimeters and Areas of Plane Figures",
+    "formula_name": "Square Perimeter and Area",
+    "formula_expression": "Perimeter = 4 * side, Area = side², Diagonal = side * √2",
+    "question": "What is the following formula used for?\n\nPerimeter = 4 * side, Area = side², Diagonal = side * √2",
+    "options": [
+      "Calculates the perimeter, area, and diagonal length of a square.",
+      "Computes rectangle properties.",
+      "Finds rhombus area.",
+      "Calculates trapezium area."
+    ],
+    "correct_answer": "Calculates the perimeter, area, and diagonal length of a square.",
+    "explanation": "Formulas for square perimeter, area, and diagonal derived using side lengths."
+  },
+  {
+    "chapter": "20",
+    "chapter_title": "Perimeters and Areas of Plane Figures",
+    "formula_name": "Parallelogram Area",
+    "formula_expression": "Area = base * corresponding altitude",
+    "question": "What is the following formula used for?\n\nArea = base * corresponding altitude",
+    "options": [
+      "Calculates the area of a parallelogram given its base and altitude.",
+      "Computes triangle area.",
+      "Finds trapezium area.",
+      "Calculates rhombus area."
+    ],
+    "correct_answer": "Calculates the area of a parallelogram given its base and altitude.",
+    "explanation": "Area of a parallelogram is the product of its base length and perpendicular height."
+  },
+  {
+    "chapter": "20",
+    "chapter_title": "Perimeters and Areas of Plane Figures",
+    "formula_name": "Triangle Area",
+    "formula_expression": "Area = (1 / 2) * base * corresponding altitude",
+    "question": "What is the following formula used for?\n\nArea = (1 / 2) * base * corresponding altitude",
+    "options": [
+      "Calculates the area of a triangle using base and height.",
+      "Computes parallelogram area.",
+      "Finds rhombus area.",
+      "Calculates circle area."
+    ],
+    "correct_answer": "Calculates the area of a triangle using base and height.",
+    "explanation": "Standard triangle area formula is half the product of base and corresponding altitude."
+  },
+  {
+    "chapter": "20",
+    "chapter_title": "Perimeters and Areas of Plane Figures",
+    "formula_name": "Triangle Area (Deduction 1)",
+    "formula_expression": "Heron's Formula: Area = √(s(s - a)(s - b)(s - c)) where s = (a + b + c) / 2",
+    "question": "What is the following formula used for?\n\nHeron's Formula: Area = √(s(s - a)(s - b)(s - c)) where s = (a + b + c) / 2",
+    "options": [
+      "Calculates triangle area using all three side lengths (a, b, c) and semi-perimeter s.",
+      "Computes perimeter.",
+      "Finds altitude height.",
+      "Calculates rhombus area."
+    ],
+    "correct_answer": "Calculates triangle area using all three side lengths (a, b, c) and semi-perimeter s.",
+    "explanation": "Heron's formula computes triangle area when heights are unknown, using side lengths and semi-perimeter s."
+  },
+  {
+    "chapter": "20",
+    "chapter_title": "Perimeters and Areas of Plane Figures",
+    "formula_name": "Rhombus Area",
+    "formula_expression": "Area = (1 / 2) * product of diagonals",
+    "question": "What is the following formula used for?\n\nArea = (1 / 2) * product of diagonals",
+    "options": [
+      "Calculates the area of a rhombus using its diagonal lengths.",
+      "Computes parallelogram area.",
+      "Finds trapezium area.",
+      "Calculates square area."
+    ],
+    "correct_answer": "Calculates the area of a rhombus using its diagonal lengths.",
+    "explanation": "The area of a rhombus equals half the product of its two perpendicular diagonals."
+  },
+  {
+    "chapter": "20",
+    "chapter_title": "Perimeters and Areas of Plane Figures",
+    "formula_name": "Trapezium Area",
+    "formula_expression": "Area = (1 / 2) * (sum of parallel sides) * distance between them",
+    "question": "What is the following formula used for?\n\nArea = (1 / 2) * (sum of parallel sides) * distance between them",
+    "options": [
+      "Calculates the area of a trapezium given parallel sides and height.",
+      "Computes parallelogram area.",
+      "Finds triangle area.",
+      "Calculates rhombus area."
+    ],
+    "correct_answer": "Calculates the area of a trapezium given parallel sides and height.",
+    "explanation": "Trapezium area is half the sum of parallel sides multiplied by perpendicular height."
+  },
+  {
+    "chapter": "20",
+    "chapter_title": "Perimeters and Areas of Plane Figures",
+    "formula_name": "Circle Circumference and Area",
+    "formula_expression": "Circumference = 2πr, Area = πr²",
+    "question": "What is the following formula used for?\n\nCircumference = 2πr, Area = πr²",
+    "options": [
+      "Calculates the circumference and area of a circle with radius r.",
+      "Computes circular ring area.",
+      "Finds sector arc length.",
+      "Calculates sphere volume."
+    ],
+    "correct_answer": "Calculates the circumference and area of a circle with radius r.",
+    "explanation": "Fundamental formulas for circle boundary length (circumference) and inner surface area."
+  },
+  {
+    "chapter": "20",
+    "chapter_title": "Perimeters and Areas of Plane Figures",
+    "formula_name": "Circular Path (Ring) Area",
+    "formula_expression": "Area = π(R² - r²)",
+    "question": "What is the following formula used for?\n\nArea = π(R² - r²)",
+    "options": [
+      "Calculates the area of a circular path or ring between outer radius R and inner radius r.",
+      "Computes total circle area.",
+      "Finds sector area.",
+      "Calculates cylinder area."
+    ],
+    "correct_answer": "Calculates the area of a circular path or ring between outer radius R and inner radius r.",
+    "explanation": "Ring area is the difference between the area of the outer circle and the inner circle."
+  },
+  {
+    "chapter": "20",
+    "chapter_title": "Perimeters and Areas of Plane Figures",
+    "formula_name": "Sector Arc Length",
+    "formula_expression": "l = (πrθ) / 180°",
+    "question": "What is the following formula used for?\n\nl = (πrθ) / 180°",
+    "options": [
+      "Calculates the arc length of a circle sector with radius r and central angle θ.",
+      "Computes sector area.",
+      "Finds circle circumference.",
+      "Calculates ring area."
+    ],
+    "correct_answer": "Calculates the arc length of a circle sector with radius r and central angle θ.",
+    "explanation": "Computes arc length l by scaling circumference by the angle fraction θ / 360°."
+  },
+  {
+    "chapter": "20",
+    "chapter_title": "Perimeters and Areas of Plane Figures",
+    "formula_name": "Sector Perimeter and Area",
+    "formula_expression": "Perimeter = 2r + (πrθ) / 180°, Area = (πr²θ) / 360°",
+    "question": "What is the following formula used for?\n\nPerimeter = 2r + (πrθ) / 180°, Area = (πr²θ) / 360°",
+    "options": [
+      "Calculates the total perimeter and area of a circular sector.",
+      "Computes circle circumference.",
+      "Finds ring area.",
+      "Calculates cone surface area."
+    ],
+    "correct_answer": "Calculates the total perimeter and area of a circular sector.",
+    "explanation": "Sector perimeter includes two radii plus arc length; sector area is scaled by θ / 360°."
+  },
+  {
+    "chapter": "21",
+    "chapter_title": "Surface Areas and Volumes of Solid Figures",
+    "formula_name": "Cuboid Surface Area and Volume",
+    "formula_expression": "Surface Area = 2(lb + bh + hl), Volume = lbh, Diagonal = √(l² + b² + h²)",
+    "question": "What is the following formula used for?\n\nSurface Area = 2(lb + bh + hl), Volume = lbh, Diagonal = √(l² + b² + h²)",
+    "options": [
+      "Calculates total surface area, volume, and space diagonal of a cuboid.",
+      "Computes cube properties.",
+      "Finds cylinder volume.",
+      "Calculates sphere volume."
+    ],
+    "correct_answer": "Calculates total surface area, volume, and space diagonal of a cuboid.",
+    "explanation": "Standard formulas for 3D rectangular cuboid geometry using length (l), breadth (b), and height (h)."
+  },
+  {
+    "chapter": "21",
+    "chapter_title": "Surface Areas and Volumes of Solid Figures",
+    "formula_name": "Cube Surface Area and Volume",
+    "formula_expression": "Surface Area = 6a², Volume = a³, Diagonal = a√3",
+    "question": "What is the following formula used for?\n\nSurface Area = 6a², Volume = a³, Diagonal = a√3",
+    "options": [
+      "Calculates surface area, volume, and space diagonal of a cube with side a.",
+      "Computes cuboid properties.",
+      "Finds sphere volume.",
+      "Calculates cone properties."
+    ],
+    "correct_answer": "Calculates surface area, volume, and space diagonal of a cube with side a.",
+    "explanation": "Specialized formulas for cubes where all dimensions equal side length a."
+  },
+  {
+    "chapter": "21",
+    "chapter_title": "Surface Areas and Volumes of Solid Figures",
+    "formula_name": "Right Circular Cylinder",
+    "formula_expression": "Curved Surface Area = 2πrh, Total Surface Area = 2πrh + 2πr², Volume = πr²h",
+    "question": "What is the following formula used for?\n\nCurved Surface Area = 2πrh, Total Surface Area = 2πrh + 2πr², Volume = πr²h",
+    "options": [
+      "Calculates curved surface area, total surface area, and volume of a right circular cylinder.",
+      "Computes cone properties.",
+      "Finds sphere volume.",
+      "Calculates cuboid surface area."
+    ],
+    "correct_answer": "Calculates curved surface area, total surface area, and volume of a right circular cylinder.",
+    "explanation": "Formulas for cylinder curved walls, base circles, and inner capacity using radius r and height h."
+  },
+  {
+    "chapter": "21",
+    "chapter_title": "Surface Areas and Volumes of Solid Figures",
+    "formula_name": "Right Circular Cone",
+    "formula_expression": "Slant Height l = √(r² + h²), CSA = πrl, TSA = πrl + πr², Volume = (1 / 3)πr²h",
+    "question": "What is the following formula used for?\n\nSlant Height l = √(r² + h²), CSA = πrl, TSA = πrl + πr², Volume = (1 / 3)πr²h",
+    "options": [
+      "Calculates slant height, curved surface area, total surface area, and volume of a cone.",
+      "Computes cylinder properties.",
+      "Finds sphere volume.",
+      "Calculates pyramid area."
+    ],
+    "correct_answer": "Calculates slant height, curved surface area, total surface area, and volume of a cone.",
+    "explanation": "Formulas for circular cones using radius r, vertical height h, and slant height l."
+  },
+  {
+    "chapter": "21",
+    "chapter_title": "Surface Areas and Volumes of Solid Figures",
+    "formula_name": "Sphere and Hemisphere",
+    "formula_expression": "Sphere CSA = 4πr², Sphere Volume = (4 / 3)πr³, Hemisphere CSA = 2πr², Hemisphere TSA = 3πr², Hemisphere Volume = (2 / 3)πr³",
+    "question": "What is the following formula used for?\n\nSphere CSA = 4πr², Sphere Volume = (4 / 3)πr³, Hemisphere CSA = 2πr², Hemisphere TSA = 3πr², Hemisphere Volume = (2 / 3)πr³",
+    "options": [
+      "Calculates surface areas and volumes for spheres and hemispheres.",
+      "Computes cylinder properties.",
+      "Finds cone volume.",
+      "Calculates cuboid dimensions."
+    ],
+    "correct_answer": "Calculates surface areas and volumes for spheres and hemispheres.",
+    "explanation": "Comprehensive surface area and volume formulas for full spheres and cut hemispheres of radius r."
+  },
+  {
+    "chapter": "22",
+    "chapter_title": "Introduction to Trigonometry",
+    "formula_name": "Basic T-Ratios",
+    "formula_expression": "sin θ = opposite / hypotenuse, cos θ = adjacent / hypotenuse, tan θ = opposite / adjacent",
+    "question": "What is the following formula used for?\n\nsin θ = opposite / hypotenuse, cos θ = adjacent / hypotenuse, tan θ = opposite / adjacent",
+    "options": [
+      "Defines the primary trigonometric ratios in a right-angled triangle.",
+      "Calculates Pythagorean identities.",
+      "Computes complementary angle ratios.",
+      "Finds special angle values."
+    ],
+    "correct_answer": "Defines the primary trigonometric ratios in a right-angled triangle.",
+    "explanation": "Basic sine, cosine, and tangent ratios relating side lengths to angle θ in right triangles."
+  },
+  {
+    "chapter": "22",
+    "chapter_title": "Introduction to Trigonometry",
+    "formula_name": "Basic T-Ratios (Deduction 1)",
+    "formula_expression": "cosec θ = 1 / sin θ",
+    "question": "What is the following formula used for?\n\ncosec θ = 1 / sin θ",
+    "options": [
+      "Defines cosecant as the reciprocal trigonometric ratio of sine.",
+      "Defines secant ratio.",
+      "Defines cotangent ratio.",
+      "Defines tangent ratio."
+    ],
+    "correct_answer": "Defines cosecant as the reciprocal trigonometric ratio of sine.",
+    "explanation": "Cosecant (cosec θ) is the inverse reciprocal of sine (hypotenuse / opposite)."
+  },
+  {
+    "chapter": "22",
+    "chapter_title": "Introduction to Trigonometry",
+    "formula_name": "Basic T-Ratios (Deduction 2)",
+    "formula_expression": "sec θ = 1 / cos θ",
+    "question": "What is the following formula used for?\n\nsec θ = 1 / cos θ",
+    "options": [
+      "Defines secant as the reciprocal trigonometric ratio of cosine.",
+      "Defines cosecant ratio.",
+      "Defines cotangent ratio.",
+      "Defines sine ratio."
+    ],
+    "correct_answer": "Defines secant as the reciprocal trigonometric ratio of cosine.",
+    "explanation": "Secant (sec θ) is the inverse reciprocal of cosine (hypotenuse / adjacent)."
+  },
+  {
+    "chapter": "22",
+    "chapter_title": "Introduction to Trigonometry",
+    "formula_name": "Basic T-Ratios (Deduction 3)",
+    "formula_expression": "cot θ = 1 / tan θ = cos θ / sin θ",
+    "question": "What is the following formula used for?\n\ncot θ = 1 / tan θ = cos θ / sin θ",
+    "options": [
+      "Defines cotangent as the reciprocal of tangent and the ratio of cosine to sine.",
+      "Defines secant ratio.",
+      "Defines cosecant ratio.",
+      "Defines Pythagorean identity."
+    ],
+    "correct_answer": "Defines cotangent as the reciprocal of tangent and the ratio of cosine to sine.",
+    "explanation": "Cotangent is the reciprocal of tangent and equals adjacent / opposite or cos θ / sin θ."
+  },
+  {
+    "chapter": "22",
+    "chapter_title": "Introduction to Trigonometry",
+    "formula_name": "Basic T-Ratios (Deduction 4)",
+    "formula_expression": "tan θ = sin θ / cos θ",
+    "question": "What is the following formula used for?\n\ntan θ = sin θ / cos θ",
+    "options": [
+      "Expresses tangent as the quotient ratio of sine divided by cosine.",
+      "Defines cotangent ratio.",
+      "Defines secant ratio.",
+      "Defines Pythagorean identity."
+    ],
+    "correct_answer": "Expresses tangent as the quotient ratio of sine divided by cosine.",
+    "explanation": "Tangent can be computed directly as the quotient of sin θ divided by cos θ."
+  },
+  {
+    "chapter": "22",
+    "chapter_title": "Introduction to Trigonometry",
+    "formula_name": "Pythagorean Identities",
+    "formula_expression": "sin² θ + cos² θ = 1, sec² θ - tan² θ = 1, cosec² θ - cot² θ = 1",
+    "question": "What is the following formula used for?\n\nsin² θ + cos² θ = 1, sec² θ - tan² θ = 1, cosec² θ - cot² θ = 1",
+    "options": [
+      "Represents the fundamental Pythagorean trigonometric identities.",
+      "Defines basic T-ratios.",
+      "Calculates complementary angle formulas.",
+      "Finds special angle values."
+    ],
+    "correct_answer": "Represents the fundamental Pythagorean trigonometric identities.",
+    "explanation": "Core trigonometric identities derived directly from the Pythagorean theorem in unit circles."
+  },
+  {
+    "chapter": "22",
+    "chapter_title": "Introduction to Trigonometry",
+    "formula_name": "Complementary Angles Ratios",
+    "formula_expression": "sin(90° - θ) = cos θ, cos(90° - θ) = sin θ, tan(90° - θ) = cot θ",
+    "question": "What is the following formula used for?\n\nsin(90° - θ) = cos θ, cos(90° - θ) = sin θ, tan(90° - θ) = cot θ",
+    "options": [
+      "Relates trigonometric functions of complementary angles.",
+      "Defines Pythagorean identities.",
+      "Calculates basic T-ratios.",
+      "Finds special angle values."
+    ],
+    "correct_answer": "Relates trigonometric functions of complementary angles.",
+    "explanation": "Shows how trigonometric ratios convert when evaluated at the complement angle (90° - θ)."
+  },
+  {
+    "chapter": "22",
+    "chapter_title": "Introduction to Trigonometry",
+    "formula_name": "Complementary Angles Ratios (Deduction 1)",
+    "formula_expression": "cot(90° - θ) = tan θ",
+    "question": "What is the following formula used for?\n\ncot(90° - θ) = tan θ",
+    "options": [
+      "Shows the co-function conversion between cotangent and tangent for complementary angles.",
+      "Converts secant to cosecant.",
+      "Converts sine to cosine.",
+      "Defines Pythagorean identity."
+    ],
+    "correct_answer": "Shows the co-function conversion between cotangent and tangent for complementary angles.",
+    "explanation": "Cotangent of the complement angle (90° - θ) equals tan θ."
+  },
+  {
+    "chapter": "22",
+    "chapter_title": "Introduction to Trigonometry",
+    "formula_name": "Complementary Angles Ratios (Deduction 2)",
+    "formula_expression": "sec(90° - θ) = cosec θ",
+    "question": "What is the following formula used for?\n\nsec(90° - θ) = cosec θ",
+    "options": [
+      "Shows the co-function conversion between secant and cosecant for complementary angles.",
+      "Converts cotangent to tangent.",
+      "Converts cosine to sine.",
+      "Defines Pythagorean identity."
+    ],
+    "correct_answer": "Shows the co-function conversion between secant and cosecant for complementary angles.",
+    "explanation": "Secant of the complement angle (90° - θ) equals cosec θ."
+  },
+  {
+    "chapter": "22",
+    "chapter_title": "Introduction to Trigonometry",
+    "formula_name": "Complementary Angles Ratios (Deduction 3)",
+    "formula_expression": "cosec(90° - θ) = sec θ",
+    "question": "What is the following formula used for?\n\ncosec(90° - θ) = sec θ",
+    "options": [
+      "Shows the co-function conversion between cosecant and secant for complementary angles.",
+      "Converts tangent to cotangent.",
+      "Converts sine to cosine.",
+      "Defines Pythagorean identity."
+    ],
+    "correct_answer": "Shows the co-function conversion between cosecant and secant for complementary angles.",
+    "explanation": "Cosecant of the complement angle (90° - θ) equals sec θ."
+  },
+  {
+    "chapter": "23",
+    "chapter_title": "Trigonometric Ratios of Some Special Angles",
+    "formula_name": "Special Angles (0°, 30°, 45°, 60°, 90°)",
+    "formula_expression": "sin 0° = 0, sin 30° = 1/2, sin 45° = 1/√2, sin 60° = √3/2, sin 90° = 1",
+    "question": "What is the following formula used for?\n\nsin 0° = 0, sin 30° = 1/2, sin 45° = 1/√2, sin 60° = √3/2, sin 90° = 1",
+    "options": [
+      "Provides exact sine ratio values for standard special angles.",
+      "Provides cosine values.",
+      "Provides tangent values.",
+      "Provides Pythagorean identities."
+    ],
+    "correct_answer": "Provides exact sine ratio values for standard special angles.",
+    "explanation": "Standard exact values of sine across key angles (0°, 30°, 45°, 60°, 90°)."
+  },
+  {
+    "chapter": "23",
+    "chapter_title": "Trigonometric Ratios of Some Special Angles",
+    "formula_name": "Special Angles (Deduction 1)",
+    "formula_expression": "cos 0° = 1, cos 30° = √3/2, cos 45° = 1/√2, cos 60° = 1/2, cos 90° = 0",
+    "question": "What is the following formula used for?\n\ncos 0° = 1, cos 30° = √3/2, cos 45° = 1/√2, cos 60° = 1/2, cos 90° = 0",
+    "options": [
+      "Provides exact cosine ratio values for standard special angles.",
+      "Provides sine values.",
+      "Provides tangent values.",
+      "Provides secant values."
+    ],
+    "correct_answer": "Provides exact cosine ratio values for standard special angles.",
+    "explanation": "Standard exact values of cosine across key angles (0°, 30°, 45°, 60°, 90°)."
+  },
+  {
+    "chapter": "23",
+    "chapter_title": "Trigonometric Ratios of Some Special Angles",
+    "formula_name": "Special Angles (Deduction 2)",
+    "formula_expression": "tan 0° = 0, tan 30° = 1/√3, tan 45° = 1, tan 60° = √3, tan 90° = Not Defined",
+    "question": "What is the following formula used for?\n\ntan 0° = 0, tan 30° = 1/√3, tan 45° = 1, tan 60° = √3, tan 90° = Not Defined",
+    "options": [
+      "Provides exact tangent ratio values for standard special angles.",
+      "Provides sine values.",
+      "Provides cosine values.",
+      "Provides cotangent values."
+    ],
+    "correct_answer": "Provides exact tangent ratio values for standard special angles.",
+    "explanation": "Standard exact values of tangent across key angles (0°, 30°, 45°, 60°, 90°), noting tan 90° is undefined."
+  },
+  {
+    "chapter": "26",
+    "chapter_title": "Introduction to Probability",
+    "formula_name": "Probability of an Event",
+    "formula_expression": "P(E) = (Number of outcomes favourable to E) / (Number of all possible outcomes)",
+    "question": "What is the following formula used for?\n\nP(E) = (Number of outcomes favourable to E) / (Number of all possible outcomes)",
+    "options": [
+      "Calculates the theoretical probability of an event occurring.",
+      "Calculates complementary event probability.",
+      "Computes statistical mean.",
+      "Finds progression terms."
+    ],
+    "correct_answer": "Calculates the theoretical probability of an event occurring.",
+    "explanation": "Fundamental probability formula dividing successful outcomes by total possible outcomes."
+  },
+  {
+    "chapter": "26",
+    "chapter_title": "Introduction to Probability",
+    "formula_name": "Probability of an Event (Deduction 1)",
+    "formula_expression": "0 ≤ P(E) ≤ 1",
+    "question": "What is the following formula used for?\n\n0 ≤ P(E) ≤ 1",
+    "options": [
+      "Establishes that any valid probability value must lie inclusively between 0 and 1.",
+      "Calculates event outcomes.",
+      "Computes complementary probability sum.",
+      "Defines odds ratio."
+    ],
+    "correct_answer": "Establishes that any valid probability value must lie inclusively between 0 and 1.",
+    "explanation": "Probability values are always real numbers between 0 (impossible) and 1 (certain)."
+  },
+  {
+    "chapter": "26",
+    "chapter_title": "Introduction to Probability",
+    "formula_name": "Probability of an Event (Deduction 2)",
+    "formula_expression": "P(E) + P(not E) = 1",
+    "question": "What is the following formula used for?\n\nP(E) + P(not E) = 1",
+    "options": [
+      "Relates the probability of an event occurring and not occurring to a total sum of 1.",
+      "Calculates individual favorable outcomes.",
+      "Computes sample space size.",
+      "Defines probability bounds."
+    ],
+    "correct_answer": "Relates the probability of an event occurring and not occurring to a total sum of 1.",
+    "explanation": "The sum of probabilities of complementary events (an event happening plus it not happening) always equals 1."
+  }
+]
