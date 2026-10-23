@@ -9,32 +9,37 @@
   <link rel="preload" as="image" href="hero_img.webp" fetchpriority="high">
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* Make subject cards relative positioned for absolute star badge placement */
+    /* Relative positioning anchor for subject cards */
     .subject-card {
       position: relative;
     }
 
-    /* Flashy Star Badge Styling - Moved to Top Left */
-    .star-badge {
+    /* Flashy Badge Anchor Container - Starts at the larger size and -5deg rotation */
+    .promo-star-badge {
       position: absolute;
-      top: 10px;
-      left: 10px;
+      top: 0px;
+      left: 0px;
       right: auto;
-      width: 84px;
-      height: 84px;
+      width: 78px;
+      height: 78px;
       display: none; /* Shown via JS when loaded */
       align-items: center;
       justify-content: center;
-      filter: drop-shadow(0 4px 10px rgba(255, 140, 0, 0.35));
-      transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      z-index: 3;
+      filter: drop-shadow(0 6px 12px rgba(9, 44, 91, 0.3));
+      transform: scale(1.18) rotate(-5deg);
+      transform-origin: top left;
+      transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.3s ease;
+      z-index: 5;
     }
 
-    .subject-card:hover .star-badge {
-      transform: scale(1.1) rotate(-6deg);
+    /* Enhanced Mouse-Over Hover Animation: Animates slightly further from starting look */
+    .subject-card:hover .promo-star-badge {
+      transform: scale(1.26) rotate(0deg) translateY(-3px);
+      filter: drop-shadow(0 10px 18px rgba(9, 44, 91, 0.4));
     }
 
-    .star-svg {
+    /* SVG Layer */
+    .star-badge-svg {
       position: absolute;
       width: 100%;
       height: 100%;
@@ -42,35 +47,60 @@
       left: 0;
     }
 
-    .star-content {
+    /* Text Layer */
+    .badge-text-wrap {
       position: relative;
-      z-index: 1;
-      text-align: center;
-      color: #ffffff;
-      padding: 0 4px;
+      z-index: 2;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      line-height: 1.1;
+      width: 100%;
+      height: 100%;
       pointer-events: none;
+      text-align: center;
+      padding-top: 4px;
     }
 
-    .star-number {
-      font-size: 12.5px;
+    .badge-count {
+      font-size: 14.5px;
       font-weight: 900;
-      letter-spacing: -0.5px;
-      text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+      color: #ffffff;
+      text-shadow: 0 1.5px 3px rgba(0, 0, 0, 0.8), 0 0 2px rgba(0,0,0,0.9);
+      letter-spacing: -0.4px;
+      line-height: 1;
+      margin-bottom: 3px;
     }
 
-    .star-label {
-      font-size: 6.5px;
-      font-weight: 800;
+    .badge-banner-label {
+      font-size: 8px;
+      font-weight: 900;
+      color: #ffffff;
       text-transform: uppercase;
-      margin-top: 2px;
-      opacity: 0.95;
-      letter-spacing: 0.3px;
-      text-shadow: 0 1px 1px rgba(0,0,0,0.3);
+      letter-spacing: 0.8px;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+      transform: rotate(-3deg);
+      line-height: 1;
+    }
+
+    /* Medium Screens & Half-Desktop Windows: Scale down to prevent overlapping icons */
+    @media (max-width: 1100px) {
+      .promo-star-badge {
+        transform: scale(0.85) rotate(-5deg);
+      }
+      .subject-card:hover .promo-star-badge {
+        transform: scale(0.92) rotate(0deg) translateY(-2px);
+      }
+    }
+
+    /* Extra Small Mobile Devices */
+    @media (max-width: 480px) {
+      .promo-star-badge {
+        transform: scale(0.78) rotate(-5deg);
+      }
+      .subject-card:hover .promo-star-badge {
+        transform: scale(0.85) rotate(0deg);
+      }
     }
   </style>
 </head>
@@ -111,21 +141,37 @@
         <p>A little practice goes a long way.</p>
       </div>
       <div class="subjects-grid">
+        
+        <!-- Science -->
         <a href="subject.html?subject=science" class="subject-card science">
-          <!-- Star Badge Top Left -->
-          <div class="star-badge" id="count-science">
-            <svg viewBox="0 0 100 100" class="star-svg">
-              <polygon points="50,6 63,35 92,40 71,62 76,90 50,76 24,90 29,62 8,40 37,35" fill="url(#starGrad)" />
+          <div class="promo-star-badge" id="count-science">
+            <svg viewBox="0 0 100 100" class="star-badge-svg">
               <defs>
-                <linearGradient id="starGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#ffb72f" />
-                  <stop offset="100%" stop-color="#ff6b00" />
+                <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#ffe259" />
+                  <stop offset="100%" stop-color="#ffa751" />
                 </linearGradient>
+                <linearGradient id="ribbonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#092c5b" />
+                  <stop offset="100%" stop-color="#1e40af" />
+                </linearGradient>
+                <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+                  <feDropShadow dx="0" dy="2" stdDeviation="2" flood-opacity="0.3"/>
+                </filter>
               </defs>
+              <!-- Outer Navy Border Star -->
+              <polygon points="50,2 64,30 96,35 73,58 78,90 50,75 22,90 27,58 4,35 36,30" fill="#092c5b" />
+              <!-- Inner Gold Star -->
+              <polygon points="50,6 62,32 92,36 70,57 75,86 50,72 25,86 30,57 8,36 38,32" fill="url(#goldGrad)" />
+              <!-- Cross Banner Ribbon -->
+              <g filter="url(#shadow)">
+                <polygon points="2,54 98,49 95,71 5,76" fill="url(#ribbonGrad)" />
+                <polygon points="2,54 98,49 98,51 2,56" fill="#ffb72f" />
+              </g>
             </svg>
-            <div class="star-content">
-              <span class="star-number">--</span>
-              <span class="star-label">Questions</span>
+            <div class="badge-text-wrap">
+              <span class="badge-count">--</span>
+              <span class="badge-banner-label">QUESTIONS</span>
             </div>
           </div>
 
@@ -136,14 +182,20 @@
           <strong>Science</strong><small>10th grade</small><span class="card-bottom"><span class="progress"><i></i></span><span class="card-arrow">→</span></span>
         </a>
 
+        <!-- English -->
         <a href="subject.html?subject=english" class="subject-card english">
-          <div class="star-badge" id="count-english">
-            <svg viewBox="0 0 100 100" class="star-svg">
-              <polygon points="50,6 63,35 92,40 71,62 76,90 50,76 24,90 29,62 8,40 37,35" fill="url(#starGrad)" />
+          <div class="promo-star-badge" id="count-english">
+            <svg viewBox="0 0 100 100" class="star-badge-svg">
+              <polygon points="50,2 64,30 96,35 73,58 78,90 50,75 22,90 27,58 4,35 36,30" fill="#092c5b" />
+              <polygon points="50,6 62,32 92,36 70,57 75,86 50,72 25,86 30,57 8,36 38,32" fill="url(#goldGrad)" />
+              <g filter="url(#shadow)">
+                <polygon points="2,54 98,49 95,71 5,76" fill="url(#ribbonGrad)" />
+                <polygon points="2,54 98,49 98,51 2,56" fill="#ffb72f" />
+              </g>
             </svg>
-            <div class="star-content">
-              <span class="star-number">--</span>
-              <span class="star-label">Questions</span>
+            <div class="badge-text-wrap">
+              <span class="badge-count">--</span>
+              <span class="badge-banner-label">QUESTIONS</span>
             </div>
           </div>
 
@@ -154,14 +206,20 @@
           <strong>English</strong><small>10th grade</small><span class="card-bottom"><span class="progress"><i></i></span><span class="card-arrow">→</span></span>
         </a>
 
+        <!-- Maths -->
         <a href="subject.html?subject=maths" class="subject-card maths">
-          <div class="star-badge" id="count-maths">
-            <svg viewBox="0 0 100 100" class="star-svg">
-              <polygon points="50,6 63,35 92,40 71,62 76,90 50,76 24,90 29,62 8,40 37,35" fill="url(#starGrad)" />
+          <div class="promo-star-badge" id="count-maths">
+            <svg viewBox="0 0 100 100" class="star-badge-svg">
+              <polygon points="50,2 64,30 96,35 73,58 78,90 50,75 22,90 27,58 4,35 36,30" fill="#092c5b" />
+              <polygon points="50,6 62,32 92,36 70,57 75,86 50,72 25,86 30,57 8,36 38,32" fill="url(#goldGrad)" />
+              <g filter="url(#shadow)">
+                <polygon points="2,54 98,49 95,71 5,76" fill="url(#ribbonGrad)" />
+                <polygon points="2,54 98,49 98,51 2,56" fill="#ffb72f" />
+              </g>
             </svg>
-            <div class="star-content">
-              <span class="star-number">--</span>
-              <span class="star-label">Questions</span>
+            <div class="badge-text-wrap">
+              <span class="badge-count">--</span>
+              <span class="badge-banner-label">QUESTIONS</span>
             </div>
           </div>
 
@@ -172,14 +230,20 @@
           <strong>Maths</strong><small>10th grade</small><span class="card-bottom"><span class="progress"><i></i></span><span class="card-arrow">→</span></span>
         </a>
 
+        <!-- Hindi -->
         <a href="subject.html?subject=hindi" class="subject-card hindi">
-          <div class="star-badge" id="count-hindi">
-            <svg viewBox="0 0 100 100" class="star-svg">
-              <polygon points="50,6 63,35 92,40 71,62 76,90 50,76 24,90 29,62 8,40 37,35" fill="url(#starGrad)" />
+          <div class="promo-star-badge" id="count-hindi">
+            <svg viewBox="0 0 100 100" class="star-badge-svg">
+              <polygon points="50,2 64,30 96,35 73,58 78,90 50,75 22,90 27,58 4,35 36,30" fill="#092c5b" />
+              <polygon points="50,6 62,32 92,36 70,57 75,86 50,72 25,86 30,57 8,36 38,32" fill="url(#goldGrad)" />
+              <g filter="url(#shadow)">
+                <polygon points="2,54 98,49 95,71 5,76" fill="url(#ribbonGrad)" />
+                <polygon points="2,54 98,49 98,51 2,56" fill="#ffb72f" />
+              </g>
             </svg>
-            <div class="star-content">
-              <span class="star-number">--</span>
-              <span class="star-label">Questions</span>
+            <div class="badge-text-wrap">
+              <span class="badge-count">--</span>
+              <span class="badge-banner-label">QUESTIONS</span>
             </div>
           </div>
 
@@ -187,14 +251,20 @@
           <strong>Hindi</strong><small>10th grade</small><span class="card-bottom"><span class="progress"><i></i></span><span class="card-arrow">→</span></span>
         </a>
 
+        <!-- Home Science -->
         <a href="subject.html?subject=home_science" class="subject-card home-science">
-          <div class="star-badge" id="count-home_science">
-            <svg viewBox="0 0 100 100" class="star-svg">
-              <polygon points="50,6 63,35 92,40 71,62 76,90 50,76 24,90 29,62 8,40 37,35" fill="url(#starGrad)" />
+          <div class="promo-star-badge" id="count-home_science">
+            <svg viewBox="0 0 100 100" class="star-badge-svg">
+              <polygon points="50,2 64,30 96,35 73,58 78,90 50,75 22,90 27,58 4,35 36,30" fill="#092c5b" />
+              <polygon points="50,6 62,32 92,36 70,57 75,86 50,72 25,86 30,57 8,36 38,32" fill="url(#goldGrad)" />
+              <g filter="url(#shadow)">
+                <polygon points="2,54 98,49 95,71 5,76" fill="url(#ribbonGrad)" />
+                <polygon points="2,54 98,49 98,51 2,56" fill="#ffb72f" />
+              </g>
             </svg>
-            <div class="star-content">
-              <span class="star-number">--</span>
-              <span class="star-label">Questions</span>
+            <div class="badge-text-wrap">
+              <span class="badge-count">--</span>
+              <span class="badge-banner-label">QUESTIONS</span>
             </div>
           </div>
 
@@ -204,6 +274,7 @@
           </span>
           <strong>Home Science</strong><small>10th grade</small><span class="card-bottom"><span class="progress"><i></i></span><span class="card-arrow">→</span></span>
         </a>
+
       </div>
     </section>
 
@@ -257,10 +328,10 @@
           }
 
           if (count > 0) {
-            const numEl = badgeEl.querySelector('.star-number');
-            const labelEl = badgeEl.querySelector('.star-label');
+            const numEl = badgeEl.querySelector('.badge-count');
+            const labelEl = badgeEl.querySelector('.badge-banner-label');
             if (numEl) numEl.textContent = `${count.toLocaleString()}+`;
-            if (labelEl) labelEl.textContent = count === 1 ? 'Question' : 'Questions';
+            if (labelEl) labelEl.textContent = count === 1 ? 'QUESTION' : 'QUESTIONS';
             badgeEl.style.display = 'flex';
           }
         } catch (err) {
