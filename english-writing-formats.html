@@ -33,26 +33,48 @@
     .section-tag { font-size: 11px; font-weight: 900; letter-spacing: 2.2px; color: #e68a37; text-transform: uppercase; text-align: center; margin-bottom: 6px; }
     .section-title { font-size: 1.8rem; font-weight: 900; color: var(--primary-dark); text-transform: uppercase; text-align: center; margin-bottom: 30px; letter-spacing: -1px; }
 
-    .format-card { background: #fff; border: 1px solid var(--border); border-radius: 18px; padding: 28px; margin-bottom: 24px; box-shadow: 0 10px 25px rgba(18,49,91,.04); }
-    .format-card h3 { font-size: 1.3rem; font-weight: 900; color: var(--primary-dark); margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
+    .format-card { background: #fff; border: 1px solid var(--border); border-radius: 18px; padding: 28px; margin-bottom: 24px; box-shadow: 0 10px 25px rgba(18,49,91,.04); position: relative; }
+    .format-card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; flex-wrap: wrap; gap: 10px; }
+    .format-card h3 { font-size: 1.3rem; font-weight: 900; color: var(--primary-dark); display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
     .format-card h3 span { font-size: 0.75rem; background: #fff4d4; color: #b45309; padding: 3px 10px; border-radius: 999px; text-transform: uppercase; font-weight: 800; }
     
+    .btn-sample { background-color: #f0f4f8; color: var(--primary-dark); border: 1px solid #cbd5e1; padding: 8px 16px; border-radius: 999px; font-weight: 800; font-size: 0.8rem; cursor: pointer; transition: all 0.2s ease; display: inline-flex; align-items: center; gap: 6px; }
+    .btn-sample:hover { background-color: var(--primary-dark); color: #fff; border-color: var(--primary-dark); transform: translateY(-1px); }
+
     .meta-box { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 15px 0; background: #f8fafc; padding: 15px; border-radius: 12px; font-size: 0.95rem; }
     .meta-box strong { color: var(--primary-dark); font-weight: 800; display: block; margin-bottom: 3px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; }
     
     .format-card p { font-size: 0.95rem; color: #496685; font-weight: 600; margin-bottom: 12px; }
-    .format-card ul { margin-left: 20px; color: #496685; font-weight: 600; font-size: 0.95rem; margin-bottom: 15px; }
-    .format-card li { margin-bottom: 6px; }
 
     table.quick-table { width: 100%; border-collapse: collapse; margin-top: 30px; background: #fff; border-radius: 16px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 10px 25px rgba(18,49,91,.04); }
     table.quick-table th, table.quick-table td { padding: 14px 18px; text-align: left; font-size: 0.9rem; border-bottom: 1px solid var(--border); }
     table.quick-table th { background: #f0f4f8; font-weight: 900; color: var(--primary-dark); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.5px; }
     table.quick-table tr:last-child td { border-bottom: none; }
+
+    /* Modal Styles */
+    .modal-overlay { position: fixed; inset: 0; background: rgba(9, 44, 91, 0.65); backdrop-filter: blur(4px); display: flex; align-items: center; justify-content: center; z-index: 1000; padding: 20px; opacity: 0; pointer-events: none; transition: opacity 0.25s ease; }
+    .modal-overlay.active { opacity: 1; pointer-events: auto; }
     
+    .modal-container { background: #fff; border-radius: 22px; max-width: 650px; width: 100%; max-height: 90vh; overflow-y: auto; padding: 30px; box-shadow: 0 25px 50px -12px rgba(9, 44, 91, 0.25); transform: translateY(20px); transition: transform 0.25s ease; position: relative; }
+    .modal-overlay.active .modal-container { transform: translateY(0); }
+    
+    .modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 2px solid var(--border); }
+    .modal-title { font-size: 1.3rem; font-weight: 900; color: var(--primary-dark); text-transform: uppercase; letter-spacing: -0.5px; }
+    .modal-close { background: #f0f4f8; border: none; width: 36px; height: 36px; border-radius: 50%; font-weight: 900; font-size: 1.1rem; color: var(--primary-dark); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
+    .modal-close:hover { background: #e2e8f0; color: #b91c1c; }
+
+    .sample-layout-box { background: #f8fafc; border: 2px dashed #cbd5e1; border-radius: 14px; padding: 20px; font-family: 'Courier New', Courier, monospace; font-size: 0.88rem; color: #1e293b; line-height: 1.5; margin-bottom: 20px; }
+    .sample-section-tag { display: inline-block; background: #e0f2fe; color: #0369a1; font-size: 0.7rem; font-weight: 800; padding: 2px 8px; border-radius: 4px; margin-bottom: 6px; text-transform: uppercase; font-family: 'Nunito', sans-serif; }
+    
+    .modal-notes h4 { font-size: 0.95rem; font-weight: 900; color: var(--primary-dark); text-transform: uppercase; margin-bottom: 8px; font-family: 'Nunito', sans-serif; }
+    .modal-notes ul { margin-left: 18px; color: #496685; font-weight: 600; font-size: 0.9rem; font-family: 'Nunito', sans-serif; }
+    .modal-notes li { margin-bottom: 6px; }
+
     @media(max-width: 600px) {
       .meta-box { grid-template-columns: 1fr; }
       .hero-banner { padding: 35px 20px; }
       .hero-banner h1 { font-size: 1.7rem; }
+      .modal-container { padding: 20px; }
     }
   </style>
 </head>
@@ -76,7 +98,10 @@
 
     <!-- 1. Letter -->
     <div class="format-card">
-      <h3>1. Letter <span>Formal & Informal</span></h3>
+      <div class="format-card-header">
+        <h3>1. Letter <span>Formal & Informal</span></h3>
+        <button class="btn-sample" onclick="openSampleModal('letter')">🔍 View Sample Layout</button>
+      </div>
       <p>A letter is a written message sent to a person, organization, or authority to convey information, express opinions, or request action.</p>
       <div class="meta-box">
         <div><strong>Key Features</strong>Formal uses strict headers, sender/receiver addresses, subject, and formal tone. Informal uses relaxed, personal language.</div>
@@ -86,7 +111,10 @@
 
     <!-- 2. Notice -->
     <div class="format-card">
-      <h3>2. Notice <span>Public Announcement</span></h3>
+      <div class="format-card-header">
+        <h3>2. Notice <span>Public Announcement</span></h3>
+        <button class="btn-sample" onclick="openSampleModal('notice')">🔍 View Sample Layout</button>
+      </div>
       <p>A brief, formal announcement used to inform a specific group of people about an upcoming event, rule change, or lost item.</p>
       <div class="meta-box">
         <div><strong>Key Features</strong>Must be enclosed within a **box**. Includes heading, organization name, date, title, and clear details (What, When, Where, Who) under ~50 words.</div>
@@ -96,7 +124,10 @@
 
     <!-- 3. Report -->
     <div class="format-card">
-      <h3>3. Report <span>Factual Account</span></h3>
+      <div class="format-card-header">
+        <h3>3. Report <span>Factual Account</span></h3>
+        <button class="btn-sample" onclick="openSampleModal('report')">🔍 View Sample Layout</button>
+      </div>
       <p>An objective, factual description of an event, accident, or school activity that has already occurred, arranged in chronological order.</p>
       <div class="meta-box">
         <div><strong>Key Features</strong>Includes a Headline and Byline. Written strictly in the **past tense** and third-person passive voice.</div>
@@ -106,7 +137,10 @@
 
     <!-- 4. Article -->
     <div class="format-card">
-      <h3>4. Article <span>Opinion & Analysis</span></h3>
+      <div class="format-card-header">
+        <h3>4. Article <span>Opinion & Analysis</span></h3>
+        <button class="btn-sample" onclick="openSampleModal('article')">🔍 View Sample Layout</button>
+      </div>
       <p>A piece written for publication in a magazine or newspaper expressing thoughts, analysis, or arguments on a social issue or trend.</p>
       <div class="meta-box">
         <div><strong>Key Features</strong>Catchy Title and Byline. Structured into 3–4 paragraphs: Introduction, Body (causes/effects/arguments), and Conclusion with solutions.</div>
@@ -116,7 +150,10 @@
 
     <!-- 5. Email -->
     <div class="format-card">
-      <h3>5. Email <span>Digital Message</span></h3>
+      <div class="format-card-header">
+        <h3>5. Email <span>Digital Message</span></h3>
+        <button class="btn-sample" onclick="openSampleModal('email')">🔍 View Sample Layout</button>
+      </div>
       <p>A quick digital communication format sent over the internet, following standard formal or semi-formal conventions in exams.</p>
       <div class="meta-box">
         <div><strong>Key Features</strong>Header fields (To, Cc, Subject line), precise and direct body paragraphs, followed by a professional sign-off.</div>
@@ -126,7 +163,10 @@
 
     <!-- 6. Diary Entry -->
     <div class="format-card">
-      <h3>6. Diary Entry <span>Personal Reflection</span></h3>
+      <div class="format-card-header">
+        <h3>6. Diary Entry <span>Personal Reflection</span></h3>
+        <button class="btn-sample" onclick="openSampleModal('diary')">🔍 View Sample Layout</button>
+      </div>
       <p>A personal record where an individual notes down private thoughts, feelings, and emotional reflections about a specific day.</p>
       <div class="meta-box">
         <div><strong>Key Features</strong>Starts with Date, Day, and Time on the top-left. Written in the **first person ("I")** with an honest, expressive tone.</div>
@@ -136,7 +176,10 @@
 
     <!-- 7. Slogan -->
     <div class="format-card">
-      <h3>7. Slogan <span>Catchy Phrase</span></h3>
+      <div class="format-card-header">
+        <h3>7. Slogan <span>Catchy Phrase</span></h3>
+        <button class="btn-sample" onclick="openSampleModal('slogan')">🔍 View Sample Layout</button>
+      </div>
       <p>An extremely short, catchy phrase designed to convey a powerful social message or promote an awareness campaign instantly.</p>
       <div class="meta-box">
         <div><strong>Key Features</strong>Short (3–10 words), rhythmic or rhyming, bold and visually striking layout.</div>
@@ -202,5 +245,213 @@
     </table>
 
   </main>
+
+  <!-- Modal Template Popup -->
+  <div id="sampleModal" class="modal-overlay" onclick="handleOutsideClick(event)">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 id="modalTitle" class="modal-title">Sample Layout</h3>
+        <button class="modal-close" onclick="closeSampleModal()" aria-label="Close modal">&times;</button>
+      </div>
+      <div id="modalBody">
+        <!-- Dynamically populated layout wireframe & notes -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const sampleData = {
+      letter: {
+        title: "Formal Letter Layout",
+        layout: `
+          <span class="sample-section-tag">Sender's Address</span><br>
+          [House No., Street, City]<br><br>
+          <span class="sample-section-tag">Date</span><br>
+          [DD Month YYYY] (e.g., 24 October 2026)<br><br>
+          <span class="sample-section-tag">Receiver's Address</span><br>
+          [Designation & Office Name]<br>
+          [City]<br><br>
+          <span class="sample-section-tag">Subject Line</span><br>
+          Subject: Brief statement of the problem/purpose<br><br>
+          <span class="sample-section-tag">Salutation</span><br>
+          Sir / Madam,<br><br>
+          <span class="sample-section-tag">Body Paragraphs</span><br>
+          Para 1: Introduction & purpose of writing.<br>
+          Para 2: Core details / facts / issue description.<br>
+          Para 3: Expected action / conclusion.<br><br>
+          <span class="sample-section-tag">Sign-off</span><br>
+          Yours faithfully,<br>
+          [Sender's Name]
+        `,
+        notes: [
+          "Leave one blank line between address blocks, date, and subject.",
+          "Keep the subject line concise and underlined or clearly highlighted.",
+          "Use formal courtesy titles (Sir/Madam, Yours faithfully)."
+        ]
+      },
+      notice: {
+        title: "Notice Writing Layout",
+        layout: `
+          +----------------------------------------------------+<br>
+          | <span class="sample-section-tag">Name of Institution / School</span>                 |<br>
+          |                    <strong>NOTICE</strong>                         |<br>
+          |                                                    | <br>
+          | <span class="sample-section-tag">Date</span>: 24 October 2026                              |<br>
+          | <span class="sample-section-tag">Heading</span>: TITLE OF THE EVENT OR COMPETITION             |<br>
+          |                                                    |<br>
+          | This is to inform all students that our school is  |<br>
+          | organizing... [Details: What, When, Where, Time].  |<br>
+          | Interested students may give names to...           |<br>
+          |                                                    |<br>
+          | <span class="sample-section-tag">Signature</span>                                         |<br>
+          | [Name]                                             |<br>
+          | [Designation / Head Boy / Girl]                    |<br>
+          +----------------------------------------------------+
+        `,
+        notes: [
+          "Must be enclosed in a clear rectangular box.",
+          "Word limit is strictly ~50 words (excluding details).",
+          "Include all 5 Ws: What is happening, When, Where, Who is eligible, Whom to contact."
+        ]
+      },
+      report: {
+        title: "Factual Report Layout",
+        layout: `
+          <span class="sample-section-tag">Headline</span><br>
+          <strong>SCIENCE EXHIBITION HELD AT ABC PUBLIC SCHOOL</strong><br><br>
+          <span class="sample-section-tag">Byline</span><br>
+          By: [Your Name / Staff Reporter]<br><br>
+          <span class="sample-section-tag">Dateline</span><br>
+          NEW DELHI, 24 October 2026:<br><br>
+          <span class="sample-section-tag">Body Paragraphs</span><br>
+          Para 1 (Lead Paragraph): What happened, when, where, and who attended as chief guest.<br>
+          Para 2 (Detailed Account): Step-by-step description of exhibits, student participation, and key highlights.<br>
+          Para 3 (Conclusion): Remarks by dignitaries and vote of thanks.
+        `,
+        notes: [
+          "Always written in the past tense and third-person perspective.",
+          "Avoid personal pronouns like 'I', 'we', or 'you'.",
+          "Keep the headline punchy and capitalize main words."
+        ]
+      },
+      article: {
+        title: "Magazine Article Layout",
+        layout: `
+          <span class="sample-section-tag">Title</span><br>
+          <strong>THE IMPACT OF DIGITAL SCREEN ADDICTION ON YOUTH</strong><br><br>
+          <span class="sample-section-tag">Byline</span><br>
+          By: [Your Name]<br><br>
+          <span class="sample-section-tag">Introduction</span><br>
+          Hook the reader with a striking statement or statistic about screen time.<br><br>
+          <span class="sample-section-tag">Body Paragraphs (Causes & Effects)</span><br>
+          Discuss reasons for overuse, health impacts (sleep disruption, eye strain), and psychological effects.<br><br>
+          <span class="sample-section-tag">Conclusion</span><br>
+          Offer constructive solutions, parental guidance, and a concluding thought.
+        `,
+        notes: [
+          "Structure into 3 to 4 well-defined paragraphs.",
+          "Maintain an informative, persuasive, and analytical tone.",
+          "Ensure vocabulary is rich and varied."
+        ]
+      },
+      email: {
+        title: "Formal / Semi-Formal Email Layout",
+        layout: `
+          <span class="sample-section-tag">Header Section</span><br>
+          <strong>To:</strong> principal.abc@school.com<br>
+          <strong>Cc:</strong> viceprincipal@school.com<br>
+          <strong>Subject:</strong> Request for organizing a workshop on coding<br><br>
+          <span class="sample-section-tag">Salutation</span><br>
+          Dear Sir / Ma'am,<br><br>
+          <span class="sample-section-tag">Body</span><br>
+          State the purpose directly in sentence one. Provide brief supporting context in 2-3 sentences.<br><br>
+          <span class="sample-section-tag">Sign-off</span><br>
+          Looking forward to a positive response.<br>
+          Yours sincerely,<br>
+          [Your Name]
+        `,
+        notes: [
+          "Subject line should be crisp and immediately state the core agenda.",
+          "Keep paragraphs short and professional.",
+          "Avoid casual abbreviations or text slang."
+        ]
+      },
+      diary: {
+        title: "Diary Entry Layout",
+        layout: `
+          <span class="sample-section-tag">Date, Day & Time (Top Left)</span><br>
+          24 October 2026<br>
+          Saturday, 9:30 PM<br><br>
+          <span class="sample-section-tag">Salutation</span><br>
+          Dear Diary,<br><br>
+          <span class="sample-section-tag">Body Reflection</span><br>
+          Today was an unforgettable day. I never expected to win first prize in...<br>
+          I felt a rush of excitement when my name was announced...<br><br>
+          <span class="sample-section-tag">Sign-off</span><br>
+          Signing off for now,<br>
+          [Your Name / Initials]
+        `,
+        notes: [
+          "Must begin with Date, Day, and Time on the top left corner.",
+          "Written strictly in the first person ('I', 'me', 'my').",
+          "Tone should be deeply personal, honest, and reflective."
+        ]
+      },
+      slogan: {
+        title: "Slogan Layout Guide",
+        layout: `
+          <div style="border: 2px solid #092c5b; padding: 15px; text-align: center; background: #fffdf0; border-radius: 8px;">
+            <span class="sample-section-tag">Catchy Poster Box</span><br>
+            <strong>"PLANT A TREE TODAY,<br>BREATHE FRESH TOMORROW!"</strong>
+          </div>
+        `,
+        notes: [
+          "Keep it extremely brief (3 to 10 words).",
+          "Use rhyming words or strong contrasting verbs to make it memorable.",
+          "Present inside a bold box or highlight with quotation marks."
+        ]
+      }
+    };
+
+    function openSampleModal(formatKey) {
+      const data = sampleData[formatKey];
+      if (!data) return;
+
+      document.getElementById('modalTitle').textContent = data.title;
+      
+      let notesHtml = '<h4>Key Placement Rules:</h4><ul>';
+      data.notes.forEach(note => {
+        notesHtml += `<li>${note}</li>`;
+      });
+      notesHtml += '</ul>';
+
+      document.getElementById('modalBody').innerHTML = `
+        <div class="sample-layout-box">${data.layout}</div>
+        <div class="modal-notes">${notesHtml}</div>
+      `;
+
+      document.getElementById('sampleModal').classList.add('active');
+      document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    }
+
+    function closeSampleModal() {
+      document.getElementById('sampleModal').classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    function handleOutsideClick(event) {
+      const modalContainer = document.querySelector('.modal-container');
+      if (!modalContainer.contains(event.target)) {
+        closeSampleModal();
+      }
+    }
+
+    // Close modal on pressing 'Escape' key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeSampleModal();
+      }
+    });
+  </script>
 </body>
 </html>

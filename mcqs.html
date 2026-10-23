@@ -33,8 +33,13 @@
     .back-link:hover { color: #ff762f; background: #e2e8f0; }
 
     .container { max-width: 800px; margin: 0 auto 50px auto; padding: 0 20px; }
-    .page-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 2px solid var(--border); }
+    .page-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 2px solid var(--border); flex-wrap: wrap; gap: 12px; }
     .page-title { font-size: 1.6rem; font-weight: 900; color: var(--primary-dark); text-transform: uppercase; letter-spacing: -0.5px; }
+    
+    .header-controls { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+    .chapter-select { padding: 10px 16px; border-radius: 12px; border: 1px solid #cbd5e1; font-weight: 700; color: var(--primary-dark); background: #fff; cursor: pointer; font-size: 0.9rem; outline: none; transition: border-color 0.2s; }
+    .chapter-select:hover, .chapter-select:focus { border-color: #0284c7; }
+
     .btn-generate { background-color: var(--primary-dark); color: #ffffff; border: none; padding: 10px 20px; border-radius: 30px; font-weight: 800; font-size: 0.85rem; letter-spacing: 0.5px; text-transform: uppercase; cursor: pointer; transition: background-color 0.2s ease, transform 0.1s ease; }
     .btn-generate:hover { background-color: var(--primary-hover); transform: translateY(-1px); }
 
@@ -90,7 +95,6 @@
     .options-list label:hover { background-color: #fff4e6; border-color: #ff762f; }
     .options-list input[type="radio"] { accent-color: #ff9b35; width: 16px; height: 16px; }
 
-    /* Correct & Incorrect Option Highlighting Styles */
     .options-list label.correct {
       background-color: var(--success-bg) !important;
       border-color: var(--success) !important;
@@ -126,7 +130,12 @@
   <div class="container">
     <div class="page-header">
       <h1 class="page-title" id="pageTitle">MCQs</h1>
-      <button id="generateBtn" class="btn-generate">Generate New Test</button>
+      <div class="header-controls">
+        <select id="chapterFilter" class="chapter-select">
+          <option value="all">All Chapters</option>
+        </select>
+        <button id="generateBtn" class="btn-generate">Generate New Test</button>
+      </div>
     </div>
 
     <!-- Centered Total Marks summary -->

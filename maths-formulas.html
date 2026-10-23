@@ -8,11 +8,18 @@
   <style>
     :root { 
       --primary-dark: #092c5b; 
+      --primary-hover: #134074;
       --accent-gold: #ff9b35; 
       --bg: #fffdf8; 
       --card-bg: #ffffff; 
       --text-main: #12315b; 
       --border: #e7eaf0; 
+      --success: #16a34a; 
+      --success-bg: #dcfce7; 
+      --success-border: #86efac; 
+      --error: #b91c1c; 
+      --error-bg: #fee2e2; 
+      --error-border: #fca5a5;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Nunito', 'Segoe UI', sans-serif; }
     body { background-color: var(--bg); color: var(--text-main); line-height: 1.6; }
@@ -20,7 +27,7 @@
     header { display: flex; justify-content: space-between; align-items: center; padding: 20px 8%; background-color: rgba(255,255,255,0.88); box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
     .logo { font-size: 27px; font-weight: 900; color: var(--primary-dark); text-decoration: none; letter-spacing: -1.2px; white-space: nowrap; }
     .logo span { color: var(--accent-gold); }
-    .logo i { font-style: normal; color: #ffb72f; font-size: 18px; vertical-align: top; margin-left: 2px; }
+    .logo-star { display: inline-block; font-size: 18px; color: #ffb72f; vertical-align: top; margin-left: 2px; font-family: sans-serif; }
     
     .back-link { text-decoration: none; color: var(--primary-dark); font-size: 13px; font-weight: 800; transition: all 0.2s ease; background: #f0f4f8; padding: 8px 16px; border-radius: 999px; }
     .back-link:hover { color: #ff762f; background: #e2e8f0; }
@@ -32,16 +39,52 @@
     .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
 
     /* Tabs */
-    .tabs-nav { display: flex; justify-content: center; gap: 12px; margin-bottom: 30px; flex-wrap: wrap; }
-    .tab-btn { background: #e2e8f0; border: none; padding: 10px 22px; border-radius: 30px; font-weight: 800; font-size: 0.9rem; color: #475569; cursor: pointer; transition: all 0.2s; }
+    .tabs-nav { display: flex; justify-content: center; gap: 10px; margin-bottom: 30px; flex-wrap: wrap; }
+    .tab-btn { background: #e2e8f0; border: none; padding: 10px 18px; border-radius: 30px; font-weight: 800; font-size: 0.85rem; color: #475569; cursor: pointer; transition: all 0.2s; }
     .tab-btn.active { background: var(--primary-dark); color: #fff; box-shadow: 0 4px 12px rgba(9,44,91,0.2); }
 
     .tab-content { display: none; }
     .tab-content.active { display: block; }
 
-    /* Filter dropdown */
-    .filter-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 12px; }
-    .filter-bar select { padding: 10px 16px; border-radius: 12px; border: 1px solid #cbd5e1; font-weight: 700; color: var(--primary-dark); background: #fff; cursor: pointer; }
+    /* Filter Bar - Cleaned & Centered */
+    .filter-bar { 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      margin: 0 auto 24px auto; 
+      max-width: 650px; 
+      gap: 16px; 
+      flex-wrap: wrap; 
+    }
+    .filter-bar h3 { 
+      font-size: 1.15rem; 
+      font-weight: 900; 
+      color: var(--primary-dark); 
+      margin: 0;
+    }
+    .filter-bar select { 
+      padding: 10px 18px; 
+      border-radius: 12px; 
+      border: 1px solid #cbd5e1; 
+      font-weight: 700; 
+      color: var(--primary-dark); 
+      background: #fff; 
+      cursor: pointer; 
+      font-size: 0.9rem;
+      outline: none;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+      transition: all 0.2s ease;
+      max-width: 100%;
+    }
+    .filter-bar select:hover, .filter-bar select:focus {
+      border-color: #0284c7;
+      box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+    }
+
+    /* Flashcard Grid Specific Filter Alignment */
+    #tab-flashcards .filter-bar {
+      max-width: 100%;
+    }
 
     /* Flashcard Grid */
     .flashcard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
@@ -65,15 +108,16 @@
     .wrong-box { background: #fff; padding: 12px 16px; border-radius: 10px; border: 1px solid #f87171; font-weight: 700; color: #991b1b; font-size: 0.9rem; }
     .right-box { background: #dcfce7; padding: 12px 16px; border-radius: 10px; border: 1px solid #86efac; font-weight: 700; color: #166534; font-size: 0.9rem; }
 
-    /* Challenge Quiz */
-    .quiz-box { background: #fff; border: 1px solid var(--border); border-radius: 20px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); max-width: 650px; margin: 0 auto; }
-    .quiz-q { font-size: 1.15rem; font-weight: 900; color: var(--primary-dark); margin-bottom: 20px; }
-    .quiz-opts { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
-    .quiz-opt { padding: 12px 18px; border: 2px solid #e2e8f0; border-radius: 12px; background: #f8fafc; font-weight: 700; text-align: left; cursor: pointer; transition: all 0.2s; font-size: 0.95rem; }
-    .quiz-opt:hover:not(:disabled) { background: #e0f2fe; border-color: #0284c7; }
-    .quiz-opt.correct { background: #dcfce7 !important; border-color: #22c55e !important; color: #15803d !important; }
-    .quiz-opt.incorrect { background: #fee2e2 !important; border-color: #ef4444 !important; color: #b91c1c !important; }
-    .quiz-feedback { padding: 14px; border-radius: 12px; font-weight: 700; font-size: 0.9rem; margin-bottom: 20px; line-height: 1.5; }
+    /* Challenge Card Panel style */
+    .challenge-card-box { background: #fff; border: 1px solid var(--border); border-radius: 20px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); max-width: 650px; margin: 0 auto; }
+    .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; font-size: 0.85rem; font-weight: 800; color: #64748b; }
+    .card-title-text { font-size: 1.15rem; font-weight: 900; color: var(--primary-dark); margin-bottom: 20px; line-height: 1.4; white-space: pre-line; }
+    .card-opts { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+    .card-opt { padding: 12px 18px; border: 2px solid #e2e8f0; border-radius: 12px; background: #f8fafc; font-weight: 700; text-align: left; cursor: pointer; transition: all 0.2s; font-size: 0.95rem; }
+    .card-opt:hover:not(:disabled) { background: #e0f2fe; border-color: #0284c7; }
+    .card-opt.correct { background: #dcfce7 !important; border-color: #22c55e !important; color: #15803d !important; }
+    .card-opt.incorrect { background: #fee2e2 !important; border-color: #ef4444 !important; color: #b91c1c !important; }
+    .card-feedback { padding: 14px; border-radius: 12px; font-weight: 700; font-size: 0.9rem; margin-bottom: 20px; line-height: 1.5; display: none; }
     .btn-main { background: var(--primary-dark); color: #fff; border: none; padding: 12px 28px; border-radius: 30px; font-weight: 900; text-transform: uppercase; cursor: pointer; transition: background 0.2s; }
     .btn-main:hover { background: #134074; }
   </style>
@@ -82,7 +126,7 @@
 
   <header>
     <a class="logo" href="index.html" aria-label="iWin Study home">
-        iWin <span>Study</span><span class="logo-star" aria-hidden="true">&#10022;</span>
+      iWin <span>Study</span><span class="logo-star" aria-hidden="true">&#10022;</span>
     </a>
     <a href="subject.html?subject=maths" class="back-link">&larr; Back to Maths</a>
   </header>
@@ -97,12 +141,13 @@
       <button class="tab-btn active" onclick="switchTab('flashcards', this)">🧠 Flashcard Library</button>
       <button class="tab-btn" onclick="switchTab('traps', this)">⚠️ Spot the Trap</button>
       <button class="tab-btn" onclick="switchTab('challenge', this)">⚡ Formula Challenge</button>
+      <button class="tab-btn" onclick="switchTab('whatformula', this)">❓ What Formula?</button>
     </div>
 
     <!-- TAB 1: FLASHCARDS -->
     <div id="tab-flashcards" class="tab-content active">
       <div class="filter-bar">
-        <h3 style="font-size: 1.2rem; font-weight: 900; color: var(--primary-dark);">Tap Cards to Reveal Formulas</h3>
+        <h3>Tap Cards to Reveal Formulas</h3>
         <select id="chapterFilter" onchange="filterFlashcards()">
           <option value="all">All Chapters</option>
         </select>
@@ -153,15 +198,35 @@
 
     <!-- TAB 3: CHALLENGE QUIZ -->
     <div id="tab-challenge" class="tab-content">
-      <div class="quiz-box">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; font-size: 0.85rem; font-weight: 800; color: #64748b;">
-          <span id="quizProgress">Question 1 of 10</span>
+      <div class="challenge-card-box">
+        <div class="card-meta">
+          <span id="quizProgress">Question 1 of 8</span>
           <span id="quizScore">Score: 0</span>
         </div>
-        <div id="quizQuestion" class="quiz-q">Loading challenge...</div>
-        <div id="quizOptions" class="quiz-opts"></div>
-        <div id="quizFeedback" class="quiz-feedback hidden"></div>
-        <button id="quizNextBtn" class="btn-main hidden" onclick="nextQuizQuestion()">Next Question ➔</button>
+        <div id="quizQuestion" class="card-title-text">Loading challenge...</div>
+        <div id="quizOptions" class="card-opts"></div>
+        <div id="quizFeedback" class="card-feedback"></div>
+        <button id="quizNextBtn" class="btn-main" style="display:none;" onclick="nextQuizQuestion()">Next Question ➔</button>
+      </div>
+    </div>
+
+    <!-- TAB 4: WHAT FORMULA? (SINGLE QUESTION CHALLENGE) -->
+    <div id="tab-whatformula" class="tab-content">
+      <div class="filter-bar">
+        <h3>Test Your Formula Knowledge</h3>
+        <select id="wfChapterFilter" onchange="filterWhatFormula()">
+          <option value="all">All Chapters</option>
+        </select>
+      </div>
+      <div class="challenge-card-box">
+        <div class="card-meta">
+          <span id="wfProgress">Question 1 of 1</span>
+          <span id="wfScore">Score: 0</span>
+        </div>
+        <div id="wfQuestion" class="card-title-text">Loading question...</div>
+        <div id="wfOptions" class="card-opts"></div>
+        <div id="wfFeedback" class="card-feedback"></div>
+        <button id="wfNextBtn" class="btn-main" style="display:none;" onclick="nextWhatFormulaQuestion()">Next Question ➔</button>
       </div>
     </div>
   </main>
@@ -171,6 +236,11 @@
     let quizQuestions = [];
     let currentQuizIndex = 0;
     let quizScore = 0;
+
+    let whatFormulaAllData = [];
+    let whatFormulaFiltered = [];
+    let wfCurrentIndex = 0;
+    let wfScore = 0;
 
     window.addEventListener('DOMContentLoaded', async () => {
       try {
@@ -184,6 +254,18 @@
       } catch (err) {
         console.error('Error loading formulas:', err);
         document.getElementById('flashcardGrid').innerHTML = '<p style="text-align:center; color: red; font-weight: 800;">Error loading formula database. Please ensure formulas.json is in data/maths/.</p>';
+      }
+
+      try {
+        const wfRes = await fetch('data/maths/WhatFormula.json');
+        if (!wfRes.ok) throw new Error('Could not load WhatFormula.json');
+        whatFormulaAllData = await wfRes.json();
+        
+        populateWhatFormulaChapterFilter();
+        initWhatFormula();
+      } catch (err) {
+        console.error('Error loading WhatFormula.json:', err);
+        document.getElementById('wfQuestion').textContent = 'Error loading WhatFormula.json database in /data/maths/.';
       }
     });
 
@@ -251,19 +333,6 @@
     }
 
     function initQuiz() {
-      // Restore original layout structure inside .quiz-box if it was replaced by the summary screen
-      const box = document.querySelector('.quiz-box');
-      box.innerHTML = `
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; font-size: 0.85rem; font-weight: 800; color: #64748b;">
-          <span id="quizProgress">Question 1 of 10</span>
-          <span id="quizScore">Score: 0</span>
-        </div>
-        <div id="quizQuestion" class="quiz-q">Loading challenge...</div>
-        <div id="quizOptions" class="quiz-opts"></div>
-        <div id="quizFeedback" class="quiz-feedback hidden"></div>
-        <button id="quizNextBtn" class="btn-main hidden" onclick="nextQuizQuestion()">Next Question ➔</button>
-      `;
-
       quizQuestions = [
         {
           q: "What is the correct expansion for (a + b)²?",
@@ -318,6 +387,7 @@
       quizScore = 0;
       renderQuizQuestion();
     }
+
     function renderQuizQuestion() {
       const q = quizQuestions[currentQuizIndex];
       document.getElementById('quizProgress').textContent = `Question ${currentQuizIndex + 1} of ${quizQuestions.length}`;
@@ -327,20 +397,16 @@
       const optsContainer = document.getElementById('quizOptions');
       optsContainer.innerHTML = '';
       
-      // Completely reset feedback element inline styling and hide it
       const feedback = document.getElementById('quizFeedback');
-      feedback.className = 'quiz-feedback hidden';
       feedback.style.display = 'none';
-      feedback.style.padding = '0';
-      feedback.style.border = 'none';
-      feedback.style.background = 'transparent';
+      feedback.className = 'card-feedback';
       feedback.innerHTML = '';
 
-      document.getElementById('quizNextBtn').classList.add('hidden');
+      document.getElementById('quizNextBtn').style.display = 'none';
 
       q.options.forEach(opt => {
         const btn = document.createElement('button');
-        btn.className = 'quiz-opt';
+        btn.className = 'card-opt';
         btn.textContent = opt;
         btn.onclick = () => selectQuizAnswer(opt, btn, q.answer, q.exp);
         optsContainer.appendChild(btn);
@@ -348,12 +414,9 @@
     }
 
     function selectQuizAnswer(selected, btnElement, correctAns, explanation) {
-      document.querySelectorAll('.quiz-opt').forEach(b => b.disabled = true);
-      
+      document.querySelectorAll('#tab-challenge .card-opt').forEach(b => b.disabled = true);
       const feedback = document.getElementById('quizFeedback');
-      feedback.classList.remove('hidden');
       feedback.style.display = 'block';
-      feedback.style.padding = '14px'; // Restore padding when showing feedback
 
       if (selected === correctAns) {
         btnElement.classList.add('correct');
@@ -365,7 +428,7 @@
         feedback.innerHTML = `<strong>Correct! 🎉</strong><br>${explanation}`;
       } else {
         btnElement.classList.add('incorrect');
-        document.querySelectorAll('.quiz-opt').forEach(b => {
+        document.querySelectorAll('#tab-challenge .card-opt').forEach(b => {
           if (b.textContent === correctAns) b.classList.add('correct');
         });
         feedback.style.background = '#fee2e2';
@@ -380,7 +443,7 @@
       } else {
         nextBtn.textContent = 'View Challenge Summary 🏆';
       }
-      nextBtn.classList.remove('hidden');
+      nextBtn.style.display = 'inline-block';
     }
 
     function nextQuizQuestion() {
@@ -388,17 +451,153 @@
       if (currentQuizIndex < quizQuestions.length) {
         renderQuizQuestion();
       } else {
-        const box = document.querySelector('.quiz-box');
+        const box = document.querySelector('#tab-challenge .challenge-card-box');
         box.innerHTML = `
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; font-size: 0.85rem; font-weight: 800; color: #64748b;">
-            <span id="quizProgress">Challenge Complete</span>
-            <span id="quizScore">Final Score: ${quizScore} / ${quizQuestions.length}</span>
+          <div class="card-meta">
+            <span>Challenge Complete</span>
+            <span>Final Score: ${quizScore} / ${quizQuestions.length}</span>
           </div>
           <div style="text-align: center; padding: 20px 0;">
             <div style="font-size: 50px; margin-bottom: 10px;">🏆</div>
             <h2 style="font-size: 1.5rem; font-weight: 900; color: var(--primary-dark); margin-bottom: 10px;">Challenge Complete!</h2>
             <p style="font-weight: 800; font-size: 1.1rem; color: #0284c7; margin-bottom: 20px;">Your Score: ${quizScore} / ${quizQuestions.length}</p>
             <button class="btn-main" onclick="initQuiz()">Play Again 🔄</button>
+          </div>
+        `;
+      }
+    }
+
+    // What Formula? Single Question Challenge Tab Logic
+    function populateWhatFormulaChapterFilter() {
+      const select = document.getElementById('wfChapterFilter');
+      const chaptersMap = new Map();
+      whatFormulaAllData.forEach(item => {
+        if (!chaptersMap.has(item.chapter)) {
+          chaptersMap.set(item.chapter, item.chapter_title);
+        }
+      });
+      chaptersMap.forEach((title, ch) => {
+        const opt = document.createElement('option');
+        opt.value = ch;
+        opt.textContent = `Chapter ${ch}: ${title}`;
+        select.appendChild(opt);
+      });
+    }
+
+    function filterWhatFormula() {
+      initWhatFormula();
+    }
+
+    function initWhatFormula() {
+      const val = document.getElementById('wfChapterFilter').value;
+      if (val === 'all') {
+        whatFormulaFiltered = [...whatFormulaAllData];
+      } else {
+        whatFormulaFiltered = whatFormulaAllData.filter(item => item.chapter === val);
+      }
+      // Shuffle questions for variety
+      whatFormulaFiltered.sort(() => Math.random() - 0.5);
+      wfCurrentIndex = 0;
+      wfScore = 0;
+      renderWhatFormulaQuestion();
+    }
+
+    function renderWhatFormulaQuestion() {
+      const box = document.querySelector('#tab-whatformula .challenge-card-box');
+      if (whatFormulaFiltered.length === 0) {
+        box.innerHTML = `<p style="text-align:center; font-weight:800; color:#475569;">No questions found for this chapter.</p>`;
+        return;
+      }
+
+      // Restore container structure if summary was shown
+      if (!document.getElementById('wfQuestion')) {
+        box.innerHTML = `
+          <div class="card-meta">
+            <span id="wfProgress">Question 1 of 1</span>
+            <span id="wfScore">Score: 0</span>
+          </div>
+          <div id="wfQuestion" class="card-title-text">Loading question...</div>
+          <div id="wfOptions" class="card-opts"></div>
+          <div id="wfFeedback" class="card-feedback"></div>
+          <button id="wfNextBtn" class="btn-main" style="display:none;" onclick="nextWhatFormulaQuestion()">Next Question ➔</button>
+        `;
+      }
+
+      const item = whatFormulaFiltered[wfCurrentIndex];
+      document.getElementById('wfProgress').textContent = `Question ${wfCurrentIndex + 1} of ${whatFormulaFiltered.length}`;
+      document.getElementById('wfScore').textContent = `Score: ${wfScore}`;
+      document.getElementById('wfQuestion').textContent = item.question;
+
+      const optsContainer = document.getElementById('wfOptions');
+      optsContainer.innerHTML = '';
+
+      const feedback = document.getElementById('wfFeedback');
+      feedback.style.display = 'none';
+      feedback.className = 'card-feedback';
+      feedback.innerHTML = '';
+
+      document.getElementById('wfNextBtn').style.display = 'none';
+
+      // Shuffle options
+      const shuffledOpts = [...item.options].sort(() => Math.random() - 0.5);
+      shuffledOpts.forEach(opt => {
+        const btn = document.createElement('button');
+        btn.className = 'card-opt';
+        btn.textContent = opt;
+        btn.onclick = () => selectWhatFormulaAnswer(opt, btn, item.correct_answer, item.explanation);
+        optsContainer.appendChild(btn);
+      });
+    }
+
+    function selectWhatFormulaAnswer(selected, btnElement, correctAns, explanation) {
+      document.querySelectorAll('#tab-whatformula .card-opt').forEach(b => b.disabled = true);
+      const feedback = document.getElementById('wfFeedback');
+      feedback.style.display = 'block';
+
+      if (selected === correctAns) {
+        btnElement.classList.add('correct');
+        wfScore += 1;
+        document.getElementById('wfScore').textContent = `Score: ${wfScore}`;
+        feedback.style.background = '#dcfce7';
+        feedback.style.color = '#15803d';
+        feedback.style.border = '1px solid #86efac';
+        feedback.innerHTML = `<strong>Correct! 🎉</strong><br>${explanation}`;
+      } else {
+        btnElement.classList.add('incorrect');
+        document.querySelectorAll('#tab-whatformula .card-opt').forEach(b => {
+          if (b.textContent === correctAns) b.classList.add('correct');
+        });
+        feedback.style.background = '#fee2e2';
+        feedback.style.color = '#b91c1c';
+        feedback.style.border = '1px solid #fca5a5';
+        feedback.innerHTML = `<strong>Incorrect. ❌</strong><br><strong>Correct Answer:</strong> ${correctAns}<br>${explanation}`;
+      }
+
+      const nextBtn = document.getElementById('wfNextBtn');
+      if (wfCurrentIndex < whatFormulaFiltered.length - 1) {
+        nextBtn.textContent = 'Next Question ➔';
+      } else {
+        nextBtn.textContent = 'View Challenge Summary 🏆';
+      }
+      nextBtn.style.display = 'inline-block';
+    }
+
+    function nextWhatFormulaQuestion() {
+      wfCurrentIndex++;
+      if (wfCurrentIndex < whatFormulaFiltered.length) {
+        renderWhatFormulaQuestion();
+      } else {
+        const box = document.querySelector('#tab-whatformula .challenge-card-box');
+        box.innerHTML = `
+          <div class="card-meta">
+            <span>Challenge Complete</span>
+            <span>Final Score: ${wfScore} / ${whatFormulaFiltered.length}</span>
+          </div>
+          <div style="text-align: center; padding: 20px 0;">
+            <div style="font-size: 50px; margin-bottom: 10px;">🏆</div>
+            <h2 style="font-size: 1.5rem; font-weight: 900; color: var(--primary-dark); margin-bottom: 10px;">Challenge Complete!</h2>
+            <p style="font-weight: 800; font-size: 1.1rem; color: #0284c7; margin-bottom: 20px;">Your Score: ${wfScore} / ${whatFormulaFiltered.length}</p>
+            <button class="btn-main" onclick="initWhatFormula()">Play Again 🔄</button>
           </div>
         `;
       }

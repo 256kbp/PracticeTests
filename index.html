@@ -4,16 +4,81 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#fffaf0">
-  <meta name="description" content="Learn smarter with iWin Study: chapter tests, interactive MCQs and full-syllabus practice exams for 10th grade.">
+  <meta name="description" content="Learn smarter with iWin Study: chapter tests, interactive multi choice and full-syllabus practice exams for 10th grade.">
   <title>iWin Study — Your next A+ starts here</title>
   <link rel="preload" as="image" href="hero_img.webp" fetchpriority="high">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Make subject cards relative positioned for absolute star badge placement */
+    .subject-card {
+      position: relative;
+    }
+
+    /* Flashy Star Badge Styling - Moved to Top Left */
+    .star-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      right: auto;
+      width: 84px;
+      height: 84px;
+      display: none; /* Shown via JS when loaded */
+      align-items: center;
+      justify-content: center;
+      filter: drop-shadow(0 4px 10px rgba(255, 140, 0, 0.35));
+      transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      z-index: 3;
+    }
+
+    .subject-card:hover .star-badge {
+      transform: scale(1.1) rotate(-6deg);
+    }
+
+    .star-svg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+
+    .star-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      color: #ffffff;
+      padding: 0 4px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      line-height: 1.1;
+      pointer-events: none;
+    }
+
+    .star-number {
+      font-size: 12.5px;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    }
+
+    .star-label {
+      font-size: 6.5px;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-top: 2px;
+      opacity: 0.95;
+      letter-spacing: 0.3px;
+      text-shadow: 0 1px 1px rgba(0,0,0,0.3);
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
     <a class="logo" href="index.html" aria-label="iWin Study home">
-  iWin <span>Study</span><span class="logo-star" aria-hidden="true">&#10022;</span>
-</a>
+      iWin <span>Study</span><span class="logo-star" aria-hidden="true">&#10022;</span>
+    </a>
     <button class="menu-toggle" type="button" aria-label="Open menu">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
     </button>
@@ -24,7 +89,7 @@
       <div class="hero-copy">
         <p class="eyebrow"><span class="eyebrow-dot"></span> YOUR STUDY SPACE</p>
         <h1>Your next <span>A+</span><br class="desktop-break"> starts here.</h1>
-        <p class="hero-description">Learn smarter with chapter tests, quick MCQs and full-syllabus practice exams.</p>
+        <p class="hero-description">Learn smarter with chapter tests, quick multi choice and full-syllabus practice exams.</p>
         <a class="primary-button" href="#subjects">Get Started <span class="button-arrow" aria-hidden="true">→</span></a>
         <div class="hero-proof"><span class="proof-check">✓</span> Small steps. Big progress.</div>
       </div>
@@ -47,31 +112,92 @@
       </div>
       <div class="subjects-grid">
         <a href="subject.html?subject=science" class="subject-card science">
+          <!-- Star Badge Top Left -->
+          <div class="star-badge" id="count-science">
+            <svg viewBox="0 0 100 100" class="star-svg">
+              <polygon points="50,6 63,35 92,40 71,62 76,90 50,76 24,90 29,62 8,40 37,35" fill="url(#starGrad)" />
+              <defs>
+                <linearGradient id="starGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#ffb72f" />
+                  <stop offset="100%" stop-color="#ff6b00" />
+                </linearGradient>
+              </defs>
+            </svg>
+            <div class="star-content">
+              <span class="star-number">--</span>
+              <span class="star-label">Questions</span>
+            </div>
+          </div>
+
           <span class="subject-art" aria-hidden="true">
             <svg viewBox="0 0 64 64"><path d="M25 9v17L12 49a5 5 0 0 0 4 7h32a5 5 0 0 0 4-7L39 26V9"/><path d="M22 9h20M19 43h26"/><circle cx="28" cy="48" r="2"/><circle cx="38" cy="38" r="2"/></svg>
             <span class="mini-spark">✦</span>
           </span>
           <strong>Science</strong><small>10th grade</small><span class="card-bottom"><span class="progress"><i></i></span><span class="card-arrow">→</span></span>
         </a>
+
         <a href="subject.html?subject=english" class="subject-card english">
+          <div class="star-badge" id="count-english">
+            <svg viewBox="0 0 100 100" class="star-svg">
+              <polygon points="50,6 63,35 92,40 71,62 76,90 50,76 24,90 29,62 8,40 37,35" fill="url(#starGrad)" />
+            </svg>
+            <div class="star-content">
+              <span class="star-number">--</span>
+              <span class="star-label">Questions</span>
+            </div>
+          </div>
+
           <span class="subject-art" aria-hidden="true">
             <svg viewBox="0 0 64 64"><path d="M8 15c10-5 18-3 24 2v36c-7-5-15-7-24-2z"/><path d="M56 15c-10-5-18-3-24 2v36c7-5 15-7 24-2z"/><path d="M15 24l10 2M15 32l10 2M39 24l10-2M39 32l10-2"/></svg>
             <span class="mini-spark">✦</span>
           </span>
           <strong>English</strong><small>10th grade</small><span class="card-bottom"><span class="progress"><i></i></span><span class="card-arrow">→</span></span>
         </a>
+
         <a href="subject.html?subject=maths" class="subject-card maths">
+          <div class="star-badge" id="count-maths">
+            <svg viewBox="0 0 100 100" class="star-svg">
+              <polygon points="50,6 63,35 92,40 71,62 76,90 50,76 24,90 29,62 8,40 37,35" fill="url(#starGrad)" />
+            </svg>
+            <div class="star-content">
+              <span class="star-number">--</span>
+              <span class="star-label">Questions</span>
+            </div>
+          </div>
+
           <span class="subject-art" aria-hidden="true">
             <svg viewBox="0 0 64 64"><path d="M13 52V13l39 39z"/><path d="M22 43h8M30 35h8M39 27h8"/><path d="M45 11v12M39 17h12"/></svg>
             <span class="mini-spark">+</span>
           </span>
           <strong>Maths</strong><small>10th grade</small><span class="card-bottom"><span class="progress"><i></i></span><span class="card-arrow">→</span></span>
         </a>
+
         <a href="subject.html?subject=hindi" class="subject-card hindi">
+          <div class="star-badge" id="count-hindi">
+            <svg viewBox="0 0 100 100" class="star-svg">
+              <polygon points="50,6 63,35 92,40 71,62 76,90 50,76 24,90 29,62 8,40 37,35" fill="url(#starGrad)" />
+            </svg>
+            <div class="star-content">
+              <span class="star-number">--</span>
+              <span class="star-label">Questions</span>
+            </div>
+          </div>
+
           <span class="subject-art hindi-glyph" aria-hidden="true">अ<span class="pencil">✎</span></span>
           <strong>Hindi</strong><small>10th grade</small><span class="card-bottom"><span class="progress"><i></i></span><span class="card-arrow">→</span></span>
         </a>
+
         <a href="subject.html?subject=home_science" class="subject-card home-science">
+          <div class="star-badge" id="count-home_science">
+            <svg viewBox="0 0 100 100" class="star-svg">
+              <polygon points="50,6 63,35 92,40 71,62 76,90 50,76 24,90 29,62 8,40 37,35" fill="url(#starGrad)" />
+            </svg>
+            <div class="star-content">
+              <span class="star-number">--</span>
+              <span class="star-label">Questions</span>
+            </div>
+          </div>
+
           <span class="subject-art" aria-hidden="true">
             <svg viewBox="0 0 64 64"><path d="M7 30L32 10l25 20"/><path d="M14 27v28h36V27M26 55V37h12v18"/><path d="M42 15l5 4"/><path d="M43 34c5-6 11-2 9 3-1 4-9 9-9 9s-8-5-9-9c-2-5 4-9 9-3z"/></svg>
             <span class="mini-spark">✦</span>
@@ -91,5 +217,57 @@
     </section>
     <footer class="site-footer"><span class="logo footer-logo">iWin <span>Study</span><i aria-hidden="true">✳</i></span><span>Learn a little. Grow a lot.</span></footer>
   </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const subjects = ['science', 'english', 'maths', 'hindi', 'home_science'];
+
+      for (const sub of subjects) {
+        const badgeEl = document.getElementById(`count-${sub}`);
+        if (!badgeEl) continue;
+
+        try {
+          let count = 0;
+          if (sub === 'maths') {
+            const manifestRes = await fetch('data/maths/manifest.json');
+            if (manifestRes.ok) {
+              const manifest = await manifestRes.json();
+              const chapters = manifest.chapters || [];
+              const chapterPromises = chapters.map(async (ch) => {
+                try {
+                  const res = await fetch(`data/maths/chapter-${ch}.json`);
+                  if (res.ok) {
+                    const data = await res.json();
+                    return Array.isArray(data) ? data.length : 0;
+                  }
+                } catch (e) {
+                  return 0;
+                }
+                return 0;
+              });
+              const counts = await Promise.all(chapterPromises);
+              count = counts.reduce((a, b) => a + b, 0);
+            }
+          } else {
+            const res = await fetch(`data/${sub}/questions.json`);
+            if (res.ok) {
+              const data = await res.json();
+              count = Array.isArray(data) ? data.length : 0;
+            }
+          }
+
+          if (count > 0) {
+            const numEl = badgeEl.querySelector('.star-number');
+            const labelEl = badgeEl.querySelector('.star-label');
+            if (numEl) numEl.textContent = `${count.toLocaleString()}+`;
+            if (labelEl) labelEl.textContent = count === 1 ? 'Question' : 'Questions';
+            badgeEl.style.display = 'flex';
+          }
+        } catch (err) {
+          console.warn(`Could not load question count for ${sub}`, err);
+        }
+      }
+    });
+  </script>
 </body>
 </html>
