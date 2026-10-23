@@ -1,6 +1,8 @@
 // Variable for number of questions displayed per test (can be changed when needed)
 const QUESTIONS_PER_TEST = 10;
 let currentTestQuestions = [];
+let allSubjectQuestions = [];
+let availableChapters = [];
 
 const DIFFICULTY_ORDER = {
   'Easy': 1,
@@ -10,66 +12,103 @@ const DIFFICULTY_ORDER = {
 
 document.getElementById('generateBtn').addEventListener('click', generateTest);
 document.getElementById('submitBtn').addEventListener('click', submitTest);
-window.addEventListener('DOMContentLoaded', generateTest);
+document.getElementById('chapterFilter').addEventListener('change', generateTest);
+window.addEventListener('DOMContentLoaded', initQuizPage);
 
-async function fetchQuestions() {
+async function initQuizPage() {
+  await loadSubjectData();
+  populateChapterDropdown();
+  generateTest();
+}
+
+async function loadSubjectData() {
   try {
     const urlParams = new URLSearchParams(window.location.search);
     const subject = urlParams.get('subject') || 'hindi';
-    const chapter = urlParams.get('chapter');
     
-    let allQuestions = [];
+    allSubjectQuestions = [];
+    availableChapters = [];
 
-    if (chapter) {
-      const response = await fetch(`data/${subject}/chapter-${chapter}.json`);
-      if (!response.ok) throw new Error(`Could not load chapter-${chapter}.json`);
-      allQuestions = await response.json();
-    } else {
-      // Try loading manifest.json first (for modular subjects like maths)
-      try {
-        const manifestRes = await fetch(`data/${subject}/manifest.json`);
-        if (manifestRes.ok) {
-          const manifest = await manifestRes.json();
-          for (const ch of manifest.chapters) {
-            try {
-              const chRes = await fetch(`data/${subject}/chapter-${ch}.json`);
-              if (chRes.ok) {
-                const chData = await chRes.json();
-                allQuestions = allQuestions.concat(chData);
-              }
-            } catch (err) {
-              console.warn(`Could not load chapter ${ch}`, err);
+    // Try loading manifest.json first (for modular subjects)
+    try {
+      const manifestRes = await fetch(`data/${subject}/manifest.json`);
+      if (manifestRes.ok) {
+        const manifest = await manifestRes.json();
+        availableChapters = manifest.chapters || [];
+        for (const ch of availableChapters) {
+          try {
+            const chRes = await fetch(`data/${subject}/chapter-${ch}.json`);
+            if (chRes.ok) {
+              const chData = await chRes.json();
+              allSubjectQuestions = allSubjectQuestions.concat(chData);
             }
+          } catch (err) {
+            console.warn(`Could not load chapter ${ch}`, err);
           }
-        } else {
-          throw new Error('No manifest');
         }
-      } catch (e) {
-        // Fallback to traditional questions.json for single-file subjects
-        const response = await fetch(`data/${subject}/questions.json`);
-        if (!response.ok) throw new Error(`Could not load questions.json for ${subject}`);
-        allQuestions = await response.json();
+      } else {
+        throw new Error('No manifest');
       }
+    } catch (e) {
+      // Fallback to traditional questions.json for single-file subjects
+      const response = await fetch(`data/${subject}/questions.json`);
+      if (!response.ok) throw new Error(`Could not load questions.json for ${subject}`);
+      allSubjectQuestions = await response.json();
+      
+      // Extract unique chapters from questions if available
+      const chapterSet = new Set();
+      allSubjectQuestions.forEach(q => {
+        if (q.chapter && q.chapter !== '-') chapterSet.add(q.chapter);
+      });
+      availableChapters = Array.from(chapterSet).sort((a, b) => Number(a) - Number(b));
     }
-    
-    // Include both MCQ and True/False question types
-    return allQuestions.filter(q => q.type === 'MCQ' || q.type === 'True/False');
   } catch (error) {
-    console.error('Could not load questions:', error);
+    console.error('Could not load subject data:', error);
     alert('Error loading question bank. Check your data folder.');
-    return [];
   }
 }
 
-async function generateTest() {
-  const questionPool = await fetchQuestions();
-  if (questionPool.length === 0) return;
+function populateChapterDropdown() {
+  const select = document.getElementById('chapterFilter');
+  // Keep the default "All Chapters" option
+  select.innerHTML = '<option value="all">All Chapters</option>';
 
-  // Randomly shuffle all available questions
+  availableChapters.forEach(ch => {
+    const opt = document.createElement('option');
+    opt.value = ch;
+    opt.textContent = `Chapter ${ch}`;
+    select.appendChild(opt);
+  });
+}
+
+async function generateTest() {
+  if (allSubjectQuestions.length === 0) await loadSubjectData();
+  if (allSubjectQuestions.length === 0) return;
+
+  const selectedChapter = document.getElementById('chapterFilter').value;
+
+  // Filter by chapter if a specific one is selected
+  let questionPool = allSubjectQuestions;
+  if (selectedChapter !== 'all') {
+    questionPool = allSubjectQuestions.filter(q => String(q.chapter) === String(selectedChapter));
+  }
+
+  // Include both MCQ and True/False question types
+  questionPool = questionPool.filter(q => q.type === 'MCQ' || q.type === 'True/False');
+
+  if (questionPool.length === 0) {
+    document.getElementById('quizContainer').innerHTML = '<p style="text-align:center; font-weight:800; color:#475569; padding: 20px;">No questions found for this chapter.</p>';
+    document.getElementById('totalMarks').textContent = 0;
+    document.getElementById('submitBtn').disabled = true;
+    return;
+  }
+
+  // Randomly shuffle available questions
   const shuffled = [...questionPool].sort(() => 0.5 - Math.random());
 
-  // Select exactly QUESTIONS_PER_TEST (10) questions per test
-  currentTestQuestions = shuffled.slice(0, QUESTIONS_PER_TEST);
+  // Select up to QUESTIONS_PER_TEST (or all if fewer available)
+  const testLimit = Math.min(QUESTIONS_PER_TEST, shuffled.length);
+  currentTestQuestions = shuffled.slice(0, testLimit);
 
   // Sort selected questions by difficulty for a smooth testing experience
   currentTestQuestions.sort((a, b) => {
@@ -79,7 +118,6 @@ async function generateTest() {
     return (a.marks || 1) - (b.marks || 1);
   });
 
-  // Calculate total marks available for the selected test questions
   const totalMarks = currentTestQuestions.reduce((sum, q) => sum + (q.marks || 1), 0);
 
   document.getElementById('resultsBanner').classList.add('hidden');
@@ -92,11 +130,6 @@ function renderTest(questions, totalMarks) {
   const container = document.getElementById('quizContainer');
   document.getElementById('totalMarks').textContent = totalMarks;
   container.innerHTML = '';
-
-  if (questions.length === 0) {
-    container.innerHTML = '<p>No questions could be selected for this test.</p>';
-    return;
-  }
 
   questions.forEach((q, index) => {
     const card = document.createElement('div');
@@ -150,7 +183,6 @@ function submitTest() {
     const userAnswer = selectedOption ? selectedOption.value : null;
     const qMarks = q.marks !== undefined ? q.marks : 1;
 
-    // Highlight options (correct and incorrect selections)
     const radios = document.querySelectorAll(`input[name="q_${q.id}"]`);
     radios.forEach(radio => {
       const label = radio.closest('label');
