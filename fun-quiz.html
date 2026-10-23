@@ -231,17 +231,50 @@
     .btn-secondary:hover { background: #e2e8f0; transform: translateY(-2px); }
     .hidden { display: none !important; }
 
-    /* Mobile-optimized floating feedback emoji overlay */
-    .floating-feedback-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; pointer-events: none; z-index: 99; }
-    .floating-emoji { font-size: 80px; animation: floatZoomFadeMobile 1.2s ease-out forwards; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.2)); }
+    /* Floating feedback emoji overlay */
+    .floating-feedback-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; pointer-events: none; z-index: 99; }
+    .floating-emoji { font-size: 80px; animation: floatZoomFadeMobile 2.2s ease-out forwards; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.2)); }
+    
+    /* Single spin on (0 to 360deg), hold in upright orientation, then fade off */
+    .floating-emoji.spin-cat {
+      animation: spinOnceAndHold 2.2s cubic-bezier(0.1, 0.85, 0.2, 1) forwards;
+    }
+    @keyframes spinOnceAndHold {
+      0% { transform: scale(0.3) translateY(20px) rotate(0deg); opacity: 0; }
+      30% { transform: scale(1.2) translateY(-5px) rotate(360deg); opacity: 1; }
+      75% { transform: scale(1) translateY(-20px) rotate(360deg); opacity: 1; }
+      100% { transform: scale(1.05) translateY(-50px) rotate(360deg); opacity: 0; }
+    }
+
     @keyframes floatZoomFadeMobile {
       0% { transform: scale(0.3) translateY(20px); opacity: 0; }
-      35% { transform: scale(1.1) translateY(-5px); opacity: 1; }
-      70% { transform: scale(1) translateY(-20px); opacity: 1; }
+      20% { transform: scale(1.1) translateY(-5px); opacity: 1; }
+      75% { transform: scale(1) translateY(-20px); opacity: 1; }
       100% { transform: scale(1.05) translateY(-50px); opacity: 0; }
     }
 
-    /* Mobile-optimized Countdown Overlay */
+    /* Streak badge notification synchronized with cat animation */
+    .streak-banner {
+      background: linear-gradient(135deg, #f59e0b, #ef4444);
+      color: #fff;
+      font-weight: 900;
+      font-size: 0.85rem;
+      padding: 6px 14px;
+      border-radius: 20px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+      margin-top: 10px;
+      animation: bounceInAndFadeUp 2.2s ease-out forwards;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    @keyframes bounceInAndFadeUp {
+      0% { transform: scale(0) translateY(20px); opacity: 0; }
+      20% { transform: scale(1.15) translateY(-5px); opacity: 1; }
+      75% { transform: scale(1) translateY(-20px); opacity: 1; }
+      100% { transform: scale(1) translateY(-50px); opacity: 0; }
+    }
+
+    /* Countdown Overlay */
     .start-animation-overlay {
       position: absolute;
       top: 0;
@@ -303,7 +336,7 @@
         <div id="progressBarFill" class="progress-bar-fill"></div>
       </div>
 
-      <div id="questionText" class="question-text question-box">Loading exciting question...</div>
+      <div id="questionText" class="question-text question-box">Loading Fun Quiz...</div>
       <div id="optionsContainer" class="options-grid"></div>
       <div id="feedbackBox" class="feedback-container hidden"></div>
 
@@ -342,6 +375,7 @@
     let selectedOptionValue = null;
     let isSubmitted = false;
     let isInitialized = false;
+    let consecutiveCorrectStreak = 0;
 
     window.addEventListener('DOMContentLoaded', initFunQuiz);
 
@@ -372,7 +406,6 @@
             allQuestions = await response.json();
           }
         }
-        // Only display Easy type questions for Fun Quiz
         return allQuestions.filter(q => q.type === 'MCQ' && q.difficulty === 'Easy');
       } catch (error) {
         console.error('Error fetching questions:', error);
@@ -411,6 +444,7 @@
       totalPossibleMarks = currentMarksSum;
       currentIndex = 0;
       earnedMarks = 0;
+      consecutiveCorrectStreak = 0;
 
       document.getElementById('quizGameView').classList.remove('hidden');
       document.getElementById('quizResultsView').classList.add('hidden');
@@ -513,7 +547,18 @@
 
         const isCorrect = (selectedOptionValue === q.answer);
 
-        showFloatingEmoji(isCorrect);
+        if (isCorrect) {
+          consecutiveCorrectStreak++;
+          earnedMarks += q.marks;
+          feedbackBox.className = 'feedback-container correct';
+          feedbackBox.innerHTML = `<strong>Correct! 🎉 (+${q.marks} marks)</strong><br>${q.explanation || 'Great job answering correctly!'}`;
+        } else {
+          consecutiveCorrectStreak = 0;
+          feedbackBox.className = 'feedback-container incorrect';
+          feedbackBox.innerHTML = `<strong>Incorrect! ❌ (0/${q.marks} marks)</strong><br><strong>Correct Answer:</strong> ${q.answer}<br>${q.explanation || ''}`;
+        }
+
+        showStreakFeedback(isCorrect, consecutiveCorrectStreak);
 
         const optionButtons = document.querySelectorAll('.option-btn');
         optionButtons.forEach(btn => {
@@ -525,15 +570,6 @@
             btn.classList.add('incorrect');
           }
         });
-
-        if (isCorrect) {
-          earnedMarks += q.marks;
-          feedbackBox.className = 'feedback-container correct';
-          feedbackBox.innerHTML = `<strong>Correct! 🎉 (+${q.marks} marks)</strong><br>${q.explanation || 'Great job answering correctly!'}`;
-        } else {
-          feedbackBox.className = 'feedback-container incorrect';
-          feedbackBox.innerHTML = `<strong>Incorrect! ❌ (0/${q.marks} marks)</strong><br><strong>Correct Answer:</strong> ${q.answer}<br>${q.explanation || ''}`;
-        }
 
         document.getElementById('runningScore').textContent = `Score: ${earnedMarks} / ${totalPossibleMarks}`;
 
@@ -555,21 +591,82 @@
       }
     }
 
-    function showFloatingEmoji(isCorrect) {
+    function showStreakFeedback(isCorrect, streak) {
       const quizContainer = document.getElementById('quizCardContainer');
       const overlay = document.createElement('div');
       overlay.className = 'floating-feedback-overlay';
       
       const emojiSpan = document.createElement('div');
       emojiSpan.className = 'floating-emoji';
-      emojiSpan.textContent = isCorrect ? '😸' : '😿';
-      
-      overlay.appendChild(emojiSpan);
+
+      if (!isCorrect) {
+        emojiSpan.textContent = '😿';
+        overlay.appendChild(emojiSpan);
+      } else {
+        if (streak === 1) {
+          emojiSpan.textContent = '😸';
+          overlay.appendChild(emojiSpan);
+        } else if (streak === 2) {
+          emojiSpan.textContent = '😺';
+          emojiSpan.classList.add('spin-cat');
+          overlay.appendChild(emojiSpan);
+
+          const badge = document.createElement('div');
+          badge.className = 'streak-banner';
+          badge.textContent = '🔥 2 In A Row!';
+          overlay.appendChild(badge);
+        } else {
+          emojiSpan.textContent = '😻';
+          emojiSpan.classList.add('spin-cat');
+          overlay.appendChild(emojiSpan);
+
+          const badge = document.createElement('div');
+          badge.className = 'streak-banner';
+          badge.textContent = `🚀 ${streak} Streak Mega Win! 🌟`;
+          overlay.appendChild(badge);
+
+          triggerConfetti();
+        }
+      }
+
       quizContainer.appendChild(overlay);
 
       setTimeout(() => {
         overlay.remove();
-      }, 1200);
+      }, 2200);
+    }
+
+    function triggerConfetti() {
+      const quizContainer = document.getElementById('quizCardContainer');
+      const colors = ['#fde047', '#f43f5e', '#3b82f6', '#10b981', '#a855f7', '#ff9b35'];
+      for (let i = 0; i < 45; i++) {
+        const particle = document.createElement('div');
+        particle.style.position = 'absolute';
+        particle.style.width = `${Math.floor(Math.random() * 8 + 6)}px`;
+        particle.style.height = `${Math.floor(Math.random() * 8 + 6)}px`;
+        particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        particle.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+        particle.style.top = '50%';
+        particle.style.left = '50%';
+        particle.style.pointerEvents = 'none';
+        particle.style.zIndex = '100';
+        
+        const angle = Math.random() * Math.PI * 2;
+        const velocity = Math.random() * 140 + 50;
+        const destX = Math.cos(angle) * velocity;
+        const destY = Math.sin(angle) * velocity - 60;
+        
+        particle.style.transition = 'transform 1.9s cubic-bezier(0.15, 0.85, 0.35, 1), opacity 1.9s ease-out';
+        particle.style.transform = `translate(0, 0) scale(1) rotate(0deg)`;
+        quizContainer.appendChild(particle);
+        
+        requestAnimationFrame(() => {
+          particle.style.transform = `translate(${destX}px, ${destY}px) scale(${Math.random() * 0.9 + 0.4}) rotate(${Math.random() * 720 - 360}deg)`;
+          particle.style.opacity = '0';
+        });
+        
+        setTimeout(() => particle.remove(), 2000);
+      }
     }
 
     function showResults() {
