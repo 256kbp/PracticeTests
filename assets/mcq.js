@@ -81,6 +81,15 @@ function populateChapterDropdown() {
   });
 }
 
+// Robust Fisher-Yates Shuffle Helper
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
 async function generateTest() {
   if (allSubjectQuestions.length === 0) await loadSubjectData();
   if (allSubjectQuestions.length === 0) return;
@@ -103,19 +112,23 @@ async function generateTest() {
     return;
   }
 
-  // Randomly shuffle available questions
-  const shuffled = [...questionPool].sort(() => 0.5 - Math.random());
+  // 1. Shuffle the question pool using Fisher-Yates
+  const shuffledPool = shuffleArray([...questionPool]);
 
-  // Select up to QUESTIONS_PER_TEST (or all if fewer available)
-  const testLimit = Math.min(QUESTIONS_PER_TEST, shuffled.length);
-  currentTestQuestions = shuffled.slice(0, testLimit);
+  // 2. Select up to QUESTIONS_PER_TEST
+  const testLimit = Math.min(QUESTIONS_PER_TEST, shuffledPool.length);
+  const selectedQuestions = shuffledPool.slice(0, testLimit);
 
-  // Sort selected questions by difficulty for a smooth testing experience
-  currentTestQuestions.sort((a, b) => {
-    const diffA = DIFFICULTY_ORDER[a.difficulty] || 2;
-    const diffB = DIFFICULTY_ORDER[b.difficulty] || 2;
-    if (diffA !== diffB) return diffA - diffB;
-    return (a.marks || 1) - (b.marks || 1);
+  // 3. Shuffle the final selected question order so tests feel completely fresh
+  shuffleArray(selectedQuestions);
+
+  // 4. Clone questions and shuffle their options so correct answers aren't always A or B
+  currentTestQuestions = selectedQuestions.map(q => {
+    const qCopy = { ...q };
+    if (qCopy.options && Array.isArray(qCopy.options)) {
+      qCopy.options = shuffleArray([...qCopy.options]);
+    }
+    return qCopy;
   });
 
   const totalMarks = currentTestQuestions.reduce((sum, q) => sum + (q.marks || 1), 0);
