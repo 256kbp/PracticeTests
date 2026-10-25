@@ -70,7 +70,6 @@ async function loadSubjectData() {
 
 function populateChapterDropdown() {
   const select = document.getElementById('chapterFilter');
-  // Keep the default "All Chapters" option
   select.innerHTML = '<option value="all">All Chapters</option>';
 
   availableChapters.forEach(ch => {
@@ -102,7 +101,7 @@ async function generateTest() {
     questionPool = allSubjectQuestions.filter(q => String(q.chapter) === String(selectedChapter));
   }
 
-  // Include both MCQ and True/False question types
+  // Include only MCQ and True/False question types (reverted back to original behavior)
   questionPool = questionPool.filter(q => q.type === 'MCQ' || q.type === 'True/False');
 
   if (questionPool.length === 0) {
@@ -151,14 +150,19 @@ function renderTest(questions, totalMarks) {
 
     const inputHtml = `
       <ul class="options-list">
-        ${q.options ? q.options.map((opt) => `
-          <li>
-            <label>
-              <input type="radio" name="q_${q.id}" value="${opt}">
-              <span>${opt}</span>
-            </label>
-          </li>
-        `).join('') : ''}
+        ${q.options ? q.options.map((opt) => {
+          // Detect if the option is long or contains newlines
+          const isLong = opt.length > 45 || opt.includes('\n') || opt.includes('<br>');
+          const labelClass = isLong ? 'option-label long-option' : 'option-label';
+          return `
+            <li>
+              <label class="${labelClass}">
+                <input type="radio" name="q_${q.id}" value="${opt}">
+                <span>${opt}</span>
+              </label>
+            </li>
+          `;
+        }).join('') : ''}
       </ul>
     `;
 
