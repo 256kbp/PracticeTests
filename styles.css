@@ -481,3 +481,28 @@ a { color: inherit; }
   html { scroll-behavior: auto; }
   *, *:before, *:after { transition: none !important; }
 }
+
+.options-list label.option-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background-color: #fafafa;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.options-list label.long-option {
+  align-items: flex-start;
+  white-space: pre-line;
+  padding: 14px 18px;
+  line-height: 1.5;
+}
+
+.options-list label.long-option input[type="radio"] {
+  margin-top: 3px; /* Aligns radio button cleanly with the first line of text */
+}
